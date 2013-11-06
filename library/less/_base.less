@@ -1,12 +1,12 @@
 /******************************************************************
-Site Name:
-Author:
+Site Name: ARChive of Contemporary Music
+Author: W.J. Levay based on design by Open
 
 Stylesheet: Base Mobile Stylesheet
 
 Be light and don't over style since everything here will be
 loaded by mobile devices. You want to keep it as minimal as
-possible. This is called at the top of the main stylsheet
+possible. This is called at the top of the main stylesheet
 and will be used across all viewports.
 
 ------------ MAP ------------
@@ -38,10 +38,10 @@ html, body {
 	/* height: 100%; */
 }
 body {
-	font-family: @serif;
+	font-family: @sans-serif;
 	font-size: 100%;
 	line-height: 1.5;
-	color: #565656;
+	color: @black;
 }
 
 /********************
@@ -174,9 +174,18 @@ h5, .h5 {
 *********************/
 
 .header {
-	#inner-header {}
+	#inner-header {border-bottom: 1px dotted @black;}
 
-	#logo {}
+	#logo {
+		a {
+			color: @black;
+			font-weight: 600;
+		}
+	}
+
+	#factoid {
+		display: none;
+	}
 
 	nav {
 		ul.nav {
@@ -204,17 +213,16 @@ and more scalable.
 */
 
 .nav {
-	border: 1px solid #ccc;
-	border-bottom: 0;
 
 	li {
 
 		a {
+			color: @black;
 			display: block;
 			text-decoration: none;
 			padding: 10px 10px;
-			background-color: #eee;
-			border-bottom: 1px solid #ccc;
+
+			&:visited {color: @black;}
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -225,6 +233,7 @@ and more scalable.
 			&:hover, &:focus {
 
 			}
+
 		}
 
 		&:first-child {}
@@ -822,11 +831,47 @@ and more scalable.
 
 .sidebar {}
 
-	.widgettitle {color: red;}
+	.about {
+		.widgettitle {color: @about;}
+	}
+	.support {
+		.widgettitle, .widget-text {
+			color: @white;
+			background-color: @support;
+			padding: 0 1em;
+			a {
+				color: @white;
+				background-color: @support-dark;
+				text-decoration: none;
+			}
+		}
+		.widgettitle {padding-top: .5em;}
+	}
+	.blog {
+		.widgettitle, .widget-text {
+			color: @white;
+			background-color: @blog;
+			padding: 0 1em;
+			a {
+				color: @white;
+				background-color: @blog-dark;
+				text-decoration: none;
+			}
+		}
+		.widgettitle {padding-top: .5em;}
+	}
 
 	.widget {
 
+		.highlight {background-color: @highlight;}
+		.widget-text p {
+			margin-top: 0;
+		}
+		.widgettitle {margin-bottom: 0;}
+
 		ul {
+			list-style: square outside none;
+			margin: 0;
 
 			li {
 
@@ -852,6 +897,7 @@ and more scalable.
 .footer {
 	clear: both;
 	#inner-footer {
+		border-top: 1px dotted @black;
 	}
 	nav {
 		ul.nav {

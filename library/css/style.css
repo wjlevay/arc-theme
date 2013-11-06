@@ -747,14 +747,14 @@ you set a great foundation, you won't need to add too many styles in
 the other stylesheets. Remember, keep it light: Speed is Important.
 */
 /******************************************************************
-Site Name:
-Author:
+Site Name: ARChive of Contemporary Music
+Author: W.J. Levay based on design by Open
 
 Stylesheet: Base Mobile Stylesheet
 
 Be light and don't over style since everything here will be
 loaded by mobile devices. You want to keep it as minimal as
-possible. This is called at the top of the main stylsheet
+possible. This is called at the top of the main stylesheet
 and will be used across all viewports.
 
 ------------ MAP ------------
@@ -783,10 +783,10 @@ body {
 
 }
 body {
-  font-family: "Georgia", Cambria, Times New Roman, Times, serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
-  color: #565656;
+  color: #000000;
 }
 /********************
 02. WORDPRESS BODY CLASSES
@@ -929,6 +929,16 @@ h5,
 /*********************
 06. HEADER STYLES
 *********************/
+.header #inner-header {
+  border-bottom: 1px dotted #000000;
+}
+.header #logo a {
+  color: #000000;
+  font-weight: 600;
+}
+.header #factoid {
+  display: none;
+}
 /*********************
 07. NAVIGATION STYLES
 *********************/
@@ -940,8 +950,6 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 .nav {
-  border: 1px solid #ccc;
-  border-bottom: 0;
   /* end .menu li */
 
   /* highlight current page */
@@ -960,11 +968,10 @@ and more scalable.
 
 }
 .nav li a {
+  color: #000000;
   display: block;
   text-decoration: none;
   padding: 10px 10px;
-  background-color: #eee;
-  border-bottom: 1px solid #ccc;
   /*
 			remember this is for mobile ONLY, so there's no need
 			to even declare hover styles here, you can do it in
@@ -972,6 +979,9 @@ and more scalable.
 			keep this file as small as possible!
 			*/
 
+}
+.nav li a:visited {
+  color: #000000;
 }
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
@@ -1313,8 +1323,51 @@ and more scalable.
 /*********************
 12. SIDEBARS & ASIDES
 *********************/
-.widgettitle {
-  color: red;
+.about .widgettitle {
+  color: #f81a33;
+}
+.support .widgettitle,
+.support .widget-text {
+  color: #ffffff;
+  background-color: #9f111e;
+  padding: 0 1em;
+}
+.support .widgettitle a,
+.support .widget-text a {
+  color: #ffffff;
+  background-color: #700106;
+  text-decoration: none;
+}
+.support .widgettitle {
+  padding-top: .5em;
+}
+.blog .widgettitle,
+.blog .widget-text {
+  color: #ffffff;
+  background-color: #008bca;
+  padding: 0 1em;
+}
+.blog .widgettitle a,
+.blog .widget-text a {
+  color: #ffffff;
+  background-color: #20469e;
+  text-decoration: none;
+}
+.blog .widgettitle {
+  padding-top: .5em;
+}
+.widget .highlight {
+  background-color: #f0ffa0;
+}
+.widget .widget-text p {
+  margin-top: 0;
+}
+.widget .widgettitle {
+  margin-bottom: 0;
+}
+.widget ul {
+  list-style: square outside none;
+  margin: 0;
 }
 .widget ul li {
   /* deep nesting */
@@ -1325,6 +1378,9 @@ and more scalable.
 *********************/
 .footer {
   clear: both;
+}
+.footer #inner-footer {
+  border-top: 1px dotted #000000;
 }
 /*
 	if you checked out the link above:
@@ -1417,6 +1473,19 @@ tweeners.
     clear: both;
   }
   /* end .entry-content */
+  /*********************
+  HEADER STYLES
+  *********************/
+  .header #factoid {
+    display: block;
+    color: #6d6e70;
+    font-size: 2.5em;
+    line-height: 1.333em;
+    font-weight: 200;
+  }
+  .header #factoid .highlight {
+    background-color: #f0ffa0;
+  }
   /*********************
   FOOTER STYLES
   *********************/
@@ -1544,7 +1613,7 @@ you can add resource intensive styles.
   LAYOUT & GRID STYLES
   *********************/
   .wrap {
-    max-width: 1140px;
+    max-width: 960px;
   }
   /*********************
   HEADER STYLES
@@ -1553,8 +1622,6 @@ you can add resource intensive styles.
   NAVIGATION STYLES
   *********************/
   .nav {
-    background: #eee;
-    border: 0;
     /* end .menu ul li */
   
     /* highlight current page */
@@ -1580,20 +1647,38 @@ you can add resource intensive styles.
   			*/
   
   }
-  .nav li a:hover,
-  .nav li a:focus {
-    background-color: #dedede;
-  }
   .nav li ul.sub-menu,
   .nav li ul.children {
     margin-top: 0;
-    border: 1px solid #ccc;
-    border-top: 0;
     position: absolute;
     display: none;
     z-index: 8999;
     /* highlight sub-menu current page */
   
+  }
+  .nav li ul.sub-menu .about,
+  .nav li ul.children .about {
+    background-color: #f81a33;
+  }
+  .nav li ul.sub-menu .features,
+  .nav li ul.children .features {
+    background-color: #21d1e7;
+  }
+  .nav li ul.sub-menu .blog,
+  .nav li ul.children .blog {
+    background-color: #008bca;
+  }
+  .nav li ul.sub-menu .collections,
+  .nav li ul.children .collections {
+    background-color: #64e92b;
+  }
+  .nav li ul.sub-menu .discography,
+  .nav li ul.children .discography {
+    background-color: #93bf36;
+  }
+  .nav li ul.sub-menu .support,
+  .nav li ul.children .support {
+    background-color: #9f111e;
   }
   .nav li ul.sub-menu li,
   .nav li ul.children li {
@@ -1606,11 +1691,11 @@ you can add resource intensive styles.
   }
   .nav li ul.sub-menu li a,
   .nav li ul.children li a {
+    color: #ffffff;
     padding-left: 10px;
     border-right: 0;
     display: block;
     width: 180px;
-    border-bottom: 1px solid #ccc;
   }
   .nav li ul.sub-menu li:last-child a,
   .nav li ul.children li:last-child a {
@@ -1624,18 +1709,11 @@ you can add resource intensive styles.
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  .sidebar {
-    margin-top: 2.2em;
-  }
-  .widgettitle {
-    margin-bottom: 0.75em;
-  }
   .widget {
     padding: 0 10px;
     margin: 2.2em 0;
   }
   .widget ul li {
-    margin-bottom: 0.75em;
     /* deep nesting */
   
   }

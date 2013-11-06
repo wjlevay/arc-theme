@@ -24,7 +24,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	max-width: 1140px;
+	max-width: 960px;
 }
 
 /*********************
@@ -35,13 +35,12 @@ HEADER STYLES
 
 	#logo {}
 
+
 /*********************
 NAVIGATION STYLES
 *********************/
 
 .nav {
-	background: #eee;
-	border: 0;
 
 	li {
 		float: left;
@@ -54,10 +53,7 @@ NAVIGATION STYLES
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
 			*/
-			&:hover, &:focus {
-				background-color: #dedede;
-
-			}
+			&:hover, &:focus {}
 		}
 
 		&:first-child {}
@@ -69,20 +65,25 @@ NAVIGATION STYLES
 		ul.sub-menu,
 		ul.children {
 			margin-top: 0;
-			border: 1px solid #ccc;
-			border-top: 0;
 			position: absolute;
 			display: none;
 			z-index: 8999;
 
+			.about {background-color: @about;}
+			.features {background-color: @features;}
+			.blog {background-color: @blog;}
+			.collections {background-color: @collections;}
+			.discography {background-color: @discography;}
+			.support {background-color: @support;}
+
 			li {
 
 				a {
+					color: @white;
 					padding-left: 10px;
 					border-right: 0;
 					display: block;
 					width: 180px;
-					border-bottom: 1px solid #ccc;
 
 					&:hover,
 					&:focus {}
@@ -137,11 +138,10 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
-	margin-top: 2.2em;
+
 }
 
 	.widgettitle {
-		margin-bottom: 0.75em;
 	}
 
 	.widget {
@@ -150,7 +150,6 @@ SIDEBARS & ASIDES
 
 		ul {
 			li {
-				margin-bottom: 0.75em;
 
 				&:first-child {}
 				&:last-child {}

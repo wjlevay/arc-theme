@@ -34,6 +34,9 @@
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
 
+		<?php // add Bootstrap and Font Awesome ?>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css" rel="stylesheet">
+
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
 
@@ -46,6 +49,9 @@
 			<header class="header" role="banner">
 
 				<div id="inner-header" class="wrap clearfix">
+
+					<?php // add random factoid about the ARChive ?>
+					<p id="factoid">The ARChive has the <span class="highlight">largest collection</span> of popular music in the United States.</p>
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
 					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
