@@ -34,9 +34,6 @@
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
 
-		<?php // add Bootstrap and Font Awesome ?>
-		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css" rel="stylesheet">
-
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
 

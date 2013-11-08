@@ -38,7 +38,7 @@ require_once( 'library/custom-post-type.php' ); // you can disable this if you l
 	- adding custom login css
 	- changing text in footer of admin
 */
-// require_once( 'library/admin.php' ); // this comes turned off by default
+require_once( 'library/admin.php' ); // this comes turned off by default
 /*
 4. library/translation/translation.php
 	- adding support for other languages
@@ -166,8 +166,9 @@ function bones_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
-/************* SEARCH FORM LAYOUT *****************/
+/************* ORIGINAL BONES SEARCH FORM LAYOUT *****************/
 
+/*
 // Search Form
 function bones_wpsearch($form) {
 	$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
@@ -177,6 +178,38 @@ function bones_wpsearch($form) {
 	</form>';
 	return $form;
 } // don't remove this bracket!
+*/
 
+/************* EXPANDING SEARCH FORM LAYOUT *****************/
+
+// Search Form
+function bones_wpsearch($form) {
+	$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+	<input class="sb-search-input" placeholder="search the ARChive..." type="search" value="' . get_search_query() . '" name="search" id="search">
+	<input class="sb-search-submit" type="submit" value="' . esc_attr__( 'Search' ) .'">
+	<span class="sb-icon-search"><i class="icon-large icon-search"></i></span>
+	</form>';
+	return $form;
+} // don't remove this bracket!
+
+/************* CUSTOM FUNCTIONS *****************/
+
+// Social Icons in Menu
+add_filter( 'storm_social_icons_type', create_function( '', 'return "icon-sign";' ) );
+add_filter( 'storm_social_icons_size', create_function( '', 'return "normal";' ) );
+
+// Expanding Search Form in Menu
+add_filter('wp_nav_menu_items','add_search_box', 10, 2);
+function add_search_box($items, $args) {
+
+        ob_start();
+        get_search_form();
+        $searchform = ob_get_contents();
+        ob_end_clean();
+
+        $items .= '<div id="sb-search" class="sb-search">' . $searchform . '</div>';
+
+    return $items;
+}
 
 ?>

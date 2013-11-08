@@ -478,6 +478,10 @@ NAVIGATION STYLES
 .nav {
   /* end .menu ul li */
 
+  /* section colors */
+
+  /* menu social icon colors */
+
   /* highlight current page */
 
   /* end current highlighters */
@@ -494,6 +498,7 @@ NAVIGATION STYLES
 
 }
 .nav li a {
+  font-size: 1.3em;
   border-bottom: 0;
   /*
 			you can use hover styles here even though this size
@@ -518,8 +523,8 @@ NAVIGATION STYLES
 .nav li ul.children .features {
   background-color: #21d1e7;
 }
-.nav li ul.sub-menu .blog,
-.nav li ul.children .blog {
+.nav li ul.sub-menu .blogs,
+.nav li ul.children .blogs {
   background-color: #008bca;
 }
 .nav li ul.sub-menu .collections,
@@ -551,6 +556,12 @@ NAVIGATION STYLES
   display: block;
   width: 180px;
 }
+.nav li ul.sub-menu li a:hover,
+.nav li ul.children li a:hover,
+.nav li ul.sub-menu li a:focus,
+.nav li ul.children li a:focus {
+  color: #e8e8e8;
+}
 .nav li ul.sub-menu li:last-child a,
 .nav li ul.children li:last-child a {
   border-bottom: 0;
@@ -558,6 +569,88 @@ NAVIGATION STYLES
 .nav li:hover ul {
   top: auto;
   display: block;
+}
+.nav li.about a {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  background-image: url(../images/about.png);
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.nav li.about a:hover,
+.nav li.about a:focus {
+  color: #f81a33;
+}
+.nav li.features a {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  background-image: url(../images/features.png);
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.nav li.features a:hover,
+.nav li.features a:focus {
+  color: #21d1e7;
+}
+.nav li.blogs a {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  background-image: url(../images/blogs.png);
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.nav li.blogs a:hover,
+.nav li.blogs a:focus {
+  color: #008bca;
+}
+.nav li.collections a {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  background-image: url(../images/collections.png);
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.nav li.collections a:hover,
+.nav li.collections a:focus {
+  color: #64e92b;
+}
+.nav li.discography a {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  background-image: url(../images/discography.png);
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.nav li.discography a:hover,
+.nav li.discography a:focus {
+  color: #93bf36;
+}
+.nav li.support a {
+  padding-left: 1.5em;
+  background-image: url(../images/support.png);
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.nav li.support a:hover,
+.nav li.support a:focus {
+  color: #9f111e;
+}
+.nav li.facebook a {
+  color: #3b5998;
+}
+.nav li.facebook a:hover,
+.nav li.facebook a:focus {
+  color: #2e4677;
+}
+.nav li.twitter a {
+  color: #00acee;
+}
+.nav li.twitter a:hover,
+.nav li.twitter a:focus {
+  color: #008bc0;
+}
+.nav #sb-search {
+  display: inline;
 }
 /* end .nav */
 /*********************

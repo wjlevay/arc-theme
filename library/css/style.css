@@ -740,6 +740,108 @@ BUTTONS
   background-image: -o-linear-gradient(top, #1681c4, #1990db);
   background-image: linear-gradient(to bottom, #1681c4, #1990db);
 }
+.sb-search {
+  position: relative;
+  width: 0%;
+  min-width: 60px;
+  height: 60px;
+  float: right;
+  overflow: hidden;
+  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  transition: width 0.3s;
+  -webkit-backface-visibility: hidden;
+}
+.sb-search-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  outline: none;
+  background: #f0ffa0;
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  z-index: 10;
+  font-size: 20px;
+  color: #6d6e70;
+}
+input[type="search"].sb-search-input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
+.sb-search-input::-webkit-input-placeholder {
+  color: #6d6e70;
+}
+.sb-search-input:-moz-placeholder {
+  color: #6d6e70;
+}
+.sb-search-input::-moz-placeholder {
+  color: #6d6e70;
+}
+.sb-search-input:-ms-input-placeholder {
+  color: #6d6e70;
+}
+.sb-icon-search,
+.sb-search-submit {
+  width: 60px;
+  height: 62px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+}
+.sb-search-submit {
+  background: #fff;
+  /* IE needs this */
+
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  /* IE 8 */
+
+  filter: alpha(opacity=0);
+  /* IE 5-7 */
+
+  opacity: 0;
+  color: transparent;
+  border: none;
+  outline: none;
+  z-index: -1;
+}
+.sb-icon-search {
+  color: #000;
+  background: #fff;
+  z-index: 90;
+  font-size: 22px;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+}
+.sb-icon-search:before {
+  content: "\e000";
+}
+/* Open state */
+.sb-search.sb-search-open,
+.no-js .sb-search {
+  width: 100%;
+}
+.sb-search.sb-search-open .sb-icon-search,
+.no-js .sb-search .sb-icon-search {
+  background: #fff;
+  color: #000;
+  z-index: 11;
+}
+.sb-search.sb-search-open .sb-search-submit,
+.no-js .sb-search .sb-search-submit {
+  z-index: 90;
+}
 /*
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
@@ -980,12 +1082,12 @@ and more scalable.
 			*/
 
 }
-.nav li a:visited {
-  color: #000000;
-}
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
   padding-left: 30px;
+}
+.nav #sb-search {
+  display: none;
 }
 /* end .nav */
 /*********************
@@ -1338,22 +1440,34 @@ and more scalable.
   background-color: #700106;
   text-decoration: none;
 }
+.support .widgettitle a:hover,
+.support .widget-text a:hover,
+.support .widgettitle a:focus,
+.support .widget-text a:focus {
+  color: #e8e8e8;
+}
 .support .widgettitle {
   padding-top: .5em;
 }
-.blog .widgettitle,
-.blog .widget-text {
+.blogs .widgettitle,
+.blogs .widget-text {
   color: #ffffff;
   background-color: #008bca;
   padding: 0 1em;
 }
-.blog .widgettitle a,
-.blog .widget-text a {
+.blogs .widgettitle a,
+.blogs .widget-text a {
   color: #ffffff;
   background-color: #20469e;
   text-decoration: none;
 }
-.blog .widgettitle {
+.blogs .widgettitle a:hover,
+.blogs .widget-text a:hover,
+.blogs .widgettitle a:focus,
+.blogs .widget-text a:focus {
+  color: #e8e8e8;
+}
+.blogs .widgettitle {
   padding-top: .5em;
 }
 .widget .highlight {
@@ -1624,6 +1738,10 @@ you can add resource intensive styles.
   .nav {
     /* end .menu ul li */
   
+    /* section colors */
+  
+    /* menu social icon colors */
+  
     /* highlight current page */
   
     /* end current highlighters */
@@ -1640,6 +1758,7 @@ you can add resource intensive styles.
   
   }
   .nav li a {
+    font-size: 1.3em;
     border-bottom: 0;
     /*
   			you can use hover styles here even though this size
@@ -1664,8 +1783,8 @@ you can add resource intensive styles.
   .nav li ul.children .features {
     background-color: #21d1e7;
   }
-  .nav li ul.sub-menu .blog,
-  .nav li ul.children .blog {
+  .nav li ul.sub-menu .blogs,
+  .nav li ul.children .blogs {
     background-color: #008bca;
   }
   .nav li ul.sub-menu .collections,
@@ -1697,6 +1816,12 @@ you can add resource intensive styles.
     display: block;
     width: 180px;
   }
+  .nav li ul.sub-menu li a:hover,
+  .nav li ul.children li a:hover,
+  .nav li ul.sub-menu li a:focus,
+  .nav li ul.children li a:focus {
+    color: #e8e8e8;
+  }
   .nav li ul.sub-menu li:last-child a,
   .nav li ul.children li:last-child a {
     border-bottom: 0;
@@ -1704,6 +1829,88 @@ you can add resource intensive styles.
   .nav li:hover ul {
     top: auto;
     display: block;
+  }
+  .nav li.about a {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    background-image: url(../images/about.png);
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+  .nav li.about a:hover,
+  .nav li.about a:focus {
+    color: #f81a33;
+  }
+  .nav li.features a {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    background-image: url(../images/features.png);
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+  .nav li.features a:hover,
+  .nav li.features a:focus {
+    color: #21d1e7;
+  }
+  .nav li.blogs a {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    background-image: url(../images/blogs.png);
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+  .nav li.blogs a:hover,
+  .nav li.blogs a:focus {
+    color: #008bca;
+  }
+  .nav li.collections a {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    background-image: url(../images/collections.png);
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+  .nav li.collections a:hover,
+  .nav li.collections a:focus {
+    color: #64e92b;
+  }
+  .nav li.discography a {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    background-image: url(../images/discography.png);
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+  .nav li.discography a:hover,
+  .nav li.discography a:focus {
+    color: #93bf36;
+  }
+  .nav li.support a {
+    padding-left: 1.5em;
+    background-image: url(../images/support.png);
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+  .nav li.support a:hover,
+  .nav li.support a:focus {
+    color: #9f111e;
+  }
+  .nav li.facebook a {
+    color: #3b5998;
+  }
+  .nav li.facebook a:hover,
+  .nav li.facebook a:focus {
+    color: #2e4677;
+  }
+  .nav li.twitter a {
+    color: #00acee;
+  }
+  .nav li.twitter a:hover,
+  .nav li.twitter a:focus {
+    color: #008bc0;
+  }
+  .nav #sb-search {
+    display: inline;
   }
   /* end .nav */
   /*********************
@@ -1831,6 +2038,30 @@ query for retina AND a certain size if you want. Go Nuts.
   the original dimensions and you are good to go. 
   
   */
+  .nav li.about a {
+    background-image: url(../images/about@2x.png);
+    background-size: 25px 25px;
+  }
+  .nav li.features a {
+    background-image: url(../images/features@2x.png);
+    background-size: 25px 25px;
+  }
+  .nav li.blogs a {
+    background-image: url(../images/blogs@2x.png);
+    background-size: 25px 25px;
+  }
+  .nav li.collections a {
+    background-image: url(../images/collections@2x.png);
+    background-size: 25px 25px;
+  }
+  .nav li.discography a {
+    background-image: url(../images/discography@2x.png);
+    background-size: 25px 25px;
+  }
+  .nav li.support a {
+    background-image: url(../images/support@2x.png);
+    background-size: 25px 25px;
+  }
 }
 /*
 iPHONE 5 MEDIA QUERY

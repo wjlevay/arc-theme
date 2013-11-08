@@ -47,6 +47,7 @@ NAVIGATION STYLES
 		position: relative;
 
 		a {
+			font-size: 1.3em;
 			border-bottom: 0;
 
 			/*
@@ -71,7 +72,7 @@ NAVIGATION STYLES
 
 			.about {background-color: @about;}
 			.features {background-color: @features;}
-			.blog {background-color: @blog;}
+			.blogs {background-color: @blogs;}
 			.collections {background-color: @collections;}
 			.discography {background-color: @discography;}
 			.support {background-color: @support;}
@@ -86,7 +87,7 @@ NAVIGATION STYLES
 					width: 180px;
 
 					&:hover,
-					&:focus {}
+					&:focus {color: @white-hover;}
 
 					&:link {}
 				}
@@ -124,12 +125,73 @@ NAVIGATION STYLES
 
 	} /* end .menu ul li */
 
+	/* section colors */
+	li.about a {
+		padding-left: 1.5em;
+		padding-right: 1.5em;
+		background-image: url(../images/about.png);
+		background-position: left;
+		background-repeat: no-repeat;
+		&:hover, &:focus {color: @about;}
+	}
+	li.features a {
+		padding-left: 1.5em;
+		padding-right: 1.5em;
+		background-image: url(../images/features.png);
+		background-position: left;
+		background-repeat: no-repeat;
+		&:hover, &:focus {color: @features;}
+	}
+	li.blogs a {
+		padding-left: 1.5em;
+		padding-right: 1.5em;
+		background-image: url(../images/blogs.png);
+		background-position: left;
+		background-repeat: no-repeat;
+		&:hover, &:focus {color: @blogs;}
+	}
+	li.collections a {
+		padding-left: 1.5em;
+		padding-right: 1.5em;
+		background-image: url(../images/collections.png);
+		background-position: left;
+		background-repeat: no-repeat;
+		&:hover, &:focus {color: @collections;}
+	}
+	li.discography a {
+		padding-left: 1.5em;
+		padding-right: 1.5em;
+		background-image: url(../images/discography.png);
+		background-position: left;
+		background-repeat: no-repeat;
+		&:hover, &:focus {color: @discography;}
+		}
+	li.support a {
+		padding-left: 1.5em;
+		background-image: url(../images/support.png);
+		background-position: left;
+		background-repeat: no-repeat;
+		&:hover, &:focus {color: @support;}
+	}
+
+	/* menu social icon colors */
+	li.facebook a {
+		color: @facebook-blue;
+		&:hover, &:focus {color: @facebook-blue-dark;}
+	}
+	li.twitter a {
+		color: @twitter-blue;
+		&:hover, &:focus {color: @twitter-blue-dark;}
+	}
+
 	/* highlight current page */
 	li.current-menu-item,
 	li.current_page_item,
 	li.current-page-ancestor {
 		a {}
 	}  /* end current highlighters */
+
+	#sb-search {display: inline;}
 
 } /* end .nav */
 

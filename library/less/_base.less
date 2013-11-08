@@ -216,13 +216,10 @@ and more scalable.
 
 	li {
 
-		a {
-			color: @black;
+		a { color: @black;
 			display: block;
 			text-decoration: none;
 			padding: 10px 10px;
-
-			&:visited {color: @black;}
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -280,6 +277,8 @@ and more scalable.
 		a {}
 
 	}  /* end current highlighters */
+
+	#sb-search {display: none;}
 
 } /* end .nav */
 
@@ -843,19 +842,23 @@ and more scalable.
 				color: @white;
 				background-color: @support-dark;
 				text-decoration: none;
+
+				&:hover, &:focus {color: @white-hover;}
 			}
 		}
 		.widgettitle {padding-top: .5em;}
 	}
-	.blog {
+	.blogs {
 		.widgettitle, .widget-text {
 			color: @white;
-			background-color: @blog;
+			background-color: @blogs;
 			padding: 0 1em;
 			a {
 				color: @white;
-				background-color: @blog-dark;
+				background-color: @blogs-dark;
 				text-decoration: none;
+
+				&:hover, &:focus {color: @white-hover;}
 			}
 		}
 		.widgettitle {padding-top: .5em;}
