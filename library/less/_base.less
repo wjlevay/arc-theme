@@ -177,9 +177,15 @@ h5, .h5 {
 	#inner-header {border-bottom: 1px dotted @black;}
 
 	#logo {
+		font-size: 3em;
 		a {
+			font-weight: 500;
 			color: @black;
-			font-weight: 600;
+			padding: .75em 0 .75em 2.25em;
+			background-image: url(../images/logo.png);
+			background-position: left;
+			background-repeat: no-repeat;
+
 		}
 	}
 
@@ -289,8 +295,24 @@ and more scalable.
 
 #content {
 	margin-top: 2.2em;
+	a {text-decoration: none;}
+	img {
+		height: auto;
+		max-width: 100%;
+	}
+	hr {
+		border: 0;
+		border-bottom: 1px black dotted;
+		margin-bottom: 1.8em;
+	}
 
-	#inner-content {}
+	#inner-content {
+		h4.blogs {
+			color: @blogs;
+			font-size: 1.5em;
+			font-weight: 200;
+		}
+	}
 }
 
 		.hentry {
@@ -304,7 +326,10 @@ and more scalable.
 		.single-title,
 		.page-title {}
 
-		.single-title {}
+		.single-title {
+			font-size: 1.75em;
+			margin: 0;
+		}
 
 		.page-title {}
 
@@ -321,11 +346,28 @@ and more scalable.
 		.tag-slug {}        /* style by tag (i.e. tag-news) */
 
 		/* post meta */
-		.byline {
-			color: #999;
+		.post-info {
+			font-size: 110%;
+			margin-bottom: 0;
 
-			time {}
+			.category {
+			a {color: @blogs;}
+			}
+
+			time {color: @gray;}
+		}		
+
+		.byline {
+			font-size: 110%;
+			color: @gray;
+			margin-top: 0;
+
+			a {
+				color: @black;
+				&:hover, &:focus {color: @gray;}
+			}
 		}
+
 
 		/* entry content */
 		.entry-content {
@@ -443,6 +485,41 @@ and more scalable.
 		.size-large {}
 		.size-medium {}
 		.size-thumbnail {}
+
+	.post-thumbnail {
+		position: relative;
+
+		.thumbnail-caption, .thumbnail-caption a {
+			position: absolute;
+			left: 0;
+			bottom: 6px;
+			padding: 0 1em;
+			color: @white;
+		}
+	}
+
+	.category-feature {
+		.thumbnail-caption {
+			background-color: @features;
+		}
+	}
+
+	.category-blog {
+		.thumbnail-caption {
+			background-color: @blogs;
+		}
+	}
+
+	#secondary-content {
+		.author-name {
+			color: @gray;
+			font-size: 110%;
+			a {color: @black;}
+		}
+		.author-info {
+			color: @black;
+		}
+	}
 
 /******************************************************************
 09. PAGE NAVI STYLES
@@ -873,7 +950,7 @@ and more scalable.
 		.widgettitle {margin-bottom: 0;}
 
 		ul {
-			list-style: square outside none;
+			list-style: none;
 			margin: 0;
 
 			li {
@@ -892,6 +969,80 @@ and more scalable.
 		}
 
 	}
+
+#blogright {
+	.widget_custom_recent_entries {
+		ul {
+
+			li {
+				margin-top: 2em;
+				border-top: 1px black dotted;
+
+				p {
+					margin: 0;
+					line-height: 1.5em;
+				}
+				img {margin: 1.8em 0 1.5em 0;}
+				.category a {
+					color: @blogs;
+					font-size: 110%;
+				}
+				.title a {
+					color: @black;
+					font-size: 130%;
+					&:hover, &:focus {color: @black-hover;}
+				}
+				.author {
+					color: @gray;
+					font-size: 110%;
+				}
+			}
+		}
+	}
+}
+
+#homeright {
+	.widget_custom_recent_entries {
+		h4 {
+			color: @white;
+			background-color: @features;
+			padding: 0 1em;
+		}
+		ul {
+
+			li {
+				margin-top: 2em;
+				padding-top: 2em;
+				border-top: 1px black dotted;
+
+				&:first-child {
+					border-top: 0;
+					padding-top: 0;
+				}
+
+				p {
+					margin: 0;
+					line-height: 1.5em;
+				}
+				.category a {
+					color: @features;
+					font-size: 110%;
+
+					&:hover, &:focus {color: @blogs;}
+				}
+				.title a {
+					color: @black;
+					font-size: 130%;
+					&:hover, &:focus {color: @black-hover;}
+				}
+				.author, .post-date {
+					color: @gray;
+					font-size: 110%;
+				}
+			}
+		}
+	}
+}
 
 /*********************
 13. FOOTER STYLES

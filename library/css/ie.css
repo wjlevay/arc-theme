@@ -657,8 +657,8 @@ NAVIGATION STYLES
 SIDEBARS & ASIDES
 *********************/
 .widget {
-  padding: 0 10px;
-  margin: 2.2em 0;
+  padding: 0;
+  margin: 0;
 }
 .widget ul li {
   /* deep nesting */

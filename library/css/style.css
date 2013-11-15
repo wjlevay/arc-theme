@@ -1034,9 +1034,16 @@ h5,
 .header #inner-header {
   border-bottom: 1px dotted #000000;
 }
+.header #logo {
+  font-size: 3em;
+}
 .header #logo a {
+  font-weight: 500;
   color: #000000;
-  font-weight: 600;
+  padding: .75em 0 .75em 2.25em;
+  background-image: url(../images/logo.png);
+  background-position: left;
+  background-repeat: no-repeat;
 }
 .header #factoid {
   display: none;
@@ -1096,7 +1103,28 @@ and more scalable.
 #content {
   margin-top: 2.2em;
 }
+#content a {
+  text-decoration: none;
+}
+#content img {
+  height: auto;
+  max-width: 100%;
+}
+#content hr {
+  border: 0;
+  border-bottom: 1px black dotted;
+  margin-bottom: 1.8em;
+}
+#content #inner-content h4.blogs {
+  color: #008bca;
+  font-size: 1.5em;
+  font-weight: 200;
+}
 /* end .hentry */
+.single-title {
+  font-size: 1.75em;
+  margin: 0;
+}
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
 /* general post style */
@@ -1107,8 +1135,27 @@ and more scalable.
 /* style by category (i.e. category-videos) */
 /* style by tag (i.e. tag-news) */
 /* post meta */
+.post-info {
+  font-size: 110%;
+  margin-bottom: 0;
+}
+.post-info .category a {
+  color: #008bca;
+}
+.post-info time {
+  color: #6d6e70;
+}
 .byline {
-  color: #999;
+  font-size: 110%;
+  color: #6d6e70;
+  margin-top: 0;
+}
+.byline a {
+  color: #000000;
+}
+.byline a:hover,
+.byline a:focus {
+  color: #6d6e70;
 }
 /* entry content */
 .entry-content {
@@ -1163,6 +1210,33 @@ and more scalable.
 /* image gallery styles */
 /* end .gallery */
 /* gallery caption styles */
+.post-thumbnail {
+  position: relative;
+}
+.post-thumbnail .thumbnail-caption,
+.post-thumbnail .thumbnail-caption a {
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  padding: 0 1em;
+  color: #ffffff;
+}
+.category-feature .thumbnail-caption {
+  background-color: #21d1e7;
+}
+.category-blog .thumbnail-caption {
+  background-color: #008bca;
+}
+#secondary-content .author-name {
+  color: #6d6e70;
+  font-size: 110%;
+}
+#secondary-content .author-name a {
+  color: #000000;
+}
+#secondary-content .author-info {
+  color: #000000;
+}
 /******************************************************************
 09. PAGE NAVI STYLES
 ******************************************************************/
@@ -1480,12 +1554,78 @@ and more scalable.
   margin-bottom: 0;
 }
 .widget ul {
-  list-style: square outside none;
+  list-style: none;
   margin: 0;
 }
 .widget ul li {
   /* deep nesting */
 
+}
+#blogright .widget_custom_recent_entries ul li {
+  margin-top: 2em;
+  border-top: 1px black dotted;
+}
+#blogright .widget_custom_recent_entries ul li p {
+  margin: 0;
+  line-height: 1.5em;
+}
+#blogright .widget_custom_recent_entries ul li img {
+  margin: 1.8em 0 1.5em 0;
+}
+#blogright .widget_custom_recent_entries ul li .category a {
+  color: #008bca;
+  font-size: 110%;
+}
+#blogright .widget_custom_recent_entries ul li .title a {
+  color: #000000;
+  font-size: 130%;
+}
+#blogright .widget_custom_recent_entries ul li .title a:hover,
+#blogright .widget_custom_recent_entries ul li .title a:focus {
+  color: #404041;
+}
+#blogright .widget_custom_recent_entries ul li .author {
+  color: #6d6e70;
+  font-size: 110%;
+}
+#homeright .widget_custom_recent_entries h4 {
+  color: #ffffff;
+  background-color: #21d1e7;
+  padding: 0 1em;
+}
+#homeright .widget_custom_recent_entries ul li {
+  margin-top: 2em;
+  padding-top: 2em;
+  border-top: 1px black dotted;
+}
+#homeright .widget_custom_recent_entries ul li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+#homeright .widget_custom_recent_entries ul li p {
+  margin: 0;
+  line-height: 1.5em;
+}
+#homeright .widget_custom_recent_entries ul li .category a {
+  color: #21d1e7;
+  font-size: 110%;
+}
+#homeright .widget_custom_recent_entries ul li .category a:hover,
+#homeright .widget_custom_recent_entries ul li .category a:focus {
+  color: #008bca;
+}
+#homeright .widget_custom_recent_entries ul li .title a {
+  color: #000000;
+  font-size: 130%;
+}
+#homeright .widget_custom_recent_entries ul li .title a:hover,
+#homeright .widget_custom_recent_entries ul li .title a:focus {
+  color: #404041;
+}
+#homeright .widget_custom_recent_entries ul li .author,
+#homeright .widget_custom_recent_entries ul li .post-date {
+  color: #6d6e70;
+  font-size: 110%;
 }
 /*********************
 13. FOOTER STYLES
@@ -1917,8 +2057,8 @@ you can add resource intensive styles.
   SIDEBARS & ASIDES
   *********************/
   .widget {
-    padding: 0 10px;
-    margin: 2.2em 0;
+    padding: 0;
+    margin: 0;
   }
   .widget ul li {
     /* deep nesting */
@@ -2039,28 +2179,40 @@ query for retina AND a certain size if you want. Go Nuts.
   
   */
   .nav li.about a {
-    background-image: url(../images/about@2x.png);
+    background: url(../images/about@2x.png);
     background-size: 25px 25px;
+    background-position: left;
+    background-repeat: no-repeat;
   }
   .nav li.features a {
-    background-image: url(../images/features@2x.png);
+    background: url(../images/features@2x.png);
     background-size: 25px 25px;
+    background-position: left;
+    background-repeat: no-repeat;
   }
   .nav li.blogs a {
-    background-image: url(../images/blogs@2x.png);
+    background: url(../images/blogs@2x.png);
     background-size: 25px 25px;
+    background-position: left;
+    background-repeat: no-repeat;
   }
   .nav li.collections a {
     background-image: url(../images/collections@2x.png);
     background-size: 25px 25px;
+    background-position: left;
+    background-repeat: no-repeat;
   }
   .nav li.discography a {
     background-image: url(../images/discography@2x.png);
     background-size: 25px 25px;
+    background-position: left;
+    background-repeat: no-repeat;
   }
   .nav li.support a {
     background-image: url(../images/support@2x.png);
     background-size: 25px 25px;
+    background-position: left;
+    background-repeat: no-repeat;
   }
 }
 /*

@@ -8,7 +8,11 @@
 
 						<div id="main" class="sixcol clearfix" role="main">
 
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+							<?php // let's display only the most recent post in the category 'feature'
+
+							$featured = new WP_Query( array( 'posts_per_page' => 1, 'category_name' => 'feature' ) );
+
+							if ($featured->have_posts()) : while (have_posts()) : the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
 
@@ -54,7 +58,7 @@
 
 						</div> <?php // end #main ?>
 
-						<?php get_sidebar( 'homeright'); ?>
+						<?php get_sidebar( 'homeright' ); ?>
 
 				</div> <?php // end #inner-content ?>
 
