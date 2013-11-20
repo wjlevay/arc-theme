@@ -6,7 +6,7 @@
 
 						<div id="main" class="ninecol first clearfix" role="main">
 
-							<h4 class="blogs">ARChive blog, or &ldquo;Would You Take My Mind Out for a Walk?&rdquo;</h2>
+							<h4 class="blogs">ARChive blog, or &ldquo;Would You Take My Mind Out for a Walk?&rdquo;</h4>
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -14,13 +14,19 @@
 
 								<header class="article-header">
 
+									<?php // check for featured image and display
+									if ( '' != get_the_post_thumbnail() ) { ?>
 									<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'bones-thumb-713' ); ?><span class="thumbnail-caption"><?php the_post_thumbnail_caption(); ?></span></a></div>
+									<?php } else {
+										echo '';
+									} 
+									?>
+
 									<p class="post-info"><?php
 										printf( __( '<span class="category">%1$s</span> <time class="updated" datetime="%2$s" pubdate>%3$s</time>', 'bonestheme' ), get_the_category_list(', '), get_the_time( 'Y-m-j' ), get_the_time( get_option('date_format')) );
 									?></p>
 									<h1 class="entry-title single-title" itemprop="headline"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 									<p class="byline vcard"><span class="author"><?php echo bones_get_the_author_posts_link(); ?>, <?php the_author_meta( 'nickname' ); ?></p></span></p>
-
 
 								</header> <?php // end article header ?>
 
@@ -32,8 +38,6 @@
 									<p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '' ); ?></p>
 
 								</footer> <?php // end article footer ?>
-
-								<hr>
 
 								<?php // comments_template(); // uncomment if you want to use them ?>
 

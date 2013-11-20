@@ -157,6 +157,9 @@ function bones_scripts_and_styles() {
     wp_enqueue_script( 'classie' );
     wp_enqueue_script( 'uisearch' );
 
+    // Adds JavaScript for handling the navigation menu hide-and-show behavior.
+	wp_enqueue_script( 'arc-navigation', get_template_directory_uri() . '/library/js/libs/navigation.js', array(), '1.0', true );
+
     /*
     I recommend using a plugin to call jQuery
     using the google cdn. That way it stays cached

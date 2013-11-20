@@ -67,6 +67,8 @@ NAVIGATION STYLES
 		} /* end .menu ul */
 	} /* end .menu */
 
+#sb-search {display: block;}
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -100,15 +102,20 @@ HEADER STYLES
 *********************/
 
 .header {
-	#factoid {
-		display: block;
-		color: @gray;
+
+	#inner-header {border-bottom: 1px dotted @black;}
+
+	#logo {
 		font-size: 2.5em;
-		line-height: 1.333em;
-		font-weight: 200;
-		
-		.highlight {
-				background-color: @highlight;
+		text-align: left;
+		a {
+			font-weight: 500;
+			color: @black;
+			padding: .75em 0 .75em 2.5em;
+			background-image: url(../images/logo.png);
+			background-position: left;
+			background-repeat: no-repeat;
+
 		}
 	}
 }

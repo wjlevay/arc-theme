@@ -207,8 +207,9 @@ function bones_wpsearch($form) {
 add_filter( 'storm_social_icons_type', create_function( '', 'return "icon-sign";' ) );
 add_filter( 'storm_social_icons_size', create_function( '', 'return "normal";' ) );
 
+/* 
 // Expanding Search Form in Menu
-add_filter('wp_nav_menu_items','add_search_box', 10, 2);
+add_filter('wp_nav_menu_items','add_search_box', 10, 2); 
 function add_search_box($items, $args) {
 
         ob_start();
@@ -220,6 +221,7 @@ function add_search_box($items, $args) {
 
     return $items;
 }
+*/
 
 // Show Captions on Thumbnail Images
 

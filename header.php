@@ -48,7 +48,7 @@
 				<div id="inner-header" class="wrap clearfix">
 
 					<?php // add random factoid about the ARChive ?>
-					<p id="factoid">The ARChive has the <span class="highlight">largest collection</span> of popular music in the United States.</p>
+					<p id="factoid">The ARChive has the <span class="highlight">largest collection</span><br>of popular music in the United States.</p>
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
 					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
@@ -57,7 +57,9 @@
 					<?php // bloginfo('description'); ?>
 
 
-					<nav role="navigation">
+					<nav id="site-navigation" role="navigation">
+						<div id="sb-search" class="sb-search"><?php get_search_form(); ?></div>
+						<h3 class="menu-toggle"><?php _e( '<i class="icon-reorder"></i>', 'bonestheme' ); ?></h3>
 						<?php bones_main_nav(); ?>
 					</nav>
 

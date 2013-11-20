@@ -50,8 +50,12 @@ body {
 ********************/
 
 .rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
-.home {}                          /* home page */
-.blog {}                          /* blog template page */
+.home {							  /* home page */
+	#main {
+		padding-top: 1.5em;
+	}
+}
+.blog {}							/* blog template page */                       
 .archive {}                       /* archive page */
 .date {}                          /* date archive page */
 	.date-paged-1 {}                /* replace the number to the corresponding page number */
@@ -177,15 +181,11 @@ h5, .h5 {
 	#inner-header {border-bottom: 1px dotted @black;}
 
 	#logo {
-		font-size: 3em;
+		font-size: 2em;
+		text-align: center;
 		a {
 			font-weight: 500;
 			color: @black;
-			padding: .75em 0 .75em 2.25em;
-			background-image: url(../images/logo.png);
-			background-position: left;
-			background-repeat: no-repeat;
-
 		}
 	}
 
@@ -217,6 +217,32 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
+
+#site-navigation {
+	
+	.nav {display: none;}
+	.nav.toggled-on {
+		display: inline-block;
+		margin: 0;
+	}
+
+	.menu-toggle {
+		display: block;
+		width: 1em;
+		margin: 0;
+		cursor: pointer;
+		font-size: 1.5em;
+		color: @black;
+
+		&:hover, &:active {
+			color: @gray;
+		}
+	}
+
+	.menu-toggle.toggled-on {
+		color: @gray;
+	}
+}
 
 .nav {
 
@@ -284,22 +310,58 @@ and more scalable.
 
 	}  /* end current highlighters */
 
-	#sb-search {display: none;}
-
 } /* end .nav */
+
+#sb-search {display: none;}
 
 
 /*********************
 08. POSTS & CONTENT STYLES
 *********************/
 
+.blog {
+	#content article {
+		border-top: 1px black dotted;
+		.post-thumbnail {padding-top: 2em;}
+
+		&:first-of-type {
+			border: 0;
+			.post-thumbnail {padding-top: 0;}
+		}
+	}
+}  
+
 #content {
-	margin-top: 2.2em;
+	margin-top: 0;
 	a {text-decoration: none;}
-	img {
-		height: auto;
+
+	/* Responsive images */
+	.entry-content img,
+	.comment-content img,
+	.widget img {
+		max-width: 100%; /* Fluid images for posts, comments, and widgets */
+	}
+	img[class*="align"],
+	img[class*="wp-image-"],
+	img[class*="attachment-"] {
+		height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+	}
+	img.size-full,
+	img.size-large,
+	img.header-image,
+	img.wp-post-image {
+		max-width: 100%;
+		height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+	}
+	
+	/* Make sure videos and embeds fit their containers */
+	embed,
+	iframe,
+	object,
+	video {
 		max-width: 100%;
 	}
+
 	hr {
 		border: 0;
 		border-bottom: 1px black dotted;
@@ -311,6 +373,14 @@ and more scalable.
 			color: @blogs;
 			font-size: 1.5em;
 			font-weight: 200;
+		}
+		.homepage-galleries {
+			h4.collections {
+				color: @collections;
+				font-size: 1.5em;
+				font-weight: 400;
+				border-bottom: 1px black dotted;
+			}
 		}
 	}
 }
@@ -324,7 +394,13 @@ and more scalable.
 		} /* end .hentry */
 
 		.single-title,
-		.page-title {}
+		.page-title {
+			a {
+				color: @black;
+
+				&:hover, &:focus {text-decoration: underline;}
+			}
+		}
 
 		.single-title {
 			font-size: 1.75em;
@@ -337,7 +413,7 @@ and more scalable.
 
 		/* want to style individual post classes? Booya! */
 		.post-id {}         /* post by id (i.e. post-3) */
-		.post {}            /* general post style */
+		.post {}			/* general post style */
 		.page {}            /* general article on a page style */
 		.attachment {}      /* general style on an attatchment */
 		.sticky {}          /* sticky post style */
@@ -492,7 +568,7 @@ and more scalable.
 		.thumbnail-caption, .thumbnail-caption a {
 			position: absolute;
 			left: 0;
-			bottom: 6px;
+			bottom: .4em;
 			padding: 0 1em;
 			color: @white;
 		}
@@ -919,7 +995,8 @@ and more scalable.
 				color: @white;
 				background-color: @support-dark;
 				text-decoration: none;
-
+				padding: 0 1em .2em 1em;
+				margin-left: -1em;
 				&:hover, &:focus {color: @white-hover;}
 			}
 		}
@@ -934,7 +1011,8 @@ and more scalable.
 				color: @white;
 				background-color: @blogs-dark;
 				text-decoration: none;
-
+				padding: 0 1em .2em 1em;
+				margin-left: -1em;
 				&:hover, &:focus {color: @white-hover;}
 			}
 		}
@@ -975,14 +1053,14 @@ and more scalable.
 		ul {
 
 			li {
-				margin-top: 2em;
+				margin-top: 1em;
 				border-top: 1px black dotted;
 
 				p {
 					margin: 0;
 					line-height: 1.5em;
 				}
-				img {margin: 1.8em 0 1.5em 0;}
+				img {margin: 1em 0 .5em 0;}
 				.category a {
 					color: @blogs;
 					font-size: 110%;
@@ -1011,8 +1089,8 @@ and more scalable.
 		ul {
 
 			li {
-				margin-top: 2em;
-				padding-top: 2em;
+				margin-top: 1em;
+				padding-top: 1em;
 				border-top: 1px black dotted;
 
 				&:first-child {
