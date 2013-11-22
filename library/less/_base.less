@@ -329,11 +329,40 @@ and more scalable.
 			.post-thumbnail {padding-top: 0;}
 		}
 	}
-}  
+}
+
+.search {
+	#content article {
+		border-top: 1px black dotted;
+		padding-top: 1em;
+
+		&:first-of-type {
+			border: 0;
+			padding-top: 0;
+		}
+	}
+}
+
+.page-template-page-support-php {
+	.page-title {
+		color: @support;
+		font-size: 1.5em;
+		font-weight: 600;
+	}
+	h4 {
+		color: @support;
+		font-size: 1.333;
+		font-weight: 500;
+		margin-bottom: 0;
+	}
+}
 
 #content {
 	margin-top: 0;
 	a {text-decoration: none;}
+
+	/* Add highlight */
+	.highlight {background-color: @highlight;}
 
 	/* Responsive images */
 	.entry-content img,
@@ -407,7 +436,7 @@ and more scalable.
 			margin: 0;
 		}
 
-		.page-title {}
+		.page-title {font-size: 1.5em;}
 
 		.archive-title { }
 
@@ -460,8 +489,11 @@ and more scalable.
 			}
 
 			ul {
+				list-style: disc inside none;
 
-				li {}
+				li {
+					margin: 1em 0;
+				}
 
 			}
 
@@ -479,13 +511,16 @@ and more scalable.
 
 			dl {}
 
-			dt {}
+			dt {
+				float: left;
+				clear: left;
+				width: 25%;}
 
 			dd {
-				margin-left: 0;
-				font-size: 0.9em;
+				float: left;
+				width: 75%;
+				margin: 0;
 				color: #787878;
-				margin-bottom: 1.5em;
 			}
 
 			img {
@@ -985,7 +1020,15 @@ and more scalable.
 
 	.about {
 		.widgettitle {color: @about;}
+		.post-thumbnail {
+			margin-top: 1.5em;
+
+			.thumbnail-caption {
+				background-color: @about;
+			}
+		}
 	}
+
 	.support {
 		.widgettitle, .widget-text {
 			color: @white;
@@ -1002,6 +1045,15 @@ and more scalable.
 		}
 		.widgettitle {padding-top: .5em;}
 	}
+
+	.support-page {
+		.post-thumbnail {
+			.thumbnail-caption {
+				background-color: @support;
+			}
+		}
+	}
+
 	.blogs {
 		.widgettitle, .widget-text {
 			color: @white;
@@ -1021,7 +1073,6 @@ and more scalable.
 
 	.widget {
 
-		.highlight {background-color: @highlight;}
 		.widget-text p {
 			margin-top: 0;
 		}

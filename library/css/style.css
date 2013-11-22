@@ -1133,8 +1133,29 @@ and more scalable.
 .blog #content article:first-of-type .post-thumbnail {
   padding-top: 0;
 }
+.search #content article {
+  border-top: 1px black dotted;
+  padding-top: 1em;
+}
+.search #content article:first-of-type {
+  border: 0;
+  padding-top: 0;
+}
+.page-template-page-support-php .page-title {
+  color: #9f111e;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.page-template-page-support-php h4 {
+  color: #9f111e;
+  font-size: 1.333;
+  font-weight: 500;
+  margin-bottom: 0;
+}
 #content {
   margin-top: 0;
+  /* Add highlight */
+
   /* Responsive images */
 
   /* Make sure videos and embeds fit their containers */
@@ -1142,6 +1163,9 @@ and more scalable.
 }
 #content a {
   text-decoration: none;
+}
+#content .highlight {
+  background-color: #f0ffa0;
 }
 #content .entry-content img,
 #content .comment-content img,
@@ -1203,6 +1227,9 @@ and more scalable.
   font-size: 1.75em;
   margin: 0;
 }
+.page-title {
+  font-size: 1.5em;
+}
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
 /* general post style */
@@ -1245,11 +1272,22 @@ and more scalable.
 			*/
 
 }
+.entry-content ul {
+  list-style: disc inside none;
+}
+.entry-content ul li {
+  margin: 1em 0;
+}
+.entry-content dt {
+  float: left;
+  clear: left;
+  width: 25%;
+}
 .entry-content dd {
-  margin-left: 0;
-  font-size: 0.9em;
+  float: left;
+  width: 75%;
+  margin: 0;
   color: #787878;
-  margin-bottom: 1.5em;
 }
 .entry-content img {
   margin: 0 0 1.5em 0;
@@ -1580,6 +1618,12 @@ and more scalable.
 .about .widgettitle {
   color: #f81a33;
 }
+.about .post-thumbnail {
+  margin-top: 1.5em;
+}
+.about .post-thumbnail .thumbnail-caption {
+  background-color: #f81a33;
+}
 .support .widgettitle,
 .support .widget-text {
   color: #ffffff;
@@ -1603,6 +1647,9 @@ and more scalable.
 .support .widgettitle {
   padding-top: .5em;
 }
+.support-page .post-thumbnail .thumbnail-caption {
+  background-color: #9f111e;
+}
 .blogs .widgettitle,
 .blogs .widget-text {
   color: #ffffff;
@@ -1625,9 +1672,6 @@ and more scalable.
 }
 .blogs .widgettitle {
   padding-top: .5em;
-}
-.widget .highlight {
-  background-color: #f0ffa0;
 }
 .widget .widget-text p {
   margin-top: 0;
@@ -1787,6 +1831,12 @@ tweeners.
   /*********************
   POSTS & CONTENT STYLES
   *********************/
+  /* float search results thumbnail */
+  .search #content article .post-thumbnail {
+    float: left;
+    margin-right: 2em;
+    padding-bottom: 2em;
+  }
   /* entry content */
   .entry-content {
     /* at this larger size, we can start to align images */
@@ -2155,6 +2205,9 @@ you can add resource intensive styles.
   /*********************
   SIDEBARS & ASIDES
   *********************/
+  .page-template-page-support-php .sidebar {
+    margin-top: 5.333em;
+  }
   .widget {
     padding: 0;
     margin: 0;

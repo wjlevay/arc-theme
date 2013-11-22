@@ -110,6 +110,15 @@ function bones_register_sidebars() {
 		'before_title' => '<h4 class="widgettitle blogs">',
 		'after_title' => '</h4>',
 	));
+	register_sidebar(array(
+		'id' => 'support',
+		'name' => __( 'Support Sidebar', 'bonestheme' ),
+		'description' => __( 'The right sidebar on the Support page.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle support">',
+		'after_title' => '</h4>',
+	));
 	/*
 	to add more sidebars or widgetized areas, just copy
 	and edit the above sidebar code. In order to call
@@ -194,7 +203,7 @@ function bones_wpsearch($form) {
 // Search Form
 function bones_wpsearch($form) {
 	$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
-	<input class="sb-search-input" placeholder="search the ARChive..." type="search" value="' . get_search_query() . '" name="search" id="search">
+	<input class="sb-search-input" placeholder="search the ARChive..." type="search" value="' . get_search_query() . '" name="s" id="s">
 	<input class="sb-search-submit" type="submit" value="' . esc_attr__( 'Search' ) .'">
 	<span class="sb-icon-search"><i class="icon-large icon-search"></i></span>
 	</form>';

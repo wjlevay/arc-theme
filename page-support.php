@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Support Page
+*/
+?>
+
 <?php get_header(); ?>
 
 			<div id="content">
@@ -12,14 +18,13 @@
 
 								<header class="article-header">
 
-									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
-
+									<h1 class="page-title"><?php the_title(); ?></h1>
 
 								</header> <?php // end article header ?>
 
 								<section class="entry-content clearfix" itemprop="articleBody">
 									<?php the_content(); ?>
-							</section> <?php // end article section ?>
+								</section> <?php // end article section ?>
 
 								<footer class="article-footer">
 
@@ -30,14 +35,14 @@
 							<?php endwhile; else : ?>
 
 									<article id="post-not-found" class="hentry clearfix">
-										<header class="article-header">
-											<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+											<header class="article-header">
+												<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
 										</header>
-										<section class="entry-content">
-											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+											<section class="entry-content">
+												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
 										</section>
 										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the page.php template.', 'bonestheme' ); ?></p>
+												<p><?php _e( 'This is the error message in the page-custom.php template.', 'bonestheme' ); ?></p>
 										</footer>
 									</article>
 
@@ -45,7 +50,7 @@
 
 						</div> <?php // end #main ?>
 
-						<?php get_sidebar(); ?>
+						<?php get_sidebar( 'support' ); ?>
 
 				</div> <?php // end #inner-content ?>
 
