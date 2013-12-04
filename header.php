@@ -59,7 +59,11 @@
 
 					<nav id="site-navigation" role="navigation">
 						<div id="sb-search" class="sb-search"><?php get_search_form(); ?></div>
-						<h3 class="menu-toggle"><?php _e( '<i class="icon-reorder"></i>', 'bonestheme' ); ?></h3>
+						<ul class="social-icons">
+							<li id="menu-item-facebook" class="menu-item social-icon facebook"><a href="http://www.facebook.com/ArchiveOfContemporaryMusic"><i class="fa fa-2x fa-facebook-square"></i><span class="fa-hidden">Facebook</span></a></li>
+							<li id="menu-item-twitter" class="menu-item social-icon twitter"><a href="http://twitter.com/ARCnyc"><i class="fa fa-2x fa-twitter-square"></i><span class="fa-hidden">Twitter</span></a></li>
+						</ul>
+						<h3 class="menu-toggle"><a href="#footer-nav"><i class="fa fa-2x fa-bars"></i></a></h3>
 						<?php bones_main_nav(); ?>
 					</nav>
 

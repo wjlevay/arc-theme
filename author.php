@@ -6,33 +6,23 @@
 
 						<div id="main" class="ninecol first clearfix" role="main">
 
-							<?php if (is_category()) { ?>
-								<h1 class="archive-title h2">
-									<span><?php _e( 'posts categorized:', 'bonestheme' ); ?></span> <?php single_cat_title(); ?>
-								</h1>
+							<?php if (is_author()) {
+								global $post;
+								$author_id = $post->post_author;
+							?>
 
-							<?php } elseif (is_tag()) { ?>
-								<h1 class="archive-title h2">
-									<span><?php _e( 'posts tagged:', 'bonestheme' ); ?></span> <?php single_tag_title(); ?>
-								</h1>
+								<h1 class="archive-title h2">author archive</h1>
 
-							<?php } elseif (is_day()) { ?>
-								<h1 class="archive-title h2">
-									<span><?php _e( 'daily archives:', 'bonestheme' ); ?></span> <?php the_time('l, F j, Y'); ?>
-								</h1>
+								<div class="author-meta">
+									<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
+									<p class="author-name"><?php the_author_meta('display_name', $author_id); ?>, <?php the_author_meta( 'nickname' ); ?></p>
+									<p class="author-info"><?php the_author_meta( 'description' ); ?></p>
+									<hr>
+								</div>
 
-							<?php } elseif (is_month()) { ?>
-									<h1 class="archive-title h2">
-										<span><?php _e( 'monthly archives:', 'bonestheme' ); ?></span> <?php the_time('F Y'); ?>
-									</h1>
-
-							<?php } elseif (is_year()) { ?>
-									<h1 class="archive-title h2">
-										<span><?php _e( 'yearly archives:', 'bonestheme' ); ?></span> <?php the_time('Y'); ?>
-									</h1>
 							<?php } ?>
 
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 
@@ -50,8 +40,7 @@
 									printf( __( '<span class="category">%1$s</span> <time class="updated" datetime="%2$s" pubdate>%3$s</time>', 'bonestheme' ), get_the_category_list(', '), get_the_time( 'Y-m-j' ), get_the_time( get_option('date_format')) );
 								?></p>
 								<h1 class="entry-title single-title" itemprop="headline"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-								<p class="byline vcard"><span class="author"><?php echo bones_get_the_author_posts_link(); ?>, <?php the_author_meta( 'nickname' ); ?></p></span></p>
-
+								
 								</header> <?php // end article header ?>
 
 								<section class="entry-content">
@@ -65,7 +54,7 @@
 
 							</article> <?php // end article ?>
 
-							<?php endwhile; ?>
+						<?php endwhile; ?>
 
 									<?php if ( function_exists( 'bones_page_navi' ) ) { ?>
 										<?php bones_page_navi(); ?>

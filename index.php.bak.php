@@ -4,7 +4,7 @@
 
 				<div id="inner-content" class="wrap clearfix">
 
-					<div id="main" class="eightcol first clearfix" role="main">
+					<div id="main" class="ninecol first clearfix" role="main">
 
 						<h4 class="blogs">ARChive blog, or &ldquo;Would You Take My Mind Out for a Walk?&rdquo;</h4>
 
@@ -16,7 +16,7 @@
 
 								<?php // check for featured image and display
 								if ( '' != get_the_post_thumbnail() ) { ?>
-								<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); ?><span class="thumbnail-caption"><?php the_post_thumbnail_caption(); ?></span></a></div>
+								<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'bones-thumb-713' ); ?><span class="thumbnail-caption"><?php the_post_thumbnail_caption(); ?></span></a></div>
 								<?php } else {
 									echo '';
 								} 

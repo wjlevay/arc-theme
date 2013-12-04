@@ -41,11 +41,13 @@ NAVIGATION STYLES
 *********************/
 
 #site-navigation {
+	height: 60px;
+	
 	.nav {display: inline;}
 	.menu-toggle {display: none;}
 }
 
-.nav {
+.top-nav {
 
 	li {
 		float: left;
@@ -130,7 +132,7 @@ NAVIGATION STYLES
 
 	} /* end .menu ul li */
 
-	/* section colors */
+	/* section colors and menu icons */
 	li.about a {
 		padding-left: 1.7em;
 		padding-right: 1em;
@@ -179,16 +181,6 @@ NAVIGATION STYLES
 		&:hover, &:focus {color: @support;}
 	}
 
-	/* menu social icon colors */
-	li.facebook a {
-		color: @facebook-blue;
-		&:hover, &:focus {color: @facebook-blue-dark;}
-	}
-	li.twitter a {
-		color: @twitter-blue;
-		&:hover, &:focus {color: @twitter-blue-dark;}
-	}
-
 	/* highlight current page */
 	li.current-menu-item,
 	li.current_page_item,
@@ -196,9 +188,37 @@ NAVIGATION STYLES
 		a {}
 	}  /* end current highlighters */
 
-	#sb-search {display: inline-block;}
+} /* end .top-nav */
 
-} /* end .nav */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+#primary-content {
+	.byline {display: none;}
+}
+
+#secondary-content {
+	display: block;
+
+	h4 {
+		padding: 0;
+		margin: .5em 0 0 0;}
+
+	hr {
+		padding: 0;
+		margin: 1em 0 1em 0;
+	}
+
+	.author-name {
+		color: @gray;
+		font-size: 110%;
+		a {color: @black;}
+	}
+	.author-info {
+		color: @black;
+	}
+}
 
 /*********************
 SIDEBARS & ASIDES

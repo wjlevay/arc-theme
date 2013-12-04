@@ -67,14 +67,16 @@ NAVIGATION STYLES
 		} /* end .menu ul */
 	} /* end .menu */
 
-#sb-search {display: block;}
+.social-icons {
+	margin: 1em 0 0 0;
+}
 
 /*********************
 POSTS & CONTENT STYLES
 *********************/
 
-/* float search results thumbnail */
-.search {
+/* float archive page & search results thumbnail */
+.search, .archive {
 	#content article {
 		.post-thumbnail {
 			float: left;
@@ -144,4 +146,29 @@ do they need tweaking?
 		li {}
 	}
 } /* end .footer-links */
-			
+
+/*********************
+EXPANDING SEARCH BAR STYLES
+*********************/
+
+.sb-search {
+	width: 0%;
+	height: 60px;
+	overflow: hidden;
+	-webkit-transition: width 0.3s;
+	-moz-transition: width 0.3s;
+	transition: width 0.3s;
+	-webkit-backface-visibility: hidden;
+}
+
+.sb-search-input {
+	font-size: 20px;
+	height: 60px;
+}
+
+.sb-icon-search,
+.sb-search-submit  {
+	height: 62px;
+	line-height: 60px;
+	cursor: pointer;
+}

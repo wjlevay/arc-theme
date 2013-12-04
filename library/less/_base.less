@@ -24,6 +24,7 @@ and will be used across all viewports.
 11. COMMENT FORM STYLES
 12. SIDEBARS & ASIDES
 13. FOOTER STYLES
+14. EXPANDING SEARCH BAR STYLES
 
 ******************************************************************/
 
@@ -220,27 +221,21 @@ and more scalable.
 
 #site-navigation {
 	
-	.nav {display: none;}
-	.nav.toggled-on {
-		display: inline-block;
-		margin: 0;
-	}
+	.top-nav {display: none;}
 
 	.menu-toggle {
-		display: block;
-		width: 1em;
+		display: inline-block;
+		float: left;
 		margin: 0;
-		cursor: pointer;
-		font-size: 1.5em;
-		color: @black;
+		padding-top: 1em;
 
-		&:hover, &:active {
-			color: @gray;
-		}
-	}
+		a {
+			color: @black;
 
-	.menu-toggle.toggled-on {
-		color: @gray;
+			&:hover, &:active {
+				color: @gray;
+			}		
+		}	
 	}
 }
 
@@ -312,8 +307,31 @@ and more scalable.
 
 } /* end .nav */
 
-#sb-search {display: none;}
+.social-icons {
 
+	float: right;
+	text-align: center;
+	margin: 1.3em 2.3em 1em 0;
+
+	li {
+		display: inline;
+		margin: .5em;
+	}
+
+	/* menu social icon colors */
+	li.facebook a {
+		color: @facebook-blue;
+		&:hover, &:focus {color: @facebook-blue-dark;}
+	}
+	li.twitter a {
+		color: @twitter-blue;
+		&:hover, &:focus {color: @twitter-blue-dark;}
+	}
+
+	.fa-hidden {
+		display: none;
+	}
+}
 
 /*********************
 08. POSTS & CONTENT STYLES
@@ -331,7 +349,7 @@ and more scalable.
 	}
 }
 
-.search {
+.search, .archive {
 	#content article {
 		border-top: 1px black dotted;
 		padding-top: 1em;
@@ -339,6 +357,22 @@ and more scalable.
 		&:first-of-type {
 			border: 0;
 			padding-top: 0;
+		}
+	}
+}
+
+.archive.author {
+	.author-meta {
+		.avatar {
+			float: left;
+			margin-right: 1em;
+		}
+		.author-name {
+			color: @gray;
+			font-size: 110%;
+		}
+		.author-info {
+			color: @black;
 		}
 	}
 }
@@ -621,16 +655,7 @@ and more scalable.
 		}
 	}
 
-	#secondary-content {
-		.author-name {
-			color: @gray;
-			font-size: 110%;
-			a {color: @black;}
-		}
-		.author-info {
-			color: @black;
-		}
-	}
+	#secondary-content {display: none;}
 
 /******************************************************************
 09. PAGE NAVI STYLES
@@ -1217,3 +1242,112 @@ and more scalable.
 
 	.copyright {}
 
+/*********************
+14. SEARCH BAR STYLES
+*********************/
+
+/* This is for a static, open search box. See _481up.less for expanding search bar styles */
+
+.sb-search {
+	position: relative;
+	min-width: 40px;
+	height: 40px;
+	float: right;
+}
+
+.sb-search-input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: none;
+	outline: none;
+	background: @highlight;
+	width: 100%;
+	height: 40px;
+	margin: 0;
+	z-index: 10;
+	font-size: 16px;
+	color: @gray;
+}
+
+input[type="search"].sb-search-input {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+}
+
+input[type="search"].sb-search-input::-webkit-search-cancel-button,
+input[type="search"].sb-search-input::-webkit-search-decoration {
+	padding-left: 10px;
+}
+
+.sb-search-input::-webkit-input-placeholder {
+	color: @gray;
+}
+
+.sb-search-input:-moz-placeholder {
+	color: @gray;
+}
+
+.sb-search-input::-moz-placeholder {
+	color: @gray;
+}
+
+.sb-search-input:-ms-input-placeholder {
+	color: @gray;
+}
+
+.sb-icon-search,
+.sb-search-submit  {
+	width: 40px;
+	height: 42px;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 0;
+	margin: 0;
+	line-height: 40px;
+	text-align: center;
+}
+
+.sb-search-submit {
+	background: #fff; /* IE needs this */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+    filter: alpha(opacity=0); /* IE 5-7 */
+    opacity: 0;
+	color: transparent;
+	border: none;
+	outline: none;
+	z-index: -1;
+}
+
+.sb-icon-search {
+	color: #000;
+	background: #fff;
+	z-index: 90;
+	font-size: 22px;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Closed and Open states are the same at this screen size */
+.sb-search, .sb-search.sb-search-open,
+.no-js .sb-search {
+	width: 100%;
+}
+
+.sb-search.sb-search-open .sb-icon-search,
+.no-js .sb-search .sb-icon-search {
+	background: #fff;
+	color: #000;
+	z-index: 11;
+}
+
+.sb-search.sb-search-open .sb-search-submit,
+.no-js .sb-search .sb-search-submit {
+	z-index: 90;
+}

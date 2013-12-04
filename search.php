@@ -6,7 +6,9 @@
 
 					<div id="main" class="ninecol first clearfix" role="main">
 
-						<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
+						<h1 class="archive-title h2">
+							<span><?php _e( 'search results for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?>
+						</h1>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

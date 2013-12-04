@@ -306,14 +306,15 @@ NAVIGATION STYLES
 
 }
 /* end .menu */
-#sb-search {
-  display: block;
+.social-icons {
+  margin: 1em 0 0 0;
 }
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-/* float search results thumbnail */
-.search #content article .post-thumbnail {
+/* float archive page & search results thumbnail */
+.search #content article .post-thumbnail,
+.archive #content article .post-thumbnail {
   float: left;
   margin-right: 2em;
   padding-bottom: 2em;
@@ -369,6 +370,28 @@ check your menus here. do they look good?
 do they need tweaking?
 */
 /* end .footer-links */
+/*********************
+EXPANDING SEARCH BAR STYLES
+*********************/
+.sb-search {
+  width: 0%;
+  height: 60px;
+  overflow: hidden;
+  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  transition: width 0.3s;
+  -webkit-backface-visibility: hidden;
+}
+.sb-search-input {
+  font-size: 20px;
+  height: 60px;
+}
+.sb-icon-search,
+.sb-search-submit {
+  height: 62px;
+  line-height: 60px;
+  cursor: pointer;
+}
 /* import grid */
 /******************************************************************
 Site Name:
@@ -492,25 +515,26 @@ HEADER STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
+#site-navigation {
+  height: 60px;
+}
 #site-navigation .nav {
   display: inline;
 }
 #site-navigation .menu-toggle {
   display: none;
 }
-.nav {
+.top-nav {
   /* end .menu ul li */
 
-  /* section colors */
-
-  /* menu social icon colors */
+  /* section colors and menu icons */
 
   /* highlight current page */
 
   /* end current highlighters */
 
 }
-.nav li {
+.top-nav li {
   float: left;
   position: relative;
   /*
@@ -520,7 +544,7 @@ NAVIGATION STYLES
   /* showing sub-menus */
 
 }
-.nav li a {
+.top-nav li a {
   font-size: 1em;
   border-bottom: 0;
   /*
@@ -529,8 +553,8 @@ NAVIGATION STYLES
 			*/
 
 }
-.nav li ul.sub-menu,
-.nav li ul.children {
+.top-nav li ul.sub-menu,
+.top-nav li ul.children {
   margin-top: 0;
   position: absolute;
   display: none;
@@ -538,32 +562,32 @@ NAVIGATION STYLES
   /* highlight sub-menu current page */
 
 }
-.nav li ul.sub-menu .about,
-.nav li ul.children .about {
+.top-nav li ul.sub-menu .about,
+.top-nav li ul.children .about {
   background-color: #f81a33;
 }
-.nav li ul.sub-menu .features,
-.nav li ul.children .features {
+.top-nav li ul.sub-menu .features,
+.top-nav li ul.children .features {
   background-color: #21d1e7;
 }
-.nav li ul.sub-menu .blogs,
-.nav li ul.children .blogs {
+.top-nav li ul.sub-menu .blogs,
+.top-nav li ul.children .blogs {
   background-color: #008bca;
 }
-.nav li ul.sub-menu .collections,
-.nav li ul.children .collections {
+.top-nav li ul.sub-menu .collections,
+.top-nav li ul.children .collections {
   background-color: #64e92b;
 }
-.nav li ul.sub-menu .discography,
-.nav li ul.children .discography {
+.top-nav li ul.sub-menu .discography,
+.top-nav li ul.children .discography {
   background-color: #93bf36;
 }
-.nav li ul.sub-menu .support,
-.nav li ul.children .support {
+.top-nav li ul.sub-menu .support,
+.top-nav li ul.children .support {
   background-color: #9f111e;
 }
-.nav li ul.sub-menu li,
-.nav li ul.children li {
+.top-nav li ul.sub-menu li,
+.top-nav li ul.children li {
   /*
 				if you need to go deeper, go nuts
 				just remember deeper menus suck
@@ -571,111 +595,121 @@ NAVIGATION STYLES
 				*/
 
 }
-.nav li ul.sub-menu li a,
-.nav li ul.children li a {
+.top-nav li ul.sub-menu li a,
+.top-nav li ul.children li a {
   color: #ffffff;
   padding-left: 10px;
   border-right: 0;
   display: block;
   width: 180px;
 }
-.nav li ul.sub-menu li a:hover,
-.nav li ul.children li a:hover,
-.nav li ul.sub-menu li a:focus,
-.nav li ul.children li a:focus {
+.top-nav li ul.sub-menu li a:hover,
+.top-nav li ul.children li a:hover,
+.top-nav li ul.sub-menu li a:focus,
+.top-nav li ul.children li a:focus {
   color: #e8e8e8;
 }
-.nav li ul.sub-menu li:last-child a,
-.nav li ul.children li:last-child a {
+.top-nav li ul.sub-menu li:last-child a,
+.top-nav li ul.children li:last-child a {
   border-bottom: 0;
 }
-.nav li:hover ul {
+.top-nav li:hover ul {
   top: auto;
   display: block;
 }
-.nav li.about a {
+.top-nav li.about a {
   padding-left: 1.7em;
   padding-right: 1em;
   background-image: url(../images/about.png);
   background-position: left;
   background-repeat: no-repeat;
 }
-.nav li.about a:hover,
-.nav li.about a:focus {
+.top-nav li.about a:hover,
+.top-nav li.about a:focus {
   color: #f81a33;
 }
-.nav li.features a {
+.top-nav li.features a {
   padding-left: 1.7em;
   padding-right: 1em;
   background-image: url(../images/features.png);
   background-position: left;
   background-repeat: no-repeat;
 }
-.nav li.features a:hover,
-.nav li.features a:focus {
+.top-nav li.features a:hover,
+.top-nav li.features a:focus {
   color: #21d1e7;
 }
-.nav li.blogs a {
+.top-nav li.blogs a {
   padding-left: 1.7em;
   padding-right: 1em;
   background-image: url(../images/blogs.png);
   background-position: left;
   background-repeat: no-repeat;
 }
-.nav li.blogs a:hover,
-.nav li.blogs a:focus {
+.top-nav li.blogs a:hover,
+.top-nav li.blogs a:focus {
   color: #008bca;
 }
-.nav li.collections a {
+.top-nav li.collections a {
   padding-left: 1.7em;
   padding-right: 1em;
   background-image: url(../images/collections.png);
   background-position: left;
   background-repeat: no-repeat;
 }
-.nav li.collections a:hover,
-.nav li.collections a:focus {
+.top-nav li.collections a:hover,
+.top-nav li.collections a:focus {
   color: #64e92b;
 }
-.nav li.discography a {
+.top-nav li.discography a {
   padding-left: 1.7em;
   padding-right: 1em;
   background-image: url(../images/discography.png);
   background-position: left;
   background-repeat: no-repeat;
 }
-.nav li.discography a:hover,
-.nav li.discography a:focus {
+.top-nav li.discography a:hover,
+.top-nav li.discography a:focus {
   color: #93bf36;
 }
-.nav li.support a {
+.top-nav li.support a {
   padding-left: 1.7em;
   background-image: url(../images/support.png);
   background-position: left;
   background-repeat: no-repeat;
 }
-.nav li.support a:hover,
-.nav li.support a:focus {
+.top-nav li.support a:hover,
+.top-nav li.support a:focus {
   color: #9f111e;
 }
-.nav li.facebook a {
-  color: #3b5998;
+/* end .top-nav */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+#primary-content .byline {
+  display: none;
 }
-.nav li.facebook a:hover,
-.nav li.facebook a:focus {
-  color: #2e4677;
+#secondary-content {
+  display: block;
 }
-.nav li.twitter a {
-  color: #00acee;
+#secondary-content h4 {
+  padding: 0;
+  margin: .5em 0 0 0;
 }
-.nav li.twitter a:hover,
-.nav li.twitter a:focus {
-  color: #008bc0;
+#secondary-content hr {
+  padding: 0;
+  margin: 1em 0 1em 0;
 }
-.nav #sb-search {
-  display: inline-block;
+#secondary-content .author-name {
+  color: #6d6e70;
+  font-size: 110%;
 }
-/* end .nav */
+#secondary-content .author-name a {
+  color: #000000;
+}
+#secondary-content .author-info {
+  color: #000000;
+}
 /*********************
 SIDEBARS & ASIDES
 *********************/

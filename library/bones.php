@@ -149,6 +149,9 @@ function bones_scripts_and_styles() {
 
     $wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 
+    // add Font Awesome
+    wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css' );
+
     // register expanding search box scripts
     wp_register_script( 'classie', get_stylesheet_directory_uri() . '/library/js/libs/classie.js', array(), '', true );
     wp_register_script( 'uisearch', get_stylesheet_directory_uri() . '/library/js/libs/uisearch.js', array(), '', true );
@@ -158,7 +161,7 @@ function bones_scripts_and_styles() {
     wp_enqueue_script( 'uisearch' );
 
     // Adds JavaScript for handling the navigation menu hide-and-show behavior.
-	wp_enqueue_script( 'arc-navigation', get_template_directory_uri() . '/library/js/libs/navigation.js', array(), '1.0', true );
+	// wp_enqueue_script( 'arc-navigation', get_template_directory_uri() . '/library/js/libs/navigation.js', array(), '1.0', true );
 
     /*
     I recommend using a plugin to call jQuery

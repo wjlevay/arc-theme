@@ -205,16 +205,12 @@ function bones_wpsearch($form) {
 	$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
 	<input class="sb-search-input" placeholder="search the ARChive..." type="search" value="' . get_search_query() . '" name="s" id="s">
 	<input class="sb-search-submit" type="submit" value="' . esc_attr__( 'Search' ) .'">
-	<span class="sb-icon-search"><i class="icon-large icon-search"></i></span>
+	<span class="sb-icon-search"><i class="fa fa-large fa-search"></i></span>
 	</form>';
 	return $form;
 } // don't remove this bracket!
 
 /************* CUSTOM FUNCTIONS *****************/
-
-// Social Icons in Menu
-add_filter( 'storm_social_icons_type', create_function( '', 'return "icon-sign";' ) );
-add_filter( 'storm_social_icons_size', create_function( '', 'return "normal";' ) );
 
 /* 
 // Expanding Search Form in Menu
