@@ -1659,6 +1659,34 @@ and more scalable.
 }
 .footer #inner-footer {
   border-top: 1px dotted #000000;
+  font-size: .75em;
+  color: #6d6e70;
+}
+.footer #inner-footer #footer-widgets address {
+  font-style: normal;
+}
+.footer #inner-footer #footer-widgets a {
+  color: #6d6e70;
+  text-decoration: none;
+}
+.footer #inner-footer #footer-widgets a:hover,
+.footer #inner-footer #footer-widgets a:focus {
+  color: #565759;
+}
+.footer #inner-footer #footer-widgets .widget li {
+  margin-top: 1.33em;
+  font-weight: bold;
+}
+.footer #inner-footer #footer-widgets .widget li .sub-menu {
+  margin-top: 0;
+  padding-left: 0;
+}
+.footer #inner-footer #footer-widgets .widget li .sub-menu li {
+  margin-top: 0;
+  font-weight: normal;
+}
+.footer #inner-footer #footer-widgets .widget_text {
+  margin-top: 1.33em;
 }
 /*
 	if you checked out the link above:
@@ -1670,6 +1698,10 @@ and more scalable.
 	view.
 	*/
 /* end .footer-links */
+.copyright {
+  padding-top: 1em;
+  clear: both;
+}
 /*********************
 14. SEARCH BAR STYLES
 *********************/

@@ -119,6 +119,42 @@ function bones_register_sidebars() {
 		'before_title' => '<h4 class="widgettitle support">',
 		'after_title' => '</h4>',
 	));
+	register_sidebar(array(
+		'id' => 'footer-1',
+		'name' => __( 'Footer Area 1', 'bonestheme' ),
+		'description' => __( 'The first footer area.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle footer">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'id' => 'footer-2',
+		'name' => __( 'Footer Area 2', 'bonestheme' ),
+		'description' => __( 'The second footer area.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle footer">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'id' => 'footer-3',
+		'name' => __( 'Footer Area 3', 'bonestheme' ),
+		'description' => __( 'The third footer area.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle footer">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'id' => 'footer-4',
+		'name' => __( 'Footer Area 4', 'bonestheme' ),
+		'description' => __( 'The fourth footer area.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle footer">',
+		'after_title' => '</h4>',
+	));
 	/*
 	to add more sidebars or widgetized areas, just copy
 	and edit the above sidebar code. In order to call
@@ -211,22 +247,6 @@ function bones_wpsearch($form) {
 } // don't remove this bracket!
 
 /************* CUSTOM FUNCTIONS *****************/
-
-/* 
-// Expanding Search Form in Menu
-add_filter('wp_nav_menu_items','add_search_box', 10, 2); 
-function add_search_box($items, $args) {
-
-        ob_start();
-        get_search_form();
-        $searchform = ob_get_contents();
-        ob_end_clean();
-
-        $items .= '<div id="sb-search" class="sb-search">' . $searchform . '</div>';
-
-    return $items;
-}
-*/
 
 // Show Captions on Thumbnail Images
 

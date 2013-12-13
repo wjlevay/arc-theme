@@ -1183,15 +1183,44 @@ and more scalable.
 	clear: both;
 	#inner-footer {
 		border-top: 1px dotted @black;
-	}
-	nav {
-		ul.nav {
-			li {
-				a {}
+		font-size: .75em;
+		color: @gray;
 
-				&:first-child {}
+		#footer-widgets {
 
-				&:last-child {}
+			address {
+				font-style: normal;
+			}
+
+			a {
+				color: @gray;
+				text-decoration: none;
+				&:hover,
+				&:focus {
+					color: @gray-hover;
+				}
+			}
+
+			.widget {
+
+				li {
+					margin-top: 1.33em;
+					font-weight: bold;
+
+					.sub-menu {
+						margin-top: 0;
+						padding-left: 0;
+
+						li {
+							margin-top: 0;
+							font-weight: normal;
+						}
+					}
+				}
+			}
+
+			.widget_text {
+				margin-top: 1.33em;
 			}
 		}
 	}
@@ -1217,7 +1246,10 @@ and more scalable.
 	} /* end .footer-links */
 
 
-	.copyright {}
+	.copyright {
+		padding-top: 1em;
+		clear: both;
+	}
 
 /*********************
 14. SEARCH BAR STYLES

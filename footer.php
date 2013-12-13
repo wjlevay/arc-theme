@@ -2,10 +2,13 @@
 
 				<div id="inner-footer" class="wrap clearfix">
 
-					<nav role="navigation">
-							<a id="footer-nav" name="footer-nav"></a>
-							<?php bones_footer_links(); ?>
-					</nav>
+					<?php
+						/*
+						 * Sidebars in the footer with four columns of widgets.
+						 */
+						if ( ! is_404() )
+							get_sidebar( 'footer' );
+					?>
 
 					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?></p>
 
