@@ -935,16 +935,9 @@ h5,
 /*********************
 06. HEADER STYLES
 *********************/
-.header #inner-header {
-  border-bottom: 1px dotted #000000;
-}
-.header #logo {
-  font-size: 2em;
-  text-align: center;
-}
-.header #logo a {
-  font-weight: 500;
-  color: #000000;
+.header #logo img {
+  max-width: 100%;
+  margin: .5em 0;
 }
 .header #factoid {
   display: none;
@@ -959,14 +952,18 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
+#site-navigation {
+  position: relative;
+}
 #site-navigation .top-nav {
   display: none;
 }
 #site-navigation .menu-toggle {
-  display: inline-block;
-  float: left;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
   margin: 0;
-  padding-top: 1em;
 }
 #site-navigation .menu-toggle a {
   color: #000000;
@@ -997,7 +994,6 @@ and more scalable.
   color: #000000;
   display: block;
   text-decoration: none;
-  padding: 10px 10px;
   /*
 			remember this is for mobile ONLY, so there's no need
 			to even declare hover styles here, you can do it in
@@ -1012,31 +1008,6 @@ and more scalable.
 }
 /* end .nav */
 .social-icons {
-  float: right;
-  text-align: center;
-  margin: 1.3em 2.3em 1em 0;
-  /* menu social icon colors */
-
-}
-.social-icons li {
-  display: inline;
-  margin: .5em;
-}
-.social-icons li.facebook a {
-  color: #3b5998;
-}
-.social-icons li.facebook a:hover,
-.social-icons li.facebook a:focus {
-  color: #2e4677;
-}
-.social-icons li.twitter a {
-  color: #00acee;
-}
-.social-icons li.twitter a:hover,
-.social-icons li.twitter a:focus {
-  color: #008bc0;
-}
-.social-icons .fa-hidden {
   display: none;
 }
 /*********************
@@ -1716,8 +1687,8 @@ and more scalable.
   border: none;
   outline: none;
   background: #f0ffa0;
-  width: 100%;
-  height: 40px;
+  width: 80%;
+  height: 30px;
   margin: 0;
   z-index: 10;
   font-size: 16px;
@@ -1746,14 +1717,12 @@ input[type="search"].sb-search-input::-webkit-search-decoration {
 .sb-icon-search,
 .sb-search-submit {
   width: 40px;
-  height: 42px;
   display: block;
   position: absolute;
   right: 0;
   top: 0;
   padding: 0;
   margin: 0;
-  line-height: 40px;
   text-align: center;
 }
 .sb-search-submit {
@@ -1776,7 +1745,6 @@ input[type="search"].sb-search-input::-webkit-search-decoration {
   color: #000;
   background: #fff;
   z-index: 90;
-  font-size: 22px;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -1854,7 +1822,34 @@ tweeners.
   }
   /* end .menu */
   .social-icons {
-    margin: 1em 0 0 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 3em;
+    margin: 0;
+    /* menu social icon colors */
+  
+  }
+  .social-icons li {
+    display: inline;
+    padding-left: 1em;
+  }
+  .social-icons li.facebook a {
+    color: #3b5998;
+  }
+  .social-icons li.facebook a:hover,
+  .social-icons li.facebook a:focus {
+    color: #2e4677;
+  }
+  .social-icons li.twitter a {
+    color: #00acee;
+  }
+  .social-icons li.twitter a:hover,
+  .social-icons li.twitter a:focus {
+    color: #008bc0;
+  }
+  .social-icons .fa-hidden {
+    display: none;
   }
   /*********************
   POSTS & CONTENT STYLES
@@ -1897,18 +1892,6 @@ tweeners.
   .header #inner-header {
     border-bottom: 1px dotted #000000;
   }
-  .header #logo {
-    font-size: 2.5em;
-    text-align: left;
-  }
-  .header #logo a {
-    font-weight: 500;
-    color: #000000;
-    padding: .75em 0 .75em 2.5em;
-    background-image: url(../images/logo.png);
-    background-position: left;
-    background-repeat: no-repeat;
-  }
   /*********************
   FOOTER STYLES
   *********************/
@@ -1922,7 +1905,6 @@ tweeners.
   *********************/
   .sb-search {
     width: 0%;
-    height: 60px;
     overflow: hidden;
     -webkit-transition: width 0.3s;
     -moz-transition: width 0.3s;
@@ -1931,12 +1913,10 @@ tweeners.
   }
   .sb-search-input {
     font-size: 20px;
-    height: 60px;
+    width: 90%;
   }
   .sb-icon-search,
   .sb-search-submit {
-    height: 62px;
-    line-height: 60px;
     cursor: pointer;
   }
 }
@@ -2063,15 +2043,9 @@ you can add resource intensive styles.
   /*********************
   HEADER STYLES
   *********************/
-  .header #logo {
-    font-size: 2.75em;
-  }
   /*********************
   NAVIGATION STYLES
   *********************/
-  #site-navigation {
-    height: 60px;
-  }
   #site-navigation .nav {
     display: inline;
   }
@@ -2079,6 +2053,10 @@ you can add resource intensive styles.
     display: none;
   }
   .top-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
     /* end .menu ul li */
   
     /* section colors and menu icons */
@@ -2101,6 +2079,7 @@ you can add resource intensive styles.
   .top-nav li a {
     font-size: 1em;
     border-bottom: 0;
+    padding: .25em;
     /*
   			you can use hover styles here even though this size
   			has the possibility of being a mobile device.
@@ -2310,6 +2289,12 @@ you can add resource intensive styles.
   
   }
   /* end .footer-links */
+  /*********************
+  EXPANDING SEARCH BAR STYLES
+  *********************/
+  .sb-search-input {
+    width: 100%;
+  }
 }
 /*
 DESKTOP
@@ -2342,18 +2327,25 @@ you can add resource intensive styles.
   .header #factoid .highlight {
     background-color: #f0ffa0;
   }
-  .header #logo {
-    font-size: 3em;
-  }
   /*********************
   NAVIGATION STYLES
   *********************/
-  .nav li {
+  .top-nav li {
     float: left;
     position: relative;
   }
-  .nav li a {
+  .top-nav li a {
     font-size: 1.3em;
+  }
+  .social-icons {
+    margin-top: .25em;
+  }
+  /*********************
+  EXPANDING SEARCH BAR STYLES
+  *********************/
+  .sb-search {
+    margin-top: .25em;
+    height: 50px;
   }
 }
 /*

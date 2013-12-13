@@ -307,7 +307,34 @@ NAVIGATION STYLES
 }
 /* end .menu */
 .social-icons {
-  margin: 1em 0 0 0;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 3em;
+  margin: 0;
+  /* menu social icon colors */
+
+}
+.social-icons li {
+  display: inline;
+  padding-left: 1em;
+}
+.social-icons li.facebook a {
+  color: #3b5998;
+}
+.social-icons li.facebook a:hover,
+.social-icons li.facebook a:focus {
+  color: #2e4677;
+}
+.social-icons li.twitter a {
+  color: #00acee;
+}
+.social-icons li.twitter a:hover,
+.social-icons li.twitter a:focus {
+  color: #008bc0;
+}
+.social-icons .fa-hidden {
+  display: none;
 }
 /*********************
 POSTS & CONTENT STYLES
@@ -350,18 +377,6 @@ HEADER STYLES
 .header #inner-header {
   border-bottom: 1px dotted #000000;
 }
-.header #logo {
-  font-size: 2.5em;
-  text-align: left;
-}
-.header #logo a {
-  font-weight: 500;
-  color: #000000;
-  padding: .75em 0 .75em 2.5em;
-  background-image: url(../images/logo.png);
-  background-position: left;
-  background-repeat: no-repeat;
-}
 /*********************
 FOOTER STYLES
 *********************/
@@ -375,7 +390,6 @@ EXPANDING SEARCH BAR STYLES
 *********************/
 .sb-search {
   width: 0%;
-  height: 60px;
   overflow: hidden;
   -webkit-transition: width 0.3s;
   -moz-transition: width 0.3s;
@@ -384,12 +398,10 @@ EXPANDING SEARCH BAR STYLES
 }
 .sb-search-input {
   font-size: 20px;
-  height: 60px;
+  width: 90%;
 }
 .sb-icon-search,
 .sb-search-submit {
-  height: 62px;
-  line-height: 60px;
   cursor: pointer;
 }
 /* import grid */
@@ -509,15 +521,9 @@ LAYOUT & GRID STYLES
 /*********************
 HEADER STYLES
 *********************/
-.header #logo {
-  font-size: 2.75em;
-}
 /*********************
 NAVIGATION STYLES
 *********************/
-#site-navigation {
-  height: 60px;
-}
 #site-navigation .nav {
   display: inline;
 }
@@ -525,6 +531,10 @@ NAVIGATION STYLES
   display: none;
 }
 .top-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
   /* end .menu ul li */
 
   /* section colors and menu icons */
@@ -547,6 +557,7 @@ NAVIGATION STYLES
 .top-nav li a {
   font-size: 1em;
   border-bottom: 0;
+  padding: .25em;
   /*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
@@ -756,6 +767,12 @@ mobile. Make sure to double check these!
 
 }
 /* end .footer-links */
+/*********************
+EXPANDING SEARCH BAR STYLES
+*********************/
+.sb-search-input {
+  width: 100%;
+}
 /******************************************************************
 Site Name: 
 Author: 
@@ -780,18 +797,25 @@ HEADER STYLES
 .header #factoid .highlight {
   background-color: #f0ffa0;
 }
-.header #logo {
-  font-size: 3em;
-}
 /*********************
 NAVIGATION STYLES
 *********************/
-.nav li {
+.top-nav li {
   float: left;
   position: relative;
 }
-.nav li a {
+.top-nav li a {
   font-size: 1.3em;
+}
+.social-icons {
+  margin-top: .25em;
+}
+/*********************
+EXPANDING SEARCH BAR STYLES
+*********************/
+.sb-search {
+  margin-top: .25em;
+  height: 50px;
 }
 /* 
 you can call the larger styles if you want, but there's really no need 

@@ -68,7 +68,30 @@ NAVIGATION STYLES
 	} /* end .menu */
 
 .social-icons {
-	margin: 1em 0 0 0;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 3em;
+	margin: 0;
+
+	li {
+		display: inline;
+		padding-left: 1em;
+	}
+
+	/* menu social icon colors */
+	li.facebook a {
+		color: @facebook-blue;
+		&:hover, &:focus {color: @facebook-blue-dark;}
+	}
+	li.twitter a {
+		color: @twitter-blue;
+		&:hover, &:focus {color: @twitter-blue-dark;}
+	}
+
+	.fa-hidden {
+		display: none;
+	}
 }
 
 /*********************
@@ -118,19 +141,7 @@ HEADER STYLES
 
 	#inner-header {border-bottom: 1px dotted @black;}
 
-	#logo {
-		font-size: 2.5em;
-		text-align: left;
-		a {
-			font-weight: 500;
-			color: @black;
-			padding: .75em 0 .75em 2.5em;
-			background-image: url(../images/logo.png);
-			background-position: left;
-			background-repeat: no-repeat;
-
-		}
-	}
+	#logo {}
 }
 
 /*********************
@@ -153,7 +164,6 @@ EXPANDING SEARCH BAR STYLES
 
 .sb-search {
 	width: 0%;
-	height: 60px;
 	overflow: hidden;
 	-webkit-transition: width 0.3s;
 	-moz-transition: width 0.3s;
@@ -163,12 +173,10 @@ EXPANDING SEARCH BAR STYLES
 
 .sb-search-input {
 	font-size: 20px;
-	height: 60px;
+	width: 90%;
 }
 
 .sb-icon-search,
 .sb-search-submit  {
-	height: 62px;
-	line-height: 60px;
 	cursor: pointer;
 }

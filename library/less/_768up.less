@@ -33,7 +33,7 @@ HEADER STYLES
 
 .header {
 
-	#logo {font-size: 2.75em;}
+	#logo {}
 }
 
 /*********************
@@ -41,13 +41,18 @@ NAVIGATION STYLES
 *********************/
 
 #site-navigation {
-	height: 60px;
 	
 	.nav {display: inline;}
 	.menu-toggle {display: none;}
 }
 
+.social-icons {}
+
 .top-nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
 
 	li {
 		float: left;
@@ -56,6 +61,7 @@ NAVIGATION STYLES
 		a {
 			font-size: 1em;
 			border-bottom: 0;
+			padding: .25em;
 
 			/*
 			you can use hover styles here even though this size
@@ -370,4 +376,12 @@ mobile. Make sure to double check these!
 		}
 	}
 } /* end .footer-links */
+
+/*********************
+EXPANDING SEARCH BAR STYLES
+*********************/
+
+.sb-search-input {
+	width: 100%;
+}
 
