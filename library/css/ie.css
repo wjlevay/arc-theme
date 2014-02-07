@@ -339,6 +339,7 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+/* style the gallery thumbnails on the homepage */
 /* float archive page & search results thumbnail */
 .search #content article .post-thumbnail,
 .archive #content article .post-thumbnail {
@@ -577,25 +578,25 @@ NAVIGATION STYLES
 .top-nav li ul.children .about {
   background-color: #f81a33;
 }
-.top-nav li ul.sub-menu .features,
-.top-nav li ul.children .features {
+.top-nav li ul.sub-menu .news,
+.top-nav li ul.children .news {
   background-color: #21d1e7;
 }
-.top-nav li ul.sub-menu .blogs,
-.top-nav li ul.children .blogs {
-  background-color: #008bca;
-}
-.top-nav li ul.sub-menu .collections,
-.top-nav li ul.children .collections {
+.top-nav li ul.sub-menu .galleries,
+.top-nav li ul.children .galleries {
   background-color: #64e92b;
 }
-.top-nav li ul.sub-menu .discography,
-.top-nav li ul.children .discography {
+.top-nav li ul.sub-menu .catalog,
+.top-nav li ul.children .catalog {
   background-color: #93bf36;
 }
 .top-nav li ul.sub-menu .support,
 .top-nav li ul.children .support {
   background-color: #9f111e;
+}
+.top-nav li ul.sub-menu .links,
+.top-nav li ul.children .links {
+  background-color: #008bca;
 }
 .top-nav li ul.sub-menu li,
 .top-nav li ul.children li {
@@ -639,52 +640,42 @@ NAVIGATION STYLES
 .top-nav li.about a:focus {
   color: #f81a33;
 }
-.top-nav li.features a {
+.top-nav li.news a {
   padding-left: 1.7em;
   padding-right: 1em;
-  background-image: url(../images/features.png);
+  background-image: url(../images/news.png);
   background-position: left;
   background-repeat: no-repeat;
 }
-.top-nav li.features a:hover,
-.top-nav li.features a:focus {
+.top-nav li.news a:hover,
+.top-nav li.news a:focus {
   color: #21d1e7;
 }
-.top-nav li.blogs a {
+.top-nav li.galleries a {
   padding-left: 1.7em;
   padding-right: 1em;
-  background-image: url(../images/blogs.png);
+  background-image: url(../images/galleries.png);
   background-position: left;
   background-repeat: no-repeat;
 }
-.top-nav li.blogs a:hover,
-.top-nav li.blogs a:focus {
-  color: #008bca;
-}
-.top-nav li.collections a {
-  padding-left: 1.7em;
-  padding-right: 1em;
-  background-image: url(../images/collections.png);
-  background-position: left;
-  background-repeat: no-repeat;
-}
-.top-nav li.collections a:hover,
-.top-nav li.collections a:focus {
+.top-nav li.galleries a:hover,
+.top-nav li.galleries a:focus {
   color: #64e92b;
 }
-.top-nav li.discography a {
+.top-nav li.catalog a {
   padding-left: 1.7em;
   padding-right: 1em;
-  background-image: url(../images/discography.png);
+  background-image: url(../images/catalog.png);
   background-position: left;
   background-repeat: no-repeat;
 }
-.top-nav li.discography a:hover,
-.top-nav li.discography a:focus {
+.top-nav li.catalog a:hover,
+.top-nav li.catalog a:focus {
   color: #93bf36;
 }
 .top-nav li.support a {
   padding-left: 1.7em;
+  padding-right: 1em;
   background-image: url(../images/support.png);
   background-position: left;
   background-repeat: no-repeat;
@@ -692,6 +683,16 @@ NAVIGATION STYLES
 .top-nav li.support a:hover,
 .top-nav li.support a:focus {
   color: #9f111e;
+}
+.top-nav li.links a {
+  padding-left: 1.7em;
+  background-image: url(../images/links.png);
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.top-nav li.links a:hover,
+.top-nav li.links a:focus {
+  color: #008bca;
 }
 /* end .top-nav */
 /*********************

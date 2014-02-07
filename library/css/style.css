@@ -910,6 +910,24 @@ h1,
   font-size: 2.5em;
   line-height: 1.333em;
 }
+/* Page- and section-specific colors for headers */
+.page-template-page-about-php h1 {
+  color: #f81a33;
+}
+.page-template-page-gallery-php h1,
+.page-template-page-gallery-landing-php h1 {
+  color: #64e92b;
+}
+.page-template-page-catalog-php h1,
+.parent-pageid-20 h1 {
+  color: #93bf36;
+}
+.page-template-page-support-php h1 {
+  color: #9f111e;
+}
+.page-template-page-resources-php h1 {
+  color: #008bca;
+}
 h2,
 .h2 {
   font-size: 1.75em;
@@ -931,6 +949,16 @@ h5,
   line-height: 2.09em;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+#crumbs {
+  margin-top: 1em;
+}
+#crumbs a {
+  color: #6d6e70;
+}
+#crumbs a:hover,
+#crumbs a:focus {
+  color: #565759;
 }
 /*********************
 06. HEADER STYLES
@@ -1035,6 +1063,22 @@ and more scalable.
   border: 0;
   padding-top: 0;
 }
+.page-template-page-gallery-landing-php #content article {
+  border-top: 1px black dotted;
+}
+.page-template-page-gallery-landing-php #content article .post-thumbnail {
+  margin: 2em 0;
+}
+.page-template-page-gallery-landing-php #content article h1 {
+  font-size: 1.5em;
+  margin-top: 1em;
+}
+.page-template-page-gallery-landing-php #content article:first-of-type {
+  border: 0;
+}
+.page-template-page-gallery-landing-php #content article:first-of-type .post-thumbnail {
+  padding-top: 0;
+}
 .archive.author .author-meta .avatar {
   float: left;
   margin-right: 1em;
@@ -1106,16 +1150,24 @@ and more scalable.
   border-bottom: 1px black dotted;
   margin-bottom: 1.8em;
 }
-#content #inner-content h4.blogs {
-  color: #008bca;
+#content #inner-content h4.news,
+#content #inner-content h4.news a {
+  color: #21d1e7;
   font-size: 1.5em;
   font-weight: 200;
 }
-#content #inner-content .homepage-galleries h4.collections {
+#content #inner-content .homepage-galleries h4.galleries {
   color: #64e92b;
   font-size: 1.5em;
   font-weight: 400;
   border-bottom: 1px black dotted;
+}
+#content #inner-content .homepage-galleries .post-thumbnail {
+  margin-bottom: 1em;
+}
+#content #inner-content .homepage-galleries .thumbnail-caption {
+  background-color: #64e92b;
+  max-width: 220px;
 }
 /* end .hentry */
 .single-title a,
@@ -1150,7 +1202,7 @@ and more scalable.
   margin-bottom: 0;
 }
 .post-info .category a {
-  color: #008bca;
+  color: #21d1e7;
 }
 .post-info time {
   color: #6d6e70;
@@ -1242,11 +1294,9 @@ and more scalable.
   padding: 0 1em;
   color: #ffffff;
 }
-.category-feature .thumbnail-caption {
-  background-color: #21d1e7;
-}
+.category-feature .thumbnail-caption,
 .category-blog .thumbnail-caption {
-  background-color: #008bca;
+  background-color: #21d1e7;
 }
 #secondary-content {
   display: none;
@@ -1522,8 +1572,23 @@ and more scalable.
 .about .post-thumbnail .thumbnail-caption {
   background-color: #f81a33;
 }
+.about-block .widgettitle,
+.about-block .widget-text {
+  max-width: 220px;
+  color: #ffffff;
+  background-color: #f81a33;
+  padding: 0 1em;
+}
+.about-block .widgettitle ul,
+.about-block .widget-text ul {
+  padding-left: .5em;
+}
+.about-block .widgettitle {
+  padding-top: .5em;
+}
 .support .widgettitle,
 .support .widget-text {
+  max-width: 220px;
   color: #ffffff;
   background-color: #9f111e;
   padding: 0 1em;
@@ -1548,27 +1613,28 @@ and more scalable.
 .support-page .post-thumbnail .thumbnail-caption {
   background-color: #9f111e;
 }
-.blogs .widgettitle,
-.blogs .widget-text {
+.news .widgettitle,
+.news .widget-text {
+  max-width: 220px;
   color: #ffffff;
   background-color: #008bca;
   padding: 0 1em;
 }
-.blogs .widgettitle a,
-.blogs .widget-text a {
+.news .widgettitle a,
+.news .widget-text a {
   color: #ffffff;
   background-color: #20469e;
   text-decoration: none;
   padding: 0 1em .2em 1em;
   margin-left: -1em;
 }
-.blogs .widgettitle a:hover,
-.blogs .widget-text a:hover,
-.blogs .widgettitle a:focus,
-.blogs .widget-text a:focus {
+.news .widgettitle a:hover,
+.news .widget-text a:hover,
+.news .widgettitle a:focus,
+.news .widget-text a:focus {
   color: #e8e8e8;
 }
-.blogs .widgettitle {
+.news .widgettitle {
   padding-top: .5em;
 }
 .widget .widget-text p {
@@ -1597,7 +1663,7 @@ and more scalable.
   margin: 1em 0 .5em 0;
 }
 #blogright .widget_custom_recent_entries ul li .category a {
-  color: #008bca;
+  color: #21d1e7;
   font-size: 110%;
 }
 #blogright .widget_custom_recent_entries ul li .title a {
@@ -1650,6 +1716,52 @@ and more scalable.
 #homeright .widget_custom_recent_entries ul li .post-date {
   color: #6d6e70;
   font-size: 110%;
+}
+#homecatalog .widget .widgettitle,
+#homecatalog .widget .widget-text {
+  max-width: 220px;
+  color: #ffffff;
+  background-color: #93bf36;
+  padding: 0 1em;
+}
+#homecatalog .widget .widgettitle ul,
+#homecatalog .widget .widget-text ul {
+  padding-left: .5em;
+}
+#homecatalog .widget .widgettitle a,
+#homecatalog .widget .widget-text a {
+  color: #ffffff;
+  background-color: #59921b;
+  text-decoration: none;
+  padding: 0 1em .2em 1em;
+  margin-left: -1em;
+}
+#homecatalog .widget .widgettitle a:hover,
+#homecatalog .widget .widget-text a:hover,
+#homecatalog .widget .widgettitle a:focus,
+#homecatalog .widget .widget-text a:focus {
+  color: #e8e8e8;
+}
+#homecatalog .widget .widgettitle {
+  margin-top: 0;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+#homecatalog .widget .widget-text {
+  padding-top: .5em;
+  border-top: 1px white dotted;
+}
+#galleries .widget h4 {
+  color: #64e92b;
+}
+#galleries .widget ul {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px black dotted;
+}
+#galleries .widget ul li {
+  padding-left: .5em;
+  text-indent: -0.5em;
 }
 /*********************
 13. FOOTER STYLES
@@ -1886,6 +1998,7 @@ tweeners.
   /*********************
   POSTS & CONTENT STYLES
   *********************/
+  /* style the gallery thumbnails on the homepage */
   /* float archive page & search results thumbnail */
   .search #content article .post-thumbnail,
   .archive #content article .post-thumbnail {
@@ -2131,25 +2244,25 @@ you can add resource intensive styles.
   .top-nav li ul.children .about {
     background-color: #f81a33;
   }
-  .top-nav li ul.sub-menu .features,
-  .top-nav li ul.children .features {
+  .top-nav li ul.sub-menu .news,
+  .top-nav li ul.children .news {
     background-color: #21d1e7;
   }
-  .top-nav li ul.sub-menu .blogs,
-  .top-nav li ul.children .blogs {
-    background-color: #008bca;
-  }
-  .top-nav li ul.sub-menu .collections,
-  .top-nav li ul.children .collections {
+  .top-nav li ul.sub-menu .galleries,
+  .top-nav li ul.children .galleries {
     background-color: #64e92b;
   }
-  .top-nav li ul.sub-menu .discography,
-  .top-nav li ul.children .discography {
+  .top-nav li ul.sub-menu .catalog,
+  .top-nav li ul.children .catalog {
     background-color: #93bf36;
   }
   .top-nav li ul.sub-menu .support,
   .top-nav li ul.children .support {
     background-color: #9f111e;
+  }
+  .top-nav li ul.sub-menu .links,
+  .top-nav li ul.children .links {
+    background-color: #008bca;
   }
   .top-nav li ul.sub-menu li,
   .top-nav li ul.children li {
@@ -2193,52 +2306,42 @@ you can add resource intensive styles.
   .top-nav li.about a:focus {
     color: #f81a33;
   }
-  .top-nav li.features a {
+  .top-nav li.news a {
     padding-left: 1.7em;
     padding-right: 1em;
-    background-image: url(../images/features.png);
+    background-image: url(../images/news.png);
     background-position: left;
     background-repeat: no-repeat;
   }
-  .top-nav li.features a:hover,
-  .top-nav li.features a:focus {
+  .top-nav li.news a:hover,
+  .top-nav li.news a:focus {
     color: #21d1e7;
   }
-  .top-nav li.blogs a {
+  .top-nav li.galleries a {
     padding-left: 1.7em;
     padding-right: 1em;
-    background-image: url(../images/blogs.png);
+    background-image: url(../images/galleries.png);
     background-position: left;
     background-repeat: no-repeat;
   }
-  .top-nav li.blogs a:hover,
-  .top-nav li.blogs a:focus {
-    color: #008bca;
-  }
-  .top-nav li.collections a {
-    padding-left: 1.7em;
-    padding-right: 1em;
-    background-image: url(../images/collections.png);
-    background-position: left;
-    background-repeat: no-repeat;
-  }
-  .top-nav li.collections a:hover,
-  .top-nav li.collections a:focus {
+  .top-nav li.galleries a:hover,
+  .top-nav li.galleries a:focus {
     color: #64e92b;
   }
-  .top-nav li.discography a {
+  .top-nav li.catalog a {
     padding-left: 1.7em;
     padding-right: 1em;
-    background-image: url(../images/discography.png);
+    background-image: url(../images/catalog.png);
     background-position: left;
     background-repeat: no-repeat;
   }
-  .top-nav li.discography a:hover,
-  .top-nav li.discography a:focus {
+  .top-nav li.catalog a:hover,
+  .top-nav li.catalog a:focus {
     color: #93bf36;
   }
   .top-nav li.support a {
     padding-left: 1.7em;
+    padding-right: 1em;
     background-image: url(../images/support.png);
     background-position: left;
     background-repeat: no-repeat;
@@ -2246,6 +2349,16 @@ you can add resource intensive styles.
   .top-nav li.support a:hover,
   .top-nav li.support a:focus {
     color: #9f111e;
+  }
+  .top-nav li.links a {
+    padding-left: 1.7em;
+    background-image: url(../images/links.png);
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+  .top-nav li.links a:hover,
+  .top-nav li.links a:focus {
+    color: #008bca;
   }
   /* end .top-nav */
   /*********************
@@ -2449,26 +2562,26 @@ query for retina AND a certain size if you want. Go Nuts.
     background-position: left;
     background-repeat: no-repeat;
   }
-  .nav li.features a {
-    background: url(../images/features@2x.png);
+  .nav li.news a {
+    background: url(../images/news@2x.png);
     background-size: 25px 25px;
     background-position: left;
     background-repeat: no-repeat;
   }
-  .nav li.blogs a {
-    background: url(../images/blogs@2x.png);
+  .nav li.links a {
+    background: url(../images/links@2x.png);
     background-size: 25px 25px;
     background-position: left;
     background-repeat: no-repeat;
   }
-  .nav li.collections a {
-    background-image: url(../images/collections@2x.png);
+  .nav li.galleries a {
+    background-image: url(../images/galleries@2x.png);
     background-size: 25px 25px;
     background-position: left;
     background-repeat: no-repeat;
   }
-  .nav li.discography a {
-    background-image: url(../images/discography@2x.png);
+  .nav li.catalog a {
+    background-image: url(../images/catalog@2x.png);
     background-size: 25px 25px;
     background-position: left;
     background-repeat: no-repeat;

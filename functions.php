@@ -29,8 +29,9 @@ require_once( 'library/bones.php' ); // if you remove this, bones will break
 	- an example custom post type
 	- example custom taxonomy (like categories)
 	- example custom taxonomy (like tags)
-*/
 require_once( 'library/custom-post-type.php' ); // you can disable this if you like
+require_once( 'library/custom-post-gallery.php' ); // you can disable this if you like
+*/
 /*
 3. library/admin.php
 	- removing some default WordPress dashboard widgets
@@ -76,8 +77,8 @@ you like. Enjoy!
 function bones_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'bonestheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'bonestheme' ),
+		'name' => __( 'Default', 'bonestheme' ),
+		'description' => __( 'The default sidebar.', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -102,12 +103,48 @@ function bones_register_sidebars() {
 		'after_title' => '</h4>',
 	));
 	register_sidebar(array(
+		'id' => 'homecatalog',
+		'name' => __( 'Home Catalogs', 'bonestheme' ),
+		'description' => __( 'The homepage sidebar that displays a list of catalogs.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'id' => 'about',
+		'name' => __( 'About Sidebar', 'bonestheme' ),
+		'description' => __( 'The right sidebar on the About page.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle about">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
 		'id' => 'blogright',
 		'name' => __( 'Blog Sidebar', 'bonestheme' ),
 		'description' => __( 'The right sidebar on a single blog post.', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle blogs">',
+		'before_title' => '<h4 class="widgettitle news">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'id' => 'gallery',
+		'name' => __( 'Gallery Sidebar', 'bonestheme' ),
+		'description' => __( 'The right sidebar on the Gallery page.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle galleries">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'id' => 'catalog',
+		'name' => __( 'Catalog Sidebar', 'bonestheme' ),
+		'description' => __( 'The right sidebar on the Catalog page.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle catalog">',
 		'after_title' => '</h4>',
 	));
 	register_sidebar(array(
@@ -117,6 +154,15 @@ function bones_register_sidebars() {
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle support">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'id' => 'resources',
+		'name' => __( 'Resources Sidebar', 'bonestheme' ),
+		'description' => __( 'The right sidebar on the Resources page.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle resources">',
 		'after_title' => '</h4>',
 	));
 	register_sidebar(array(
@@ -408,5 +454,112 @@ function custom_widget_init() {
 
 add_action('widgets_init', 'custom_widget_init');
 
+// Custom Breadcrumbs
+
+function qt_custom_breadcrumbs() {
+  
+  $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
+  $delimiter = '&raquo;'; // delimiter between crumbs
+  $home = 'home'; // text for the 'Home' link
+  $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
+  $before = '<span class="current">'; // tag before the current crumb
+  $after = '</span>'; // tag after the current crumb
+  
+  global $post;
+  $homeLink = get_bloginfo('url');
+  
+  if (is_home() || is_front_page()) {
+  
+    if ($showOnHome == 1) echo '<div id="crumbs"><a href="' . $homeLink . '">' . $home . '</a></div>';
+  
+  } else {
+  
+    echo '<div id="crumbs"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
+  
+    if ( is_category() ) {
+      $thisCat = get_category(get_query_var('cat'), false);
+      if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
+      echo $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
+  
+    } elseif ( is_search() ) {
+      echo $before . 'Search results for "' . get_search_query() . '"' . $after;
+  
+    } elseif ( is_day() ) {
+      echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
+      echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
+      echo $before . get_the_time('d') . $after;
+  
+    } elseif ( is_month() ) {
+      echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
+      echo $before . get_the_time('F') . $after;
+  
+    } elseif ( is_year() ) {
+      echo $before . get_the_time('Y') . $after;
+  
+    } elseif ( is_single() && !is_attachment() ) {
+      if ( get_post_type() != 'post' ) {
+        $post_type = get_post_type_object(get_post_type());
+        $slug = $post_type->rewrite;
+        echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
+        if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+      } else {
+        $cat = get_the_category(); $cat = $cat[0];
+        $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+        if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
+        echo $cats;
+        if ($showCurrent == 1) echo $before . get_the_title() . $after;
+      }
+  
+    } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
+      $post_type = get_post_type_object(get_post_type());
+      echo $before . $post_type->labels->singular_name . $after;
+  
+    } elseif ( is_attachment() ) {
+      $parent = get_post($post->post_parent);
+      $cat = get_the_category($parent->ID); $cat = $cat[0];
+      echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+      echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
+      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+  
+    } elseif ( is_page() && !$post->post_parent ) {
+      if ($showCurrent == 1) echo $before . get_the_title() . $after;
+  
+    } elseif ( is_page() && $post->post_parent ) {
+      $parent_id  = $post->post_parent;
+      $breadcrumbs = array();
+      while ($parent_id) {
+        $page = get_page($parent_id);
+        $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
+        $parent_id  = $page->post_parent;
+      }
+      $breadcrumbs = array_reverse($breadcrumbs);
+      for ($i = 0; $i < count($breadcrumbs); $i++) {
+        echo $breadcrumbs[$i];
+        if ($i != count($breadcrumbs)-1) echo ' ' . $delimiter . ' ';
+      }
+      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+  
+    } elseif ( is_tag() ) {
+      echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
+  
+    } elseif ( is_author() ) {
+       global $author;
+      $userdata = get_userdata($author);
+      echo $before . 'Articles posted by ' . $userdata->display_name . $after;
+  
+    } elseif ( is_404() ) {
+      echo $before . 'Error 404' . $after;
+    }
+  
+    if ( get_query_var('paged') ) {
+      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
+      echo __('Page') . ' ' . get_query_var('paged');
+      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
+    }
+  
+    echo '</div>';
+  
+  }
+} // end qt_custom_breadcrumbs()
 
 ?>

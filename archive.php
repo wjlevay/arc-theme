@@ -96,7 +96,7 @@
 
 						</div> <?php // end #main ?>
 
-						<?php get_sidebar(); ?>
+						<?php get_sidebar( 'blogright' ); ?>
 
 								</div> <?php // end #inner-content ?>
 

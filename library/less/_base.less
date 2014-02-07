@@ -152,6 +152,23 @@ h1, .h1 {
 	line-height: 1.333em;
 }
 
+/* Page- and section-specific colors for headers */
+.page-template-page-about-php {
+	h1 {color: @about;}
+}
+.page-template-page-gallery-php, .page-template-page-gallery-landing-php {
+	h1 {color: @galleries;}
+}
+.page-template-page-catalog-php, .parent-pageid-20 {
+	h1 {color: @catalog;}
+}
+.page-template-page-support-php {
+	h1 {color: @support;}
+}
+.page-template-page-resources-php {
+	h1 {color: @links;}
+}
+
 h2, .h2 {
 	font-size: 1.75em;
 	line-height: 1.4em;
@@ -172,6 +189,14 @@ h5, .h5 {
 	line-height: 2.09em;
 	text-transform: uppercase;
 	letter-spacing: 2px;
+}
+
+#crumbs {
+	a {color: @gray;
+		&:hover, &:focus {color: @gray-hover;}
+	}
+
+	margin-top: 1em;
 }
 
 /*********************
@@ -338,6 +363,23 @@ and more scalable.
 	}
 }
 
+.page-template-page-gallery-landing-php {
+	#content article {
+		border-top: 1px black dotted;
+		.post-thumbnail {margin: 2em 0;}
+
+		h1 {
+			font-size: 1.5em;
+			margin-top: 1em;
+		}
+
+		&:first-of-type {
+			border: 0;
+			.post-thumbnail {padding-top: 0;}
+		}
+	}
+}
+
 .archive.author {
 	.author-meta {
 		.avatar {
@@ -409,17 +451,24 @@ and more scalable.
 	}
 
 	#inner-content {
-		h4.blogs {
-			color: @blogs;
+		h4.news, h4.news a {
+			color: @news;
 			font-size: 1.5em;
 			font-weight: 200;
 		}
 		.homepage-galleries {
-			h4.collections {
-				color: @collections;
+			h4.galleries {
+				color: @galleries;
 				font-size: 1.5em;
 				font-weight: 400;
 				border-bottom: 1px black dotted;
+			}
+			.post-thumbnail {
+				margin-bottom: 1em;
+			}
+			.thumbnail-caption {
+				background-color: @galleries;
+				max-width: 220px;
 			}
 		}
 	}
@@ -467,7 +516,7 @@ and more scalable.
 			margin-bottom: 0;
 
 			.category {
-			a {color: @blogs;}
+			a {color: @news;}
 			}
 
 			time {color: @gray;}
@@ -620,15 +669,9 @@ and more scalable.
 		}
 	}
 
-	.category-feature {
+	.category-feature, .category-blog {
 		.thumbnail-caption {
-			background-color: @features;
-		}
-	}
-
-	.category-blog {
-		.thumbnail-caption {
-			background-color: @blogs;
+			background-color: @news;
 		}
 	}
 
@@ -1031,8 +1074,20 @@ and more scalable.
 		}
 	}
 
+	.about-block {
+		.widgettitle, .widget-text {
+			max-width: 220px;
+			color: @white;
+			background-color: @about;
+			padding: 0 1em;
+			ul {padding-left: .5em;}
+		}
+		.widgettitle {padding-top: .5em;}
+	}
+
 	.support {
 		.widgettitle, .widget-text {
+			max-width: 220px;
 			color: @white;
 			background-color: @support;
 			padding: 0 1em;
@@ -1056,14 +1111,15 @@ and more scalable.
 		}
 	}
 
-	.blogs {
+	.news {
 		.widgettitle, .widget-text {
+			max-width: 220px;
 			color: @white;
-			background-color: @blogs;
+			background-color: @links;
 			padding: 0 1em;
 			a {
 				color: @white;
-				background-color: @blogs-dark;
+				background-color: @links-dark;
 				text-decoration: none;
 				padding: 0 1em .2em 1em;
 				margin-left: -1em;
@@ -1115,7 +1171,7 @@ and more scalable.
 				}
 				img {margin: 1em 0 .5em 0;}
 				.category a {
-					color: @blogs;
+					color: @news;
 					font-size: 110%;
 				}
 				.title a {
@@ -1136,7 +1192,7 @@ and more scalable.
 	.widget_custom_recent_entries {
 		h4 {
 			color: @white;
-			background-color: @features;
+			background-color: @news;
 			padding: 0 1em;
 		}
 		ul {
@@ -1156,10 +1212,10 @@ and more scalable.
 					line-height: 1.5em;
 				}
 				.category a {
-					color: @features;
+					color: @news;
 					font-size: 110%;
 
-					&:hover, &:focus {color: @blogs;}
+					&:hover, &:focus {color: @links;}
 				}
 				.title a {
 					color: @black;
@@ -1170,6 +1226,52 @@ and more scalable.
 					color: @gray;
 					font-size: 110%;
 				}
+			}
+		}
+	}
+}
+
+#homecatalog {
+	.widget {
+		.widgettitle, .widget-text {
+			max-width: 220px;
+			color: @white;
+			background-color: @catalog;
+			padding: 0 1em;
+			ul {padding-left: .5em;}
+			a {
+				color: @white;
+				background-color: @catalog-dark;
+				text-decoration: none;
+				padding: 0 1em .2em 1em;
+				margin-left: -1em;
+				&:hover, &:focus {color: @white-hover;}
+			}
+		}
+		.widgettitle {
+			margin-top: 0;
+			padding-top: .5em;
+			padding-bottom: .5em;
+		}
+		.widget-text {
+			padding-top: .5em;
+			border-top: 1px white dotted;
+		}
+	}
+}
+
+#galleries {
+	.widget {
+		h4 {color: @galleries;}
+
+		ul {
+			margin-top: 1em;
+			padding-top: 1em;
+			border-top: 1px black dotted;
+
+			li {
+				padding-left: .5em;
+				text-indent: -.5em;
 			}
 		}
 	}

@@ -8,7 +8,7 @@
 
 						<div id="main" class="ninecol first clearfix" role="main">
 
-							<h4 class="blogs"><a href="<?php echo home_url(); ?>/blog" title="Go back to the main blog page">ARChive blog</a></h4>
+							<h4 class="news"><a href="<?php echo home_url(); ?>/news" title="Go back to the main news page">ARChive news</a></h4>
 
 								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -16,7 +16,7 @@
 
 									<div id="secondary-content" class="fourcol clearfix first"><?php // start #secondary-content subcolumn ?>
 											
-										<h4 class="blogs">author</h4>
+										<h4 class="news">author</h4>
 										<hr>
 										<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
 										<p class="author-name"><?php echo bones_get_the_author_posts_link(); ?>,<br><?php the_author_meta( 'nickname' ); ?></p>
@@ -59,7 +59,7 @@
 
 						<div id="main" class="ninecol first clearfix" role="main">
 
-							<h4 class="blogs">ARChive blog</h4>
+							<h4 class="news">ARChive blog</h4>
 
 							<article id="post-not-found" class="hentry clearfix">
 									<header class="article-header">

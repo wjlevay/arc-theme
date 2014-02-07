@@ -60,10 +60,46 @@
 
 							<div class="homepage-galleries">
 
-								<h4 class="collections">galleries &amp; selections</h4>
+								<h4 class="galleries">galleries &amp; selections</h4>
 
+								<?php // Now get thumbnails and links from the featured gallery pages
 
-							</div>
+								$galleries = new WP_Query( array('post_type' => 'page', 'post_parent' => 20, 'posts_per_page' => 3, 'orderby' => 'rand') );
+								if ($galleries->have_posts()) : 
+								while ($galleries->have_posts()) : $galleries->the_post(); 
+								$postcount++; ?>
+
+									<?php // If it's the first or third gallery, put it in a left column, if it's the second, put it in a right column
+									if (($postcount == 1) || ($postcount == 3)) : echo '<div class="sixcol first clearfix">'; 
+									else : echo '<div class="sixcol last clearfix">';
+									endif ; ?>
+
+									<?php // check for featured image and display with a read more link in the caption space
+									get_the_post_thumbnail(); ?>
+										<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'bones-thumb-220' ); ?><span class="thumbnail-caption">view more <?php the_title(); ?> &gt;&gt;</span></a></div>
+									</div><?php // end the sixcol from the If statement above ?>
+
+								<?php endwhile; ?>
+
+								<?php else : ?>
+
+										<article id="post-not-found" class="hentry clearfix">
+												<header class="article-header">
+													<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+											</header>
+												<section class="entry-content">
+													<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+											</section>
+											<footer class="article-footer">
+													<p><?php _e( 'This is the error message in the index.php template.', 'bonestheme' ); ?></p>
+											</footer>
+										</article>
+
+								<?php endif; ?>
+
+								<?php get_sidebar( 'homecatalog' ); ?>
+
+							</div> <?php // end homepage-galleries ?>
 
 						</div> <?php // end #main ?>
 
