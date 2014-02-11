@@ -808,6 +808,10 @@ NAVIGATION STYLES
 .top-nav li a {
   font-size: 1.3em;
 }
+.top-nav li ul.sub-menu li a,
+.top-nav li ul.children li a {
+  width: 220px;
+}
 .social-icons {
   margin-top: .25em;
 }

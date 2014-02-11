@@ -47,8 +47,16 @@
 
 				<div id="inner-header" class="wrap clearfix">
 
-					<?php // add random factoid about the ARChive ?>
-					<p id="factoid">The ARChive has the <span class="highlight">largest collection</span><br>of popular music in the United States.</p>
+					<?php // add random factoid about the ARChive
+
+					$factoid = new WP_Query(array ('post_type' => 'quote', 'posts_per_page' => 1, 'orderby' => 'rand') );
+					while ($factoid->have_posts()) : $factoid->the_post(); ?>
+
+					<div id="factoid"><?php the_content(); ?></div>
+
+					<?php endwhile;
+					wp_reset_postdata(); 
+					?>
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
 					<a id="logo" href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/library/images/arc-logo.jpg"></a>

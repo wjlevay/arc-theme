@@ -8,9 +8,10 @@
 
 						<div id="main" class="sixcol clearfix" role="main">
 
-							<?php // let's display only the most recent post in the category 'feature'
+							<?php // let's display only the most recent STICKY post
 
-							$feature = new WP_Query( array( 'posts_per_page' => 1, 'category_name' => 'feature' ) );
+							$sticky = get_option( 'sticky_posts' );
+							$feature = new WP_Query( array( 'posts_per_page' => 1, 'post__in'  => $sticky, 'ignore_sticky_posts' => 1 ) );
 
 							if ($feature->have_posts()) : while ($feature->have_posts()) : $feature->the_post(); ?>
 
@@ -34,29 +35,10 @@
 									the_content('read more &gt;&gt;'); ?>
 								</section> <?php // end article section ?>
 
-								<?php // comments_template(); // uncomment if you want to use them ?>
-
 							</article> <?php // end article ?>
 
-							<?php endwhile; ?>
-
-							<?php else : ?>
-
-									<article id="post-not-found" class="hentry clearfix">
-											<header class="article-header">
-												<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-										</header>
-											<section class="entry-content">
-												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the index.php template.', 'bonestheme' ); ?></p>
-										</footer>
-									</article>
-
-							<?php endif; ?>
-
-							<?php wp_reset_postdata(); ?>
+							<?php endwhile; endif;
+							wp_reset_postdata(); ?>
 
 							<div class="homepage-galleries">
 
