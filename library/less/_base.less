@@ -50,7 +50,6 @@ body {
     style a page via class
 ********************/
 
-.rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
 .home {							  /* home page */
 	#main {
 		padding-top: 1.5em;
@@ -128,6 +127,23 @@ a, a:visited {
 	}
 }
 
+.page-resources {
+	.linklist {
+		.linkgroup {border-top: 1px dotted black;}
+		.h3 {
+			color: @links;
+			font-weight: bold;
+			margin-top: 1em;
+		}
+		ul {
+			a, a:visited {
+				color: @links-dark;
+				&:hover, &:focus {color: @links;}
+			}
+		}
+	}
+}
+
 /******************************************************************
 05. H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
@@ -153,20 +169,32 @@ h1, .h1 {
 }
 
 /* Page- and section-specific colors for headers */
-.page-template-page-about-php {
-	h1 {color: @about;}
+.page-about {
+	h1, h2, h3 {color: @about;}
 }
-.page-template-page-gallery-php, .page-template-page-gallery-landing-php {
+.page-news {
+	h1, h2, h3 {color: @news;}
+}
+.page-template-page-gallery-landing-php {
 	h1 {color: @galleries;}
 }
-.page-template-page-catalog-php, .parent-pageid-20 {
-	h1 {color: @catalog;}
+.page-template-page-gallery-php {
+	h1.gallery-title {
+		margin: 0;
+		font-size: 1.5em;
+	}
+	h2.page-title {
+		color: @galleries;
+	}
 }
-.page-template-page-support-php {
-	h1 {color: @support;}
+.page-catalog {
+	h1, h2, h3 {color: @catalog;}
 }
-.page-template-page-resources-php {
-	h1 {color: @links;}
+.page-support {
+	h1, h2, h3 {color: @support;}
+}
+.page-resources {
+	h1, h2, h3 {color: @links;}
 }
 
 h2, .h2 {
@@ -368,15 +396,17 @@ and more scalable.
 		border-top: 1px black dotted;
 		.post-thumbnail {margin: 2em 0;}
 
-		h1 {
-			font-size: 1.5em;
-			margin-top: 1em;
-		}
-
 		&:first-of-type {
 			border: 0;
 			.post-thumbnail {padding-top: 0;}
 		}
+	}
+}
+
+.page-galleries {
+	.ngg-galleryoverview {
+		border-top: 1px black dotted;
+		padding-top: 2em;
 	}
 }
 
@@ -451,10 +481,15 @@ and more scalable.
 	}
 
 	#inner-content {
-		h4.news, h4.news a {
+		h4.news {
 			color: @news;
 			font-size: 1.5em;
 			font-weight: 200;
+
+			a {
+				color: @news;
+				&:hover, &:focus {color: @links;}
+			}
 		}
 		.homepage-galleries {
 			h4.galleries {
@@ -496,7 +531,10 @@ and more scalable.
 			margin: 0;
 		}
 
-		.page-title {font-size: 1.5em;}
+		.page-title {
+			font-size: 1.5em;
+			margin-top: 1em;
+		}
 
 		.archive-title { }
 
@@ -549,7 +587,8 @@ and more scalable.
 			}
 
 			ul {
-				list-style: disc inside none;
+				list-style: disc outside none;
+				padding-left: 1em;
 
 				li {
 					margin: 1em 0;
@@ -614,8 +653,6 @@ and more scalable.
 
 		.wp-caption {
 			max-width: 100%;
-			background: #eee;
-			padding: 5px;
 
 			/* images inside wp-caption */
 			img {
@@ -626,11 +663,39 @@ and more scalable.
 
 			p.wp-caption-text {
 				font-size: 0.85em;
-				margin: 4px 0 7px;
-				text-align: center;
+				margin: 0;
+				padding: 0 1em .5em 1em;
+				color: @white;
 			}
 
 		} /* end .wp-caption */
+
+		/* set background colors for captions */
+		.page-about {
+			.wp-caption, .thumbnail-caption {background-color: @about;}
+		}
+
+		.blog .wp-caption, 
+		.single .wp-caption, 
+		.category-features .thumbnail-caption, 
+		.category-blog .thumbnail-caption {background-color: @news;}
+
+		.page-galleries {
+			.wp-caption, .thumbnail-caption {background-color: @galleries;}
+		}
+
+		.page-catalog {
+			.wp-caption, .thumbnail-caption {background-color: @catalog;}
+		}
+
+		.page-support {
+			.wp-caption, .thumbnail-caption {background-color: @support;}
+		}
+
+		.page-resources {
+			.wp-caption, .thumbnail-caption {background-color: @links;}
+		} 
+		/* end .thumbnail-caption */
 
 		/* image gallery styles */
 		.gallery {
@@ -669,9 +734,15 @@ and more scalable.
 		}
 	}
 
-	.category-feature, .category-blog {
+	.category-features, .category-blog {
 		.thumbnail-caption {
 			background-color: @news;
+		}
+	}
+
+	.page-galleries {
+		.thumbnail-caption {
+			background-color: @galleries;
 		}
 	}
 
@@ -1061,78 +1132,18 @@ and more scalable.
 12. SIDEBARS & ASIDES
 *********************/
 
-.sidebar {}
+/* Universal widget styles */
 
-	.about {
-		.widgettitle {color: @about;}
-		.post-thumbnail {
-			margin-top: 1.5em;
+.sidebar {
 
-			.thumbnail-caption {
-				background-color: @about;
-			}
-		}
-	}
-
-	.about-block {
-		.widgettitle, .widget-text {
-			max-width: 220px;
-			color: @white;
-			background-color: @about;
-			padding: 0 1em;
-			ul {padding-left: .5em;}
-		}
-		.widgettitle {padding-top: .5em;}
-	}
-
-	.support {
-		.widgettitle, .widget-text {
-			max-width: 220px;
-			color: @white;
-			background-color: @support;
-			padding: 0 1em;
-			a {
-				color: @white;
-				background-color: @support-dark;
-				text-decoration: none;
-				padding: 0 1em .2em 1em;
-				margin-left: -1em;
-				&:hover, &:focus {color: @white-hover;}
-			}
-		}
-		.widgettitle {padding-top: .5em;}
-	}
-
-	.support-page {
-		.post-thumbnail {
-			.thumbnail-caption {
-				background-color: @support;
-			}
-		}
-	}
-
-	.news {
-		.widgettitle, .widget-text {
-			max-width: 220px;
-			color: @white;
-			background-color: @links;
-			padding: 0 1em;
-			a {
-				color: @white;
-				background-color: @links-dark;
-				text-decoration: none;
-				padding: 0 1em .2em 1em;
-				margin-left: -1em;
-				&:hover, &:focus {color: @white-hover;}
-			}
-		}
-		.widgettitle {padding-top: .5em;}
-	}
+	/* Hide some widgets on smaller devices */
+	.widget.hide {display: none;}
 
 	.widget {
 
-		.widget-text p {
-			margin-top: 0;
+		max-width: 220px;
+		.widget-text {
+			p {margin-top: 0;}
 		}
 		.widgettitle {margin-bottom: 0;}
 
@@ -1156,6 +1167,41 @@ and more scalable.
 		}
 
 	}
+
+}
+
+/* Sectional widget styles & section widgets on the homepage */
+
+#about .widget, .sidebar .about {
+	.widget-text {
+		ul {
+			padding: 0 0 .5em .5em;
+			li {}
+		}
+	}
+
+	.widgettitle {color: @about;}
+
+	.post-thumbnail {
+		margin-top: 1.5em;
+
+		.thumbnail-caption {
+			background-color: @about;
+		}
+	}
+}
+
+#about .widget.about-block, .sidebar .about-block {
+	.widgettitle, .widget-text {
+		color: @white;
+		background-color: @about;
+		padding: 0 1em;
+	}
+	.widgettitle {padding-top: .5em;}
+	.widget-text {
+		ul {padding: 0 0 .5em .5em;}
+	}
+}
 
 #blogright {
 	.widget_custom_recent_entries {
@@ -1190,6 +1236,7 @@ and more scalable.
 
 #homeright {
 	.widget_custom_recent_entries {
+		max-width: 100%;
 		h4 {
 			color: @white;
 			background-color: @news;
@@ -1250,29 +1297,93 @@ and more scalable.
 		}
 		.widgettitle {
 			margin-top: 0;
+			margin-bottom: 0;
 			padding-top: .5em;
 			padding-bottom: .5em;
 		}
 		.widget-text {
 			padding-top: .5em;
 			border-top: 1px white dotted;
+			p {margin-top: 0;}
 		}
 	}
 }
 
-#galleries {
-	.widget {
-		h4 {color: @galleries;}
+.sidebar .support {
+	.widgettitle, .widget-text {
+		color: @white;
+		background-color: @support;
+		padding: 0 1em;
+		a {
+			color: @white;
+			background-color: @support-dark;
+			text-decoration: none;
+			padding: 0 1em .2em 1em;
+			margin-left: -1em;
+			&:hover, &:focus {color: @white-hover;}
+		}
+	}
+	.widgettitle {padding-top: .5em;}
+}
 
-		ul {
-			margin-top: 1em;
-			padding-top: 1em;
-			border-top: 1px black dotted;
+.sidebar .news {
+	.widgettitle, .widget-text {
+		color: @white;
+		background-color: @links;
+		padding: 0 1em;
+		a {
+			color: @white;
+			background-color: @links-dark;
+			text-decoration: none;
+			padding: 0 1em .2em 1em;
+			margin-left: -1em;
+			&:hover, &:focus {color: @white-hover;}
+		}
+	}
+	.widgettitle {padding-top: .5em;}
+}
 
-			li {
-				padding-left: .5em;
-				text-indent: -.5em;
-			}
+#galleries .widget {
+	.widgettitle {color: @galleries;}
+
+	ul {
+		margin-top: 1em;
+		padding-top: 1em;
+		border-top: 1px black dotted;
+
+		li {
+			padding-left: .5em;
+			text-indent: -.5em;
+		}
+	}
+}
+
+#catalog .widget {
+	.widgettitle {color: @catalog;}
+	.post-thumbnail {
+		margin-top: 1.5em;
+		.thumbnail-caption {
+			background-color: @catalog;
+		}
+	}
+}
+
+#support .widget {
+	.widgettitle {color: @support;}
+	img {margin-top: 1.5em;}
+	.post-thumbnail {
+		.thumbnail-caption {
+			background-color: @support;
+		}
+	}
+}
+
+#resources .widget {
+	.widgettitle {color: @links;}
+	.post-thumbnail {
+		margin-top: 1.5em;
+		.thumbnail-caption {
+			background-color: @links;
 		}
 	}
 }

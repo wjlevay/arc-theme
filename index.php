@@ -6,7 +6,7 @@
 
 					<div id="main" class="eightcol first clearfix" role="main">
 
-						<h4 class="news">ARChive blog, or &ldquo;Would You Take My Mind Out for a Walk?&rdquo;</h4>
+						<h4 class="news">ARChive news</h4>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

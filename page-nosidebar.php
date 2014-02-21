@@ -18,6 +18,8 @@ Template Name: No Sidebar
 
 								<header class="article-header">
 
+									<?php if (function_exists('arc_custom_breadcrumbs')) arc_custom_breadcrumbs(); ?>
+
 									<h1 class="page-title"><?php the_title(); ?></h1>
 
 								</header> <?php // end article header ?>

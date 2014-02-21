@@ -793,7 +793,6 @@ body {
 02. WORDPRESS BODY CLASSES
     style a page via class
 ********************/
-/* for sites that are read right to left (i.e. hebrew) */
 .home {
   /* home page */
 
@@ -869,6 +868,24 @@ a:visited:link {
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
 }
+.page-resources .linklist .linkgroup {
+  border-top: 1px dotted black;
+}
+.page-resources .linklist .h3 {
+  color: #008bca;
+  font-weight: bold;
+  margin-top: 1em;
+}
+.page-resources .linklist ul a,
+.page-resources .linklist ul a:visited {
+  color: #20469e;
+}
+.page-resources .linklist ul a:hover,
+.page-resources .linklist ul a:visited:hover,
+.page-resources .linklist ul a:focus,
+.page-resources .linklist ul a:visited:focus {
+  color: #008bca;
+}
 /******************************************************************
 05. H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
@@ -911,21 +928,39 @@ h1,
   line-height: 1.333em;
 }
 /* Page- and section-specific colors for headers */
-.page-template-page-about-php h1 {
+.page-about h1,
+.page-about h2,
+.page-about h3 {
   color: #f81a33;
 }
-.page-template-page-gallery-php h1,
+.page-news h1,
+.page-news h2,
+.page-news h3 {
+  color: #21d1e7;
+}
 .page-template-page-gallery-landing-php h1 {
   color: #64e92b;
 }
-.page-template-page-catalog-php h1,
-.parent-pageid-20 h1 {
+.page-template-page-gallery-php h1.gallery-title {
+  margin: 0;
+  font-size: 1.5em;
+}
+.page-template-page-gallery-php h2.page-title {
+  color: #64e92b;
+}
+.page-catalog h1,
+.page-catalog h2,
+.page-catalog h3 {
   color: #93bf36;
 }
-.page-template-page-support-php h1 {
+.page-support h1,
+.page-support h2,
+.page-support h3 {
   color: #9f111e;
 }
-.page-template-page-resources-php h1 {
+.page-resources h1,
+.page-resources h2,
+.page-resources h3 {
   color: #008bca;
 }
 h2,
@@ -1069,15 +1104,15 @@ and more scalable.
 .page-template-page-gallery-landing-php #content article .post-thumbnail {
   margin: 2em 0;
 }
-.page-template-page-gallery-landing-php #content article h1 {
-  font-size: 1.5em;
-  margin-top: 1em;
-}
 .page-template-page-gallery-landing-php #content article:first-of-type {
   border: 0;
 }
 .page-template-page-gallery-landing-php #content article:first-of-type .post-thumbnail {
   padding-top: 0;
+}
+.page-galleries .ngg-galleryoverview {
+  border-top: 1px black dotted;
+  padding-top: 2em;
 }
 .archive.author .author-meta .avatar {
   float: left;
@@ -1150,11 +1185,17 @@ and more scalable.
   border-bottom: 1px black dotted;
   margin-bottom: 1.8em;
 }
-#content #inner-content h4.news,
-#content #inner-content h4.news a {
+#content #inner-content h4.news {
   color: #21d1e7;
   font-size: 1.5em;
   font-weight: 200;
+}
+#content #inner-content h4.news a {
+  color: #21d1e7;
+}
+#content #inner-content h4.news a:hover,
+#content #inner-content h4.news a:focus {
+  color: #008bca;
 }
 #content #inner-content .homepage-galleries h4.galleries {
   color: #64e92b;
@@ -1186,6 +1227,7 @@ and more scalable.
 }
 .page-title {
   font-size: 1.5em;
+  margin-top: 1em;
 }
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
@@ -1230,7 +1272,8 @@ and more scalable.
 
 }
 .entry-content ul {
-  list-style: disc inside none;
+  list-style: disc outside none;
+  padding-left: 1em;
 }
 .entry-content ul li {
   margin: 1em 0;
@@ -1264,8 +1307,6 @@ and more scalable.
 /* end .entry-content */
 .wp-caption {
   max-width: 100%;
-  background: #eee;
-  padding: 5px;
   /* images inside wp-caption */
 
 }
@@ -1276,10 +1317,39 @@ and more scalable.
 }
 .wp-caption p.wp-caption-text {
   font-size: 0.85em;
-  margin: 4px 0 7px;
-  text-align: center;
+  margin: 0;
+  padding: 0 1em .5em 1em;
+  color: #ffffff;
 }
 /* end .wp-caption */
+/* set background colors for captions */
+.page-about .wp-caption,
+.page-about .thumbnail-caption {
+  background-color: #f81a33;
+}
+.blog .wp-caption,
+.single .wp-caption,
+.category-features .thumbnail-caption,
+.category-blog .thumbnail-caption {
+  background-color: #21d1e7;
+}
+.page-galleries .wp-caption,
+.page-galleries .thumbnail-caption {
+  background-color: #64e92b;
+}
+.page-catalog .wp-caption,
+.page-catalog .thumbnail-caption {
+  background-color: #93bf36;
+}
+.page-support .wp-caption,
+.page-support .thumbnail-caption {
+  background-color: #9f111e;
+}
+.page-resources .wp-caption,
+.page-resources .thumbnail-caption {
+  background-color: #008bca;
+}
+/* end .thumbnail-caption */
 /* image gallery styles */
 /* end .gallery */
 /* gallery caption styles */
@@ -1294,9 +1364,12 @@ and more scalable.
   padding: 0 1em;
   color: #ffffff;
 }
-.category-feature .thumbnail-caption,
+.category-features .thumbnail-caption,
 .category-blog .thumbnail-caption {
   background-color: #21d1e7;
+}
+.page-galleries .thumbnail-caption {
+  background-color: #64e92b;
 }
 #secondary-content {
   display: none;
@@ -1563,93 +1636,63 @@ and more scalable.
 /*********************
 12. SIDEBARS & ASIDES
 *********************/
-.about .widgettitle {
-  color: #f81a33;
+/* Universal widget styles */
+.sidebar {
+  /* Hide some widgets on smaller devices */
+
 }
-.about .post-thumbnail {
-  margin-top: 1.5em;
+.sidebar .widget.hide {
+  display: none;
 }
-.about .post-thumbnail .thumbnail-caption {
-  background-color: #f81a33;
-}
-.about-block .widgettitle,
-.about-block .widget-text {
+.sidebar .widget {
   max-width: 220px;
-  color: #ffffff;
-  background-color: #f81a33;
-  padding: 0 1em;
 }
-.about-block .widgettitle ul,
-.about-block .widget-text ul {
-  padding-left: .5em;
-}
-.about-block .widgettitle {
-  padding-top: .5em;
-}
-.support .widgettitle,
-.support .widget-text {
-  max-width: 220px;
-  color: #ffffff;
-  background-color: #9f111e;
-  padding: 0 1em;
-}
-.support .widgettitle a,
-.support .widget-text a {
-  color: #ffffff;
-  background-color: #700106;
-  text-decoration: none;
-  padding: 0 1em .2em 1em;
-  margin-left: -1em;
-}
-.support .widgettitle a:hover,
-.support .widget-text a:hover,
-.support .widgettitle a:focus,
-.support .widget-text a:focus {
-  color: #e8e8e8;
-}
-.support .widgettitle {
-  padding-top: .5em;
-}
-.support-page .post-thumbnail .thumbnail-caption {
-  background-color: #9f111e;
-}
-.news .widgettitle,
-.news .widget-text {
-  max-width: 220px;
-  color: #ffffff;
-  background-color: #008bca;
-  padding: 0 1em;
-}
-.news .widgettitle a,
-.news .widget-text a {
-  color: #ffffff;
-  background-color: #20469e;
-  text-decoration: none;
-  padding: 0 1em .2em 1em;
-  margin-left: -1em;
-}
-.news .widgettitle a:hover,
-.news .widget-text a:hover,
-.news .widgettitle a:focus,
-.news .widget-text a:focus {
-  color: #e8e8e8;
-}
-.news .widgettitle {
-  padding-top: .5em;
-}
-.widget .widget-text p {
+.sidebar .widget .widget-text p {
   margin-top: 0;
 }
-.widget .widgettitle {
+.sidebar .widget .widgettitle {
   margin-bottom: 0;
 }
-.widget ul {
+.sidebar .widget ul {
   list-style: none;
   margin: 0;
 }
-.widget ul li {
+.sidebar .widget ul li {
   /* deep nesting */
 
+}
+/* Sectional widget styles & section widgets on the homepage */
+#about .widget .widget-text ul,
+.sidebar .about .widget-text ul {
+  padding: 0 0 .5em .5em;
+}
+#about .widget .widgettitle,
+.sidebar .about .widgettitle {
+  color: #f81a33;
+}
+#about .widget .post-thumbnail,
+.sidebar .about .post-thumbnail {
+  margin-top: 1.5em;
+}
+#about .widget .post-thumbnail .thumbnail-caption,
+.sidebar .about .post-thumbnail .thumbnail-caption {
+  background-color: #f81a33;
+}
+#about .widget.about-block .widgettitle,
+.sidebar .about-block .widgettitle,
+#about .widget.about-block .widget-text,
+.sidebar .about-block .widget-text {
+  color: #ffffff;
+  background-color: #f81a33;
+  padding: 0 1em;
+}
+#about .widget.about-block .widgettitle,
+.sidebar .about-block .widgettitle {
+  padding-top: .5em;
+}
+#about .widget.about-block .widget-text ul,
+.sidebar .about-block .widget-text ul {
+  padding: 0 0 .5em .5em;
 }
 #blogright .widget_custom_recent_entries ul li {
   margin-top: 1em;
@@ -1677,6 +1720,9 @@ and more scalable.
 #blogright .widget_custom_recent_entries ul li .author {
   color: #6d6e70;
   font-size: 110%;
+}
+#homeright .widget_custom_recent_entries {
+  max-width: 100%;
 }
 #homeright .widget_custom_recent_entries h4 {
   color: #ffffff;
@@ -1744,6 +1790,7 @@ and more scalable.
 }
 #homecatalog .widget .widgettitle {
   margin-top: 0;
+  margin-bottom: 0;
   padding-top: .5em;
   padding-bottom: .5em;
 }
@@ -1751,7 +1798,56 @@ and more scalable.
   padding-top: .5em;
   border-top: 1px white dotted;
 }
-#galleries .widget h4 {
+#homecatalog .widget .widget-text p {
+  margin-top: 0;
+}
+.sidebar .support .widgettitle,
+.sidebar .support .widget-text {
+  color: #ffffff;
+  background-color: #9f111e;
+  padding: 0 1em;
+}
+.sidebar .support .widgettitle a,
+.sidebar .support .widget-text a {
+  color: #ffffff;
+  background-color: #700106;
+  text-decoration: none;
+  padding: 0 1em .2em 1em;
+  margin-left: -1em;
+}
+.sidebar .support .widgettitle a:hover,
+.sidebar .support .widget-text a:hover,
+.sidebar .support .widgettitle a:focus,
+.sidebar .support .widget-text a:focus {
+  color: #e8e8e8;
+}
+.sidebar .support .widgettitle {
+  padding-top: .5em;
+}
+.sidebar .news .widgettitle,
+.sidebar .news .widget-text {
+  color: #ffffff;
+  background-color: #008bca;
+  padding: 0 1em;
+}
+.sidebar .news .widgettitle a,
+.sidebar .news .widget-text a {
+  color: #ffffff;
+  background-color: #20469e;
+  text-decoration: none;
+  padding: 0 1em .2em 1em;
+  margin-left: -1em;
+}
+.sidebar .news .widgettitle a:hover,
+.sidebar .news .widget-text a:hover,
+.sidebar .news .widgettitle a:focus,
+.sidebar .news .widget-text a:focus {
+  color: #e8e8e8;
+}
+.sidebar .news .widgettitle {
+  padding-top: .5em;
+}
+#galleries .widget .widgettitle {
   color: #64e92b;
 }
 #galleries .widget ul {
@@ -1762,6 +1858,33 @@ and more scalable.
 #galleries .widget ul li {
   padding-left: .5em;
   text-indent: -0.5em;
+}
+#catalog .widget .widgettitle {
+  color: #93bf36;
+}
+#catalog .widget .post-thumbnail {
+  margin-top: 1.5em;
+}
+#catalog .widget .post-thumbnail .thumbnail-caption {
+  background-color: #93bf36;
+}
+#support .widget .widgettitle {
+  color: #9f111e;
+}
+#support .widget img {
+  margin-top: 1.5em;
+}
+#support .widget .post-thumbnail .thumbnail-caption {
+  background-color: #9f111e;
+}
+#resources .widget .widgettitle {
+  color: #008bca;
+}
+#resources .widget .post-thumbnail {
+  margin-top: 1.5em;
+}
+#resources .widget .post-thumbnail .thumbnail-caption {
+  background-color: #008bca;
 }
 /*********************
 13. FOOTER STYLES
@@ -2073,8 +2196,8 @@ you can add resource intensive styles.
 */
 @media only screen and (min-width: 768px) {
   /******************************************************************
-  Site Name:
-  Author:
+  Site Name: ARChive of Contemporary Music
+  Author: W.J. Levay
   
   Stylesheet: Grid Stylesheet
   
@@ -2280,6 +2403,7 @@ you can add resource intensive styles.
     border-right: 0;
     display: block;
     width: 180px;
+    background-image: none;
   }
   .top-nav li ul.sub-menu li a:hover,
   .top-nav li ul.children li a:hover,
@@ -2393,6 +2517,9 @@ you can add resource intensive styles.
   *********************/
   .page-template-page-support-php .sidebar {
     margin-top: 5.333em;
+  }
+  .sidebar .widget.hide {
+    display: block;
   }
   .widget {
     padding: 0;

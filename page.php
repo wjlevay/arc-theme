@@ -12,8 +12,9 @@
 
 								<header class="article-header">
 
-									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+									<?php if (function_exists('arc_custom_breadcrumbs')) arc_custom_breadcrumbs(); ?>
 
+									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 
 								</header> <?php // end article header ?>
 
@@ -45,7 +46,16 @@
 
 						</div> <?php // end #main ?>
 
-						<?php get_sidebar(); ?>
+					<?php // get the sidebar based on the page slug
+					$id = get_the_ID();
+					$ancestors = get_ancestors($id, 'page');
+					$top_page = $ancestors ? get_page(end($ancestors)) : get_page($id);
+
+					if(locate_template('sidebar-'.$top_page->post_name.'.php'))
+					    get_sidebar($top_page->post_name);
+					else
+					    get_sidebar();
+					?>
 
 				</div> <?php // end #inner-content ?>
 

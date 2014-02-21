@@ -18,6 +18,8 @@ Template Name: Gallery Landing Page
 
 								<header class="article-header">
 
+									<?php if (function_exists('arc_custom_breadcrumbs')) arc_custom_breadcrumbs(); ?>
+
 									<h1 class="page-title"><?php the_title(); ?></h1>
 
 								</header> <?php // end article header ?>
@@ -52,7 +54,7 @@ Template Name: Gallery Landing Page
 
 							<?php // Now get thumbnails and excerpts from the featured gallery pages ?>
 
-							<?php $galleries = new WP_Query( array('showposts' => 3, 'child_of' => 20, 'post_type' => 'page', 'orderby' => 'menu_order title', 'order' => 'DESC', 'meta_key' => 'featured' ) );
+							<?php $galleries = new WP_Query( array('showposts' => 3, 'child_of' => 20, 'post_type' => 'page', 'orderby' => 'menu_order title', 'order' => 'DESC', 'meta_key' => 'featured', 'meta_value' => 'yes') );
 
 							if ($galleries->have_posts()) : while ($galleries->have_posts()) : $galleries->the_post(); ?>
 
@@ -60,9 +62,9 @@ Template Name: Gallery Landing Page
 
 							<div id="gallery-thumb" class="eightcol clearfix first"><?php // start #gallery-thumb subcolumn ?>
 
-								<?php // check for featured image and display without caption
+								<?php // check for featured image and display with caption
 								if ( '' != get_the_post_thumbnail() ) { ?>
-								<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); ?></a></div>
+								<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); ?><span class="thumbnail-caption">view more <?php the_title(); ?> &gt;&gt;</span></a></div>
 								<?php } else {
 									echo '';
 								} 

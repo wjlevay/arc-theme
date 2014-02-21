@@ -294,7 +294,65 @@ function bones_wpsearch($form) {
 
 /************* CUSTOM FUNCTIONS *****************/
 
-// Show Captions on Thumbnail Images
+// Set page slug as a body class (via http://timneill.net/2013/05/wordpress-add-page-slug-to-body-class-including-parents/)
+
+function add_body_class($classes) {
+    // You can modify this check so it will run on every post type
+    if (is_page()) {
+        global $post;
+        
+        // If we *do* have an ancestors list, process it
+        // http://codex.wordpress.org/Function_Reference/get_post_ancestors
+        if ($parents = get_post_ancestors($post->ID)) {
+            foreach ((array)$parents as $parent) {
+                // As the array contains IDs only, we need to get each page
+                if ($page = get_page($parent)) {
+                    // Add the current ancestor to the body class array
+                    $classes[] = "{$page->post_type}-{$page->post_name}";
+                }
+            }
+        }
+ 
+        // Add the current page to our body class array
+        $classes[] = "{$post->post_type}-{$post->post_name}";
+    }
+    
+    return $classes;
+}
+
+add_filter('body_class', 'add_body_class');
+
+// Change page template to Gallery page upon saving a Gallery child page
+
+function assign_gallery_template($post_id) {
+    global $post;
+    // Checks if Gallery child page and if doesn't already have the Gallery Page template assigned
+	if ('20' == $post->post_parent && get_post_meta($post_id, '_wp_page_template', true) !== 'page-gallery.php')
+	{	
+		update_post_meta( $post_id, '_wp_page_template', 'page-gallery.php' );
+	}
+}
+
+add_action('save_post', 'assign_gallery_template', 10);
+
+// Switch the template when viewing a Gallery section child page that hasn't been re-saved yet
+
+function switch_page_template() {
+    global $post;
+    // Checks if current page is a Gallery child page
+	if ('20' == $post->post_parent && get_post_meta($post_id, '_wp_page_template', true) !== 'page-gallery.php')
+	{	
+		$template = TEMPLATEPATH . "/page-gallery.php";
+		if (file_exists($template)) {
+			load_template($template);
+			exit;
+		}
+	}
+}
+ 
+add_action('template_redirect', 'switch_page_template');
+
+// Show Captions on Thumbnail Images (via http://wordpress.org/support/topic/display-caption-with-the_post_thumbnail)
 
 function the_post_thumbnail_caption() {
   global $post;
@@ -325,241 +383,5 @@ function the_post_thumbnail_caption() {
      //if(count($alt)) echo $alt;
   }
 }
-
-// Add Custom Recent Posts widget
-
-class Custom_Widget_Recent_Posts extends WP_Widget {
-
-	function __construct() {
-		$widget_ops = array('classname' => 'widget_custom_recent_entries', 'description' => __( "A customized list of the most recent posts") );
-		parent::__construct('custom-recent-posts', __('Custom Recent Posts'), $widget_ops);
-		$this->alt_option_name = 'widget_custom_recent_entries';
-
-		add_action( 'save_post', array($this, 'flush_widget_cache') );
-		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
-		add_action( 'switch_theme', array($this, 'flush_widget_cache') );
-	}
-
-	function widget($args, $instance) {
-		$cache = wp_cache_get('widget_custom_recent_posts', 'widget');
-
-		if ( !is_array($cache) )
-			$cache = array();
-
-		if ( ! isset( $args['widget_id'] ) )
-			$args['widget_id'] = $this->id;
-
-		if ( isset( $cache[ $args['widget_id'] ] ) ) {
-			echo $cache[ $args['widget_id'] ];
-			return;
-		}
-
-		ob_start();
-		extract($args);
-
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Custom Recent Posts' );
-		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
-		$number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 10;
-		if ( ! $number )
- 			$number = 10;
-		$show_date = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
-		$show_thumb = isset( $instance['show_thumb'] ) ? $instance['show_thumb'] : false;
-
-		// if single post, assign id to variable $current_post as an array, then we can exclude current post from displaying in the widget
-		if ( is_single() ) {
-			$current_post = array( get_the_ID() );
-		}
-
-		$r = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_page' => $number, 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true, 'post__not_in' => $current_post ) ) );
-		if ($r->have_posts()) :
-?>
-		<?php echo $before_widget; ?>
-		<?php if ( $title ) echo $before_title . $title . $after_title; ?>
-		<ul>
-		<?php while ( $r->have_posts() ) : $r->the_post(); ?>
-			<li>
-				<?php if ( $show_thumb ) : ?><a href="<?php the_permalink(); ?>"><?php 
-					if ( has_post_thumbnail() ) {
-						the_post_thumbnail( 'thumbnail' );
-					}
-					else {
-						echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/library/images/thumbnail-default.png" class="attachment-thumbnail wp-post-image" />';
-					}
-					?></a>
-				<?php endif; ?>
-				<p class="category"><?php echo get_the_category_list(', '); ?> 
-					<?php if ( $show_date ) : ?><span class="post-date"><?php echo get_the_date(); ?></span>
-					<?php endif; ?></p>
-				<p class="title"><a href="<?php the_permalink(); ?>"><?php get_the_title() ? the_title() : the_ID(); ?></a></p>
-				<p class="author"><?php the_author(); ?>, <?php the_author_meta( 'nickname' ); ?></p>
-			</li>
-		<?php endwhile; ?>
-		</ul>
-		<?php echo $after_widget; ?>
-<?php
-		// Reset the global $the_post as this query will have stomped on it
-		wp_reset_postdata();
-
-		endif;
-
-		$cache[$args['widget_id']] = ob_get_flush();
-		wp_cache_set('widget_custom_recent_posts', $cache, 'widget');
-	}
-
-	function update( $new_instance, $old_instance ) {
-		$instance = $old_instance;
-		$instance['title'] = strip_tags($new_instance['title']);
-		$instance['number'] = (int) $new_instance['number'];
-		$instance['show_date'] = isset( $new_instance['show_date'] ) ? (bool) $new_instance['show_date'] : false;
-		$instance['show_thumb'] = isset( $new_instance['show_thumb'] ) ? (bool) $new_instance['show_thumb'] : false;
-		$this->flush_widget_cache();
-
-		$alloptions = wp_cache_get( 'alloptions', 'options' );
-		if ( isset($alloptions['widget_custom_recent_entries']) )
-			delete_option('widget_custom_recent_entries');
-
-		return $instance;
-	}
-
-	function flush_widget_cache() {
-		wp_cache_delete('widget_custom_recent_posts', 'widget');
-	}
-
-	function form( $instance ) {
-		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
-		$number    = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
-		$show_date = isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : false;
-		$show_thumb = isset( $instance['show_thumb'] ) ? (bool) $instance['show_thumb'] : false;
-?>
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
-		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
-
-		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:' ); ?></label>
-		<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
-
-		<p><input class="checkbox" type="checkbox" <?php checked( $show_date ); ?> id="<?php echo $this->get_field_id( 'show_date' ); ?>" name="<?php echo $this->get_field_name( 'show_date' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display post date?' ); ?></label></p>
-
-		<p><input class="checkbox" type="checkbox" <?php checked( $show_thumb, 1 ); ?> id="<?php echo $this->get_field_id( 'show_thumb' ); ?>" name="<?php echo $this->get_field_name( 'show_thumb' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'show_thumb' ); ?>"><?php _e( 'Display post thumbnail?' ); ?></label></p>
-<?php
-	}
-}
-
-// Register Custom Recent Posts widget
-
-function custom_widget_init() {
-    register_widget('Custom_Widget_Recent_Posts');
-}
-
-add_action('widgets_init', 'custom_widget_init');
-
-// Custom Breadcrumbs
-
-function qt_custom_breadcrumbs() {
-  
-  $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-  $delimiter = '&raquo;'; // delimiter between crumbs
-  $home = 'home'; // text for the 'Home' link
-  $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
-  $before = '<span class="current">'; // tag before the current crumb
-  $after = '</span>'; // tag after the current crumb
-  
-  global $post;
-  $homeLink = get_bloginfo('url');
-  
-  if (is_home() || is_front_page()) {
-  
-    if ($showOnHome == 1) echo '<div id="crumbs"><a href="' . $homeLink . '">' . $home . '</a></div>';
-  
-  } else {
-  
-    echo '<div id="crumbs"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
-  
-    if ( is_category() ) {
-      $thisCat = get_category(get_query_var('cat'), false);
-      if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
-      echo $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
-  
-    } elseif ( is_search() ) {
-      echo $before . 'Search results for "' . get_search_query() . '"' . $after;
-  
-    } elseif ( is_day() ) {
-      echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-      echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
-      echo $before . get_the_time('d') . $after;
-  
-    } elseif ( is_month() ) {
-      echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-      echo $before . get_the_time('F') . $after;
-  
-    } elseif ( is_year() ) {
-      echo $before . get_the_time('Y') . $after;
-  
-    } elseif ( is_single() && !is_attachment() ) {
-      if ( get_post_type() != 'post' ) {
-        $post_type = get_post_type_object(get_post_type());
-        $slug = $post_type->rewrite;
-        echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
-        if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
-      } else {
-        $cat = get_the_category(); $cat = $cat[0];
-        $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-        if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
-        echo $cats;
-        if ($showCurrent == 1) echo $before . get_the_title() . $after;
-      }
-  
-    } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
-      $post_type = get_post_type_object(get_post_type());
-      echo $before . $post_type->labels->singular_name . $after;
-  
-    } elseif ( is_attachment() ) {
-      $parent = get_post($post->post_parent);
-      $cat = get_the_category($parent->ID); $cat = $cat[0];
-      echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-      echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
-      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
-  
-    } elseif ( is_page() && !$post->post_parent ) {
-      if ($showCurrent == 1) echo $before . get_the_title() . $after;
-  
-    } elseif ( is_page() && $post->post_parent ) {
-      $parent_id  = $post->post_parent;
-      $breadcrumbs = array();
-      while ($parent_id) {
-        $page = get_page($parent_id);
-        $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
-        $parent_id  = $page->post_parent;
-      }
-      $breadcrumbs = array_reverse($breadcrumbs);
-      for ($i = 0; $i < count($breadcrumbs); $i++) {
-        echo $breadcrumbs[$i];
-        if ($i != count($breadcrumbs)-1) echo ' ' . $delimiter . ' ';
-      }
-      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
-  
-    } elseif ( is_tag() ) {
-      echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
-  
-    } elseif ( is_author() ) {
-       global $author;
-      $userdata = get_userdata($author);
-      echo $before . 'Articles posted by ' . $userdata->display_name . $after;
-  
-    } elseif ( is_404() ) {
-      echo $before . 'Error 404' . $after;
-    }
-  
-    if ( get_query_var('paged') ) {
-      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page') . ' ' . get_query_var('paged');
-      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
-    }
-  
-    echo '</div>';
-  
-  }
-} // end qt_custom_breadcrumbs()
 
 ?>

@@ -46,7 +46,7 @@
 
 								<?php // Now get thumbnails and links from the featured gallery pages
 
-								$galleries = new WP_Query( array('post_type' => 'page', 'post_parent' => 20, 'posts_per_page' => 3, 'orderby' => 'rand') );
+								$galleries = new WP_Query( array('post_type' => 'page', 'post_parent' => 20, 'posts_per_page' => 3, 'orderby' => 'rand', 'meta_key' => '_thumbnail_id') );
 								if ($galleries->have_posts()) : 
 								while ($galleries->have_posts()) : $galleries->the_post(); 
 								$postcount++; ?>
@@ -57,8 +57,12 @@
 									endif ; ?>
 
 									<?php // check for featured image and display with a read more link in the caption space
-									get_the_post_thumbnail(); ?>
-										<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'bones-thumb-220' ); ?><span class="thumbnail-caption">view more <?php the_title(); ?> &gt;&gt;</span></a></div>
+									if ( '' != get_the_post_thumbnail() ) { ?>
+									<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'bones-thumb-220' ); ?><span class="thumbnail-caption">view more <?php the_title(); ?> &gt;&gt;</span></a></div>
+									<?php } else {
+									echo '';
+									} 
+									?>
 									</div><?php // end the sixcol from the If statement above ?>
 
 								<?php endwhile; ?>

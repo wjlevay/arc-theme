@@ -98,6 +98,7 @@ NAVIGATION STYLES
 					border-right: 0;
 					display: block;
 					width: 180px;
+					background-image: none;
 
 					&:hover,
 					&:focus {color: @white-hover;}
@@ -188,11 +189,8 @@ NAVIGATION STYLES
 	}
 
 	/* highlight current page */
-	li.current-menu-item,
-	li.current_page_item,
-	li.current-page-ancestor {
-		a {}
-	}  /* end current highlighters */
+
+	/* end current highlighters */
 
 } /* end .top-nav */
 
@@ -237,6 +235,7 @@ SIDEBARS & ASIDES
 }
 
 .sidebar {
+	.widget.hide {display: block;}
 
 }
 

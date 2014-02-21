@@ -18,9 +18,10 @@ Template Name: Gallery Page
 
 								<header class="article-header">
 
-									<?php if (function_exists('qt_custom_breadcrumbs')) qt_custom_breadcrumbs(); ?>
+									<?php if (function_exists('arc_custom_breadcrumbs')) arc_custom_breadcrumbs(); ?>
 
-									<h1 class="page-title"><?php the_title(); ?></h1>
+									<h2 class="page-title">gallery</h2>
+									<h1 class="gallery-title"><?php the_title(); ?></h1>
 
 								</header> <?php // end article header ?>
 
