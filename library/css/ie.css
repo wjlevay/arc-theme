@@ -732,7 +732,7 @@ POSTS & CONTENT STYLES
 .page-template-page-gallery-landing-php #content article:last-of-type {
   border: 0;
 }
-.page-galleries #content article {
+.page-template-page-gallery-php #content article {
   border-bottom: 0;
 }
 /*********************

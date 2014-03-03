@@ -1126,10 +1126,10 @@ and more scalable.
 .page-template-page-gallery-landing-php #gallery-content h1 a {
   color: #64e92b;
 }
-.page-galleries #content article {
+.page-template-page-gallery-php #content article {
   border-bottom: 1px black dotted;
 }
-.page-galleries .ngg-galleryoverview {
+.page-template-page-gallery-php .ngg-galleryoverview {
   border-top: 1px black dotted;
   padding-top: 2em;
 }
@@ -2566,7 +2566,7 @@ you can add resource intensive styles.
   .page-template-page-gallery-landing-php #content article:last-of-type {
     border: 0;
   }
-  .page-galleries #content article {
+  .page-template-page-gallery-php #content article {
     border-bottom: 0;
   }
   /*********************
