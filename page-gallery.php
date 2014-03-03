@@ -20,8 +20,7 @@ Template Name: Gallery Page
 
 									<?php if (function_exists('arc_custom_breadcrumbs')) arc_custom_breadcrumbs(); ?>
 
-									<h2 class="page-title">gallery</h2>
-									<h1 class="gallery-title"><?php the_title(); ?></h1>
+									<h1 class="page-title">gallery: <?php the_title(); ?></h1>
 
 								</header> <?php // end article header ?>
 

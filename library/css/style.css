@@ -634,7 +634,7 @@ USAGE: .border-radius(4px);
 
 */
 /*********************
-TRANISTION
+TRANSITION
 *********************/
 /* .transition(all,2s); */
 /*********************
@@ -941,11 +941,7 @@ h1,
 .page-template-page-gallery-landing-php h1 {
   color: #64e92b;
 }
-.page-template-page-gallery-php h1.gallery-title {
-  margin: 0;
-  font-size: 1.5em;
-}
-.page-template-page-gallery-php h2.page-title {
+.page-template-page-gallery-php h1.page-title {
   color: #64e92b;
 }
 .page-catalog h1,
@@ -984,6 +980,26 @@ h5,
   line-height: 2.09em;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+h2.news,
+.archive-title.h2 {
+  color: #21d1e7;
+  font-size: 1.5em;
+  font-weight: 200;
+  margin-bottom: 0.5em;
+}
+h2.news a,
+.archive-title.h2 a {
+  color: #21d1e7;
+}
+h2.news a:hover,
+.archive-title.h2 a:hover,
+h2.news a:focus,
+.archive-title.h2 a:focus {
+  color: #008bca;
+}
+h4.news {
+  color: #21d1e7;
 }
 #crumbs {
   margin-top: 1em;
@@ -1099,16 +1115,19 @@ and more scalable.
   padding-top: 0;
 }
 .page-template-page-gallery-landing-php #content article {
-  border-top: 1px black dotted;
+  border-bottom: 1px black dotted;
 }
-.page-template-page-gallery-landing-php #content article .post-thumbnail {
-  margin: 2em 0;
+.page-template-page-gallery-landing-php #gallery-thumb {
+  padding-top: 2em;
 }
-.page-template-page-gallery-landing-php #content article:first-of-type {
-  border: 0;
+.page-template-page-gallery-landing-php #gallery-content {
+  padding-bottom: 1.5em;
 }
-.page-template-page-gallery-landing-php #content article:first-of-type .post-thumbnail {
-  padding-top: 0;
+.page-template-page-gallery-landing-php #gallery-content h1 a {
+  color: #64e92b;
+}
+.page-galleries #content article {
+  border-bottom: 1px black dotted;
 }
 .page-galleries .ngg-galleryoverview {
   border-top: 1px black dotted;
@@ -1184,18 +1203,6 @@ and more scalable.
   border: 0;
   border-bottom: 1px black dotted;
   margin-bottom: 1.8em;
-}
-#content #inner-content h4.news {
-  color: #21d1e7;
-  font-size: 1.5em;
-  font-weight: 200;
-}
-#content #inner-content h4.news a {
-  color: #21d1e7;
-}
-#content #inner-content h4.news a:hover,
-#content #inner-content h4.news a:focus {
-  color: #008bca;
 }
 #content #inner-content .homepage-galleries h4.galleries {
   color: #64e92b;
@@ -1318,10 +1325,13 @@ and more scalable.
 .wp-caption p.wp-caption-text {
   font-size: 0.85em;
   margin: 0;
-  padding: 0 1em .5em 1em;
+  padding: 0 1em;
   color: #ffffff;
 }
 /* end .wp-caption */
+.thumbnail-caption {
+  font-size: 0.85em;
+}
 /* set background colors for captions */
 .page-about .wp-caption,
 .page-about .thumbnail-caption {
@@ -1353,6 +1363,23 @@ and more scalable.
 /* image gallery styles */
 /* end .gallery */
 /* gallery caption styles */
+/* Next Gen Gallery caption styles */
+#fancybox-title {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.25;
+}
+#fancybox-title .artist,
+#fancybox-title .metadata {
+  font-size: 0.85em;
+}
+#fancybox-title .title {
+  font-size: 1.25em;
+}
+.fancybox-title-inside {
+  text-align: left;
+  color: #000000;
+}
 .post-thumbnail {
   position: relative;
 }
@@ -1360,7 +1387,7 @@ and more scalable.
 .post-thumbnail .thumbnail-caption a {
   position: absolute;
   left: 0;
-  bottom: .35em;
+  bottom: 6px;
   padding: 0 1em;
   color: #ffffff;
 }
@@ -1374,10 +1401,16 @@ and more scalable.
 #secondary-content {
   display: none;
 }
+/* style things in the article-footer */
+.article-footer .tags {
+  color: #6d6e70;
+  font-size: 0.85em;
+}
 /******************************************************************
 09. PAGE NAVI STYLES
 ******************************************************************/
 .page-navigation,
+.post-navigation,
 .wp-prev-next {
   margin: 1.1em 0 2.2em;
 }
@@ -1401,10 +1434,9 @@ and more scalable.
 }
 .bones_page_navi li {
   float: left;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 .bones_page_navi li a {
-  padding: 3px 6px;
   display: block;
   text-decoration: none;
   position: relative;
@@ -1415,7 +1447,6 @@ and more scalable.
   text-decoration: underline;
 }
 .bones_page_navi li.bpn-current {
-  padding: 3px 6px;
   border-bottom: 2px solid #f01d4f;
   position: relative;
 }
@@ -1426,10 +1457,6 @@ and more scalable.
 .bones_page_navi li.bpn-prev-link,
 .bones_page_navi li.bpn-next-link {
   font-weight: 700;
-}
-.bones_page_navi li.bpn-prev-link a,
-.bones_page_navi li.bpn-next-link a {
-  padding: 0;
 }
 .bones_page_navi li.bpn-prev-link a:hover,
 .bones_page_navi li.bpn-next-link a:hover,
@@ -1446,6 +1473,23 @@ and more scalable.
   float: right;
 }
 /* end .wp-prev-next */
+.post-navigation {
+  margin-left: 20px;
+}
+.post-navigation .prev-post,
+.post-navigation .next-post {
+  display: inline;
+}
+.post-navigation .prev-post a,
+.post-navigation .next-post a {
+  font-weight: 700;
+}
+.post-navigation .prev-post {
+  margin-right: 10px;
+}
+.post-navigation .next-post {
+  margin-left: 10px;
+}
 /******************************************************************
 10. COMMENT STYLES
 ******************************************************************/
@@ -1645,7 +1689,8 @@ and more scalable.
   display: none;
 }
 .sidebar .widget {
-  max-width: 220px;
+  /* max-width: 220px; */
+
 }
 .sidebar .widget .widget-text p {
   margin-top: 0;
@@ -1853,7 +1898,6 @@ and more scalable.
 #galleries .widget ul {
   margin-top: 1em;
   padding-top: 1em;
-  border-top: 1px black dotted;
 }
 #galleries .widget ul li {
   padding-left: .5em;
@@ -1868,11 +1912,11 @@ and more scalable.
 #catalog .widget .post-thumbnail .thumbnail-caption {
   background-color: #93bf36;
 }
+#support .widget {
+  margin-top: 1.5em;
+}
 #support .widget .widgettitle {
   color: #9f111e;
-}
-#support .widget img {
-  margin-top: 1.5em;
 }
 #support .widget .post-thumbnail .thumbnail-caption {
   background-color: #9f111e;
@@ -1891,6 +1935,7 @@ and more scalable.
 *********************/
 .footer {
   clear: both;
+  margin-top: 1em;
 }
 .footer #inner-footer {
   border-top: 1px dotted #000000;
@@ -2512,12 +2557,21 @@ you can add resource intensive styles.
   #secondary-content .author-info {
     color: #000000;
   }
+  .page-template-page-gallery-landing-php #gallery-thumb {
+    padding: 2em 0;
+  }
+  .page-template-page-gallery-landing-php #gallery-content {
+    padding: 1.5em 0;
+  }
+  .page-template-page-gallery-landing-php #content article:last-of-type {
+    border: 0;
+  }
+  .page-galleries #content article {
+    border-bottom: 0;
+  }
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  .page-template-page-support-php .sidebar {
-    margin-top: 5.333em;
-  }
   .sidebar .widget.hide {
     display: block;
   }
@@ -2532,6 +2586,9 @@ you can add resource intensive styles.
   .widget ul li ul {
     margin-top: 0.75em;
     padding-left: 1em;
+  }
+  #galleries .widget ul {
+    border-top: 1px black dotted;
   }
   /* links widget */
   /* meta widget */

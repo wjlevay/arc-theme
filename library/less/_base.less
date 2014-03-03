@@ -179,11 +179,7 @@ h1, .h1 {
 	h1 {color: @galleries;}
 }
 .page-template-page-gallery-php {
-	h1.gallery-title {
-		margin: 0;
-		font-size: 1.5em;
-	}
-	h2.page-title {
+	h1.page-title {
 		color: @galleries;
 	}
 }
@@ -218,6 +214,20 @@ h5, .h5 {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
+
+h2.news, .archive-title.h2 {
+	color: @news;
+	font-size: 1.5em;
+	font-weight: 200;
+	margin-bottom: 0.5em;
+
+	a {
+		color: @news;
+		&:hover, &:focus {color: @links;}
+	}
+}
+
+h4.news {color: @news;}
 
 #crumbs {
 	a {color: @gray;
@@ -393,17 +403,26 @@ and more scalable.
 
 .page-template-page-gallery-landing-php {
 	#content article {
-		border-top: 1px black dotted;
-		.post-thumbnail {margin: 2em 0;}
+		border-bottom: 1px black dotted;
+	}
 
-		&:first-of-type {
-			border: 0;
-			.post-thumbnail {padding-top: 0;}
+	#gallery-thumb {
+		padding-top: 2em;
+	}
+
+	#gallery-content {
+		padding-bottom: 1.5em;
+
+		h1 {
+			a {
+				color: @galleries;
+			}
 		}
 	}
 }
 
 .page-galleries {
+	#content article {border-bottom: 1px black dotted;}
 	.ngg-galleryoverview {
 		border-top: 1px black dotted;
 		padding-top: 2em;
@@ -481,16 +500,7 @@ and more scalable.
 	}
 
 	#inner-content {
-		h4.news {
-			color: @news;
-			font-size: 1.5em;
-			font-weight: 200;
 
-			a {
-				color: @news;
-				&:hover, &:focus {color: @links;}
-			}
-		}
 		.homepage-galleries {
 			h4.galleries {
 				color: @galleries;
@@ -664,11 +674,13 @@ and more scalable.
 			p.wp-caption-text {
 				font-size: 0.85em;
 				margin: 0;
-				padding: 0 1em .5em 1em;
+				padding: 0 1em;
 				color: @white;
 			}
 
 		} /* end .wp-caption */
+
+		.thumbnail-caption {font-size: 0.85em;}
 
 		/* set background colors for captions */
 		.page-about {
@@ -722,13 +734,29 @@ and more scalable.
 		.size-medium {}
 		.size-thumbnail {}
 
+		/* Next Gen Gallery caption styles */
+		#fancybox-title {
+			font-family: inherit;
+			font-size: inherit;
+			line-height: 1.25;
+
+			.artist, .metadata {font-size: 0.85em;}
+
+			.title {font-size: 1.25em;}
+		}
+
+		.fancybox-title-inside {
+			text-align: left;
+			color: @black;
+		}
+
 	.post-thumbnail {
 		position: relative;
 
 		.thumbnail-caption, .thumbnail-caption a {
 			position: absolute;
 			left: 0;
-			bottom: .35em;
+			bottom: 6px;
 			padding: 0 1em;
 			color: @white;
 		}
@@ -748,11 +776,20 @@ and more scalable.
 
 	#secondary-content {display: none;}
 
+	/* style things in the article-footer */
+	.article-footer {
+		.tags {
+			color: @gray;
+			font-size: 0.85em;
+		}
+	}
+
 /******************************************************************
 09. PAGE NAVI STYLES
 ******************************************************************/
 
 .page-navigation,
+.post-navigation,
 .wp-prev-next {
 	margin: 1.1em 0 2.2em;
 }
@@ -760,10 +797,9 @@ and more scalable.
 
 		li {
 			float: left;
-			margin-left: 10px;
+			margin-left: 20px;
 
 			a {
-				padding: 3px 6px;
 				display: block;
 				text-decoration: none;
 				position: relative;
@@ -779,7 +815,6 @@ and more scalable.
 
 		/* current page link */
 		li.bpn-current {
-			padding: 3px 6px;
 			border-bottom: 2px solid #f01d4f;
 			position: relative;
 
@@ -797,9 +832,7 @@ and more scalable.
 		li.bpn-next-link {
 			font-weight: 700;
 
-			a {
-				padding: 0;
-			}
+			a {}
 		}
 
 		/* remove the bg on end links */
@@ -858,6 +891,24 @@ and more scalable.
 		}
 
 	} /* end .wp-prev-next */
+
+.post-navigation {
+	margin-left: 20px;
+
+	.prev-post,
+	.next-post {
+		display: inline;
+		a {
+			font-weight: 700;
+		}
+	}
+	.prev-post {
+		margin-right: 10px;
+	}
+	.next-post {
+		margin-left: 10px;
+	}
+}
 
 /******************************************************************
 10. COMMENT STYLES
@@ -1141,7 +1192,7 @@ and more scalable.
 
 	.widget {
 
-		max-width: 220px;
+		/* max-width: 220px; */
 		.widget-text {
 			p {margin-top: 0;}
 		}
@@ -1349,7 +1400,6 @@ and more scalable.
 	ul {
 		margin-top: 1em;
 		padding-top: 1em;
-		border-top: 1px black dotted;
 
 		li {
 			padding-left: .5em;
@@ -1369,8 +1419,8 @@ and more scalable.
 }
 
 #support .widget {
+	margin-top: 1.5em;
 	.widgettitle {color: @support;}
-	img {margin-top: 1.5em;}
 	.post-thumbnail {
 		.thumbnail-caption {
 			background-color: @support;
@@ -1394,6 +1444,7 @@ and more scalable.
 
 .footer {
 	clear: both;
+	margin-top: 1em;
 	#inner-footer {
 		border-top: 1px dotted @black;
 		font-size: .75em;

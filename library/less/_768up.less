@@ -224,15 +224,30 @@ POSTS & CONTENT STYLES
 	}
 }
 
+.page-template-page-gallery-landing-php {
+
+	#gallery-thumb {
+		padding: 2em 0;
+	}
+
+	#gallery-content {
+		padding: 1.5em 0;
+	}
+
+	#content article {
+		&:last-of-type {
+			border: 0;
+		}
+	}
+}
+
+.page-galleries {
+	#content article {border-bottom: 0;}
+}
+
 /*********************
 SIDEBARS & ASIDES
 *********************/
-
-.page-template-page-support-php {
-	.sidebar {
-		margin-top: 5.333em;
-	}
-}
 
 .sidebar {
 	.widget.hide {display: block;}
@@ -262,6 +277,7 @@ SIDEBARS & ASIDES
 		}
 	}
 
+#galleries .widget ul {border-top: 1px black dotted;}
 
 	/* links widget */
 	.widget_links {}

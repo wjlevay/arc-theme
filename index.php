@@ -6,7 +6,7 @@
 
 					<div id="main" class="eightcol first clearfix" role="main">
 
-						<h4 class="news">ARChive news</h4>
+						<h2 class="news">ARChive news</h2>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -36,7 +36,7 @@
 							</section> <?php // end article section ?>
 
 							<footer class="article-footer">
-								<p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '' ); ?></p>
+								<p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Read more posts about:', 'bonestheme' ) . '</span> ', ', ', '' ); ?></p>
 
 							</footer> <?php // end article footer ?>
 

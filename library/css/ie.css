@@ -154,7 +154,7 @@ USAGE: .border-radius(4px);
 
 */
 /*********************
-TRANISTION
+TRANSITION
 *********************/
 /* .transition(all,2s); */
 /*********************
@@ -723,12 +723,21 @@ POSTS & CONTENT STYLES
 #secondary-content .author-info {
   color: #000000;
 }
+.page-template-page-gallery-landing-php #gallery-thumb {
+  padding: 2em 0;
+}
+.page-template-page-gallery-landing-php #gallery-content {
+  padding: 1.5em 0;
+}
+.page-template-page-gallery-landing-php #content article:last-of-type {
+  border: 0;
+}
+.page-galleries #content article {
+  border-bottom: 0;
+}
 /*********************
 SIDEBARS & ASIDES
 *********************/
-.page-template-page-support-php .sidebar {
-  margin-top: 5.333em;
-}
 .sidebar .widget.hide {
   display: block;
 }
@@ -743,6 +752,9 @@ SIDEBARS & ASIDES
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
+}
+#galleries .widget ul {
+  border-top: 1px black dotted;
 }
 /* links widget */
 /* meta widget */

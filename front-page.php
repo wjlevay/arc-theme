@@ -58,7 +58,13 @@
 
 									<?php // check for featured image and display with a read more link in the caption space
 									if ( '' != get_the_post_thumbnail() ) { ?>
-									<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'bones-thumb-220' ); ?><span class="thumbnail-caption">view more <?php the_title(); ?> &gt;&gt;</span></a></div>
+									<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'bones-thumb-220' ); ?>
+										<span class="thumbnail-caption">view more <?php // check for a short_title custom field value and display it
+											$short_title = get_post_meta($post->ID, 'short_title', true);
+											if ( '' != $short_title) { echo $short_title; }
+											else { the_title(); } ?> &gt;&gt;
+										</span></a>
+									</div>
 									<?php } else {
 									echo '';
 									} 
