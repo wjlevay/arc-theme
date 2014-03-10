@@ -4,7 +4,7 @@
 
 				<div id="inner-content" class="wrap clearfix">
 
-					<div id="main" class="eightcol first clearfix" role="main">
+					<div id="main" class="ninecol first clearfix" role="main">
 
 						<h2 class="news"><a href="<?php echo home_url(); ?>/news" title="Go back to the main news page">ARChive news</a></h2>
 

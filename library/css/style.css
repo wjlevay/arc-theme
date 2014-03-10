@@ -1495,8 +1495,23 @@ and more scalable.
 ******************************************************************/
 /* h3 comment title */
 #comments {
+  font-weight: 600;
+  display: inline-block;
   /* number of comments span */
 
+}
+#toggle-comments-container {
+  display: inline-block;
+}
+#toggle-comments-container a,
+#toggle-comments-container a:hover,
+#toggle-comments-container a:focus {
+  font-weight: 200;
+  color: #6d6e70;
+}
+.comments hr {
+  margin-bottom: 0;
+  padding: 0;
 }
 .commentlist {
   /* general comment classes */
@@ -1521,7 +1536,7 @@ and more scalable.
   clear: both;
   overflow: hidden;
   list-style-type: none;
-  margin-bottom: 1.5em;
+  margin-bottom: 3em;
   padding: 0.7335em 10px;
   /* end .commentlist li ul.children */
 
@@ -1549,24 +1564,27 @@ and more scalable.
   margin-top: 0;
   padding-bottom: 0;
 }
-.commentlist .odd {
-  background: #eee;
+.commentlist li.depth-2 {
+  margin-left: 2.5em;
 }
-.commentlist .even {
-  background: #fefefe;
+.commentlist li.depth-3 {
+  margin-left: 5em;
+}
+.commentlist li.depth-4 {
+  margin-left: 7.5em;
+}
+.commentlist li.depth-5 {
+  margin-left: 10em;
 }
 .commentlist .vcard {
-  margin-left: 50px;
+  margin-left: 80px;
 }
 .commentlist .vcard cite.fn {
   font-weight: 700;
   font-style: normal;
 }
-.commentlist .vcard time {
-  float: right;
-}
 .commentlist .vcard time a {
-  color: #999;
+  color: #6d6e70;
   text-decoration: none;
 }
 .commentlist .vcard time a:hover {
@@ -1574,33 +1592,19 @@ and more scalable.
 }
 .commentlist .vcard img.avatar {
   position: absolute;
-  left: 10px;
-  padding: 2px;
-  border: 1px solid #cecece;
-  background: #fff;
+  left: 0;
 }
 .commentlist .comment_content {
-  margin-left: 50px;
+  margin-left: 80px;
 }
 .commentlist .comment_content p {
-  margin: 0.7335em 0 1.5em;
+  margin: 0;
   font-size: 1em;
   line-height: 1.5em;
 }
 .commentlist .comment-reply-link {
-  text-decoration: none;
-  float: right;
-  background: #4598bb;
-  padding: 3px 5px;
-  color: #fff;
-  opacity: 0.65;
-  margin-bottom: 10px;
-  font-weight: 700;
-  font-size: 0.9em;
-}
-.commentlist .comment-reply-link:hover,
-.commentlist .comment-reply-link:focus {
-  opacity: 1;
+  color: #6d6e70;
+  margin-left: 80px;
 }
 /* end .commentlist */
 /******************************************************************
@@ -1665,7 +1669,7 @@ and more scalable.
 /* comment submit button */
 /* comment form title */
 #comment-form-title {
-  margin: 0 0 1.1em;
+  margin: 0;
 }
 /* cancel comment reply link */
 /* logged in comments */
