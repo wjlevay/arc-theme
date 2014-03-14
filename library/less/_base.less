@@ -39,7 +39,7 @@ html, body {
 	/* height: 100%; */
 }
 body {
-	font-family: @sans-serif;
+	.amplitudelight;
 	font-size: 100%;
 	line-height: 1.5;
 	color: @black;
@@ -131,8 +131,6 @@ a, a:visited {
 	.linklist {
 		.linkgroup {border-top: 1px dotted black;}
 		.h3 {
-			color: @links;
-			font-weight: bold;
 			margin-top: 1em;
 		}
 		ul {
@@ -149,9 +147,7 @@ a, a:visited {
 ******************************************************************/
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-	font-family: @sans-serif;
 	text-rendering: optimizelegibility;
-	font-weight: 400;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -166,31 +162,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 h1, .h1 {
 	font-size: 2.5em;
 	line-height: 1.333em;
-}
-
-/* Page- and section-specific colors for headers */
-.page-about {
-	h1, h2, h3 {color: @about;}
-}
-.page-news {
-	h1, h2, h3 {color: @news;}
-}
-.page-template-page-gallery-landing-php {
-	h1 {color: @galleries;}
-}
-.page-template-page-gallery-php {
-	h1.page-title {
-		color: @galleries;
-	}
-}
-.page-catalog {
-	h1, h2, h3 {color: @catalog;}
-}
-.page-support {
-	h1, h2, h3 {color: @support;}
-}
-.page-resources {
-	h1, h2, h3 {color: @links;}
 }
 
 h2, .h2 {
@@ -215,10 +186,24 @@ h5, .h5 {
 	letter-spacing: 2px;
 }
 
-h2.news, .archive-title.h2 {
+/* Page- and section-specific colors for headers */
+.page-about {
+	h1, .h1, h2, .h2, h3, .h3 {
+		color: @about;
+	}
+}
+
+.page-news {
+	h1, .h1, h2, .h2, h3, .h3, h4.news {
+		.amplitudewidebold;
+		color: @news;
+	}
+}
+
+.news.h2, .archive-title.h2 {
+	.amplitudewidebold;
 	color: @news;
 	font-size: 1.5em;
-	font-weight: 200;
 	margin-bottom: 0.5em;
 
 	a {
@@ -227,14 +212,38 @@ h2.news, .archive-title.h2 {
 	}
 }
 
-h4.news {color: @news;}
-
-#crumbs {
-	a {color: @gray;
-		&:hover, &:focus {color: @gray-hover;}
+.page-template-page-gallery-landing-php {
+	h1, .h1, h2, .h2, h3, .h3 {
+		.amplitudemedium;
+		color: @galleries;
 	}
+}
 
-	margin-top: 1em;
+.page-template-page-gallery-php {
+	h1.page-title {
+		.amplitudemedium;
+		color: @galleries;
+	}
+}
+
+.page-catalog {
+	h1, .h1, h2, .h2, h3, .h3 {
+		color: @catalog;
+	}
+}
+
+.page-support {
+	h1, .h1, h2, .h2, h3, .h3 {
+		.amplitudewidebold;
+		color: @support;
+	}
+}
+
+.page-resources {
+	h1, .h1, h2, .h2, h3, .h3 {
+		.amplitudemedium;
+		color: @links;
+	}
 }
 
 /*********************
@@ -377,6 +386,9 @@ and more scalable.
 08. POSTS & CONTENT STYLES
 *********************/
 
+/* Custom Breadcrumbs */
+#crumbs {display: none;}
+
 .blog {
 	#content article {
 		border-top: 1px black dotted;
@@ -445,20 +457,6 @@ and more scalable.
 	}
 }
 
-.page-template-page-support-php {
-	.page-title {
-		color: @support;
-		font-size: 1.5em;
-		font-weight: 600;
-	}
-	h4 {
-		color: @support;
-		font-size: 1.333;
-		font-weight: 500;
-		margin-bottom: 0;
-	}
-}
-
 #content {
 	margin-top: 0;
 	a {text-decoration: none;}
@@ -503,9 +501,9 @@ and more scalable.
 
 		.homepage-galleries {
 			h4.galleries {
+				.amplitudemedium;
 				color: @galleries;
 				font-size: 1.5em;
-				font-weight: 400;
 				border-bottom: 1px black dotted;
 			}
 			.post-thumbnail {
@@ -564,7 +562,10 @@ and more scalable.
 			margin-bottom: 0;
 
 			.category {
-			a {color: @news;}
+				a {
+					.amplitudewidebold;
+					color: @news;
+				}
 			}
 
 			time {color: @gray;}
@@ -892,31 +893,13 @@ and more scalable.
 
 	} /* end .wp-prev-next */
 
-.post-navigation {
-	margin-left: 20px;
-
-	.prev-post,
-	.next-post {
-		display: inline;
-		a {
-			font-weight: 700;
-		}
-	}
-	.prev-post {
-		margin-right: 10px;
-	}
-	.next-post {
-		margin-left: 10px;
-	}
-}
-
 /******************************************************************
 10. COMMENT STYLES
 ******************************************************************/
 
 /* h3 comment title */
-#comments {
-	font-weight: 600;
+#comments, #nocomments {
+	.amplitudewidebold;
 	display: inline-block;
 
 	/* number of comments span */
@@ -928,6 +911,7 @@ and more scalable.
 
 #toggle-comments-container {
 	display: inline-block;
+	margin-left: 0.5em;
 
 		a, a:hover, a:focus {
 			font-weight: 200;
@@ -1205,6 +1189,7 @@ and more scalable.
 		/* max-width: 220px; */
 		.widget-text {
 			p {margin-top: 0;}
+			address {font-style: normal;}
 		}
 		.widgettitle {margin-bottom: 0;}
 
@@ -1241,7 +1226,10 @@ and more scalable.
 		}
 	}
 
-	.widgettitle {color: @about;}
+	.widgettitle {
+		.amplitudemedium;
+		color: @about;
+	}
 
 	.post-thumbnail {
 		margin-top: 1.5em;
@@ -1254,12 +1242,14 @@ and more scalable.
 
 #about .widget.about-block, .sidebar .about-block {
 	.widgettitle, .widget-text {
+		.amplitudemedium;
 		color: @white;
 		background-color: @about;
 		padding: 0 1em;
 	}
 	.widgettitle {padding-top: .5em;}
 	.widget-text {
+		.amplitudelight;
 		ul {padding: 0 0 .5em .5em;}
 	}
 }
@@ -1278,6 +1268,7 @@ and more scalable.
 				}
 				img {margin: 1em 0 .5em 0;}
 				.category a {
+					.amplitudewidebold;
 					color: @news;
 					font-size: 110%;
 				}
@@ -1300,6 +1291,7 @@ and more scalable.
 		max-width: 100%;
 		h4 {
 			color: @white;
+			.amplitudewidebold;
 			background-color: @news;
 			padding: 0 1em;
 		}
@@ -1320,6 +1312,7 @@ and more scalable.
 					line-height: 1.5em;
 				}
 				.category a {
+					.amplitudewidebold;
 					color: @news;
 					font-size: 110%;
 
@@ -1384,7 +1377,10 @@ and more scalable.
 			&:hover, &:focus {color: @white-hover;}
 		}
 	}
-	.widgettitle {padding-top: .5em;}
+	.widgettitle {
+		.amplitudewidebold;
+		padding-top: .5em;
+	}
 }
 
 .sidebar .news {
@@ -1401,11 +1397,17 @@ and more scalable.
 			&:hover, &:focus {color: @white-hover;}
 		}
 	}
-	.widgettitle {padding-top: .5em;}
+	.widgettitle {
+		.amplitudemedium;
+		padding-top: .5em;
+	}
 }
 
 #galleries .widget {
-	.widgettitle {color: @galleries;}
+	.widgettitle {
+		.amplitudemedium;
+		color: @galleries;
+	}
 
 	ul {
 		margin-top: 1em;
@@ -1430,7 +1432,10 @@ and more scalable.
 
 #support .widget {
 	margin-top: 1.5em;
-	.widgettitle {color: @support;}
+	.widgettitle {
+		.amplitudewidebold;
+		color: @support;
+	}
 	.post-thumbnail {
 		.thumbnail-caption {
 			background-color: @support;
@@ -1439,7 +1444,10 @@ and more scalable.
 }
 
 #resources .widget {
-	.widgettitle {color: @links;}
+	.widgettitle {
+		.amplitudemedium;
+		color: @links;
+	}
 	.post-thumbnail {
 		margin-top: 1.5em;
 		.thumbnail-caption {

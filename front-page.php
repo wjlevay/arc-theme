@@ -42,7 +42,7 @@
 
 							<div class="homepage-galleries">
 
-								<h4 class="galleries">galleries &amp; selections</h4>
+								<h4 class="galleries">galleries &amp; catalogs</h4>
 
 								<?php // Now get thumbnails and links from the featured gallery pages
 

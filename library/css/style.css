@@ -1,3 +1,4 @@
+@import url("//cloud.webtype.com/css/23e655f1-f6a1-4d24-96ec-9cc65f36b447.css");
 /******************************************************************
 Site Name:
 Author:
@@ -572,6 +573,22 @@ TYPOGRAPHY
     	font-style: normal;
 	}
 */
+/* Webtype font styles */
+.amplitudelight {
+  font-family: "Amplitude Light";
+  font-style: normal;
+  font-weight: normal;
+}
+.amplitudemedium {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
+}
+.amplitudewidebold {
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
+}
 /* 
 use the best ampersand 
 http://simplebits.com/notebook/2008/08/14/ampersands-2/
@@ -784,7 +801,9 @@ body {
 
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Amplitude Light";
+  font-style: normal;
+  font-weight: normal;
   font-size: 100%;
   line-height: 1.5;
   color: #000000;
@@ -872,8 +891,6 @@ a:visited:link {
   border-top: 1px dotted black;
 }
 .page-resources .linklist .h3 {
-  color: #008bca;
-  font-weight: bold;
   margin-top: 1em;
 }
 .page-resources .linklist ul a,
@@ -899,9 +916,7 @@ h4,
 .h4,
 h5,
 .h5 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-rendering: optimizelegibility;
-  font-weight: 400;
   /*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -927,38 +942,6 @@ h1,
   font-size: 2.5em;
   line-height: 1.333em;
 }
-/* Page- and section-specific colors for headers */
-.page-about h1,
-.page-about h2,
-.page-about h3 {
-  color: #f81a33;
-}
-.page-news h1,
-.page-news h2,
-.page-news h3 {
-  color: #21d1e7;
-}
-.page-template-page-gallery-landing-php h1 {
-  color: #64e92b;
-}
-.page-template-page-gallery-php h1.page-title {
-  color: #64e92b;
-}
-.page-catalog h1,
-.page-catalog h2,
-.page-catalog h3 {
-  color: #93bf36;
-}
-.page-support h1,
-.page-support h2,
-.page-support h3 {
-  color: #9f111e;
-}
-.page-resources h1,
-.page-resources h2,
-.page-resources h3 {
-  color: #008bca;
-}
 h2,
 .h2 {
   font-size: 1.75em;
@@ -981,35 +964,92 @@ h5,
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-h2.news,
+/* Page- and section-specific colors for headers */
+.page-about h1,
+.page-about .h1,
+.page-about h2,
+.page-about .h2,
+.page-about h3,
+.page-about .h3 {
+  color: #f81a33;
+}
+.page-news h1,
+.page-news .h1,
+.page-news h2,
+.page-news .h2,
+.page-news h3,
+.page-news .h3,
+.page-news h4.news {
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
+  color: #21d1e7;
+}
+.news.h2,
 .archive-title.h2 {
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
   color: #21d1e7;
   font-size: 1.5em;
-  font-weight: 200;
   margin-bottom: 0.5em;
 }
-h2.news a,
+.news.h2 a,
 .archive-title.h2 a {
   color: #21d1e7;
 }
-h2.news a:hover,
+.news.h2 a:hover,
 .archive-title.h2 a:hover,
-h2.news a:focus,
+.news.h2 a:focus,
 .archive-title.h2 a:focus {
   color: #008bca;
 }
-h4.news {
-  color: #21d1e7;
+.page-template-page-gallery-landing-php h1,
+.page-template-page-gallery-landing-php .h1,
+.page-template-page-gallery-landing-php h2,
+.page-template-page-gallery-landing-php .h2,
+.page-template-page-gallery-landing-php h3,
+.page-template-page-gallery-landing-php .h3 {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
+  color: #64e92b;
 }
-#crumbs {
-  margin-top: 1em;
+.page-template-page-gallery-php h1.page-title {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
+  color: #64e92b;
 }
-#crumbs a {
-  color: #6d6e70;
+.page-catalog h1,
+.page-catalog .h1,
+.page-catalog h2,
+.page-catalog .h2,
+.page-catalog h3,
+.page-catalog .h3 {
+  color: #93bf36;
 }
-#crumbs a:hover,
-#crumbs a:focus {
-  color: #565759;
+.page-support h1,
+.page-support .h1,
+.page-support h2,
+.page-support .h2,
+.page-support h3,
+.page-support .h3 {
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
+  color: #9f111e;
+}
+.page-resources h1,
+.page-resources .h1,
+.page-resources h2,
+.page-resources .h2,
+.page-resources h3,
+.page-resources .h3 {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
+  color: #008bca;
 }
 /*********************
 06. HEADER STYLES
@@ -1092,6 +1132,10 @@ and more scalable.
 /*********************
 08. POSTS & CONTENT STYLES
 *********************/
+/* Custom Breadcrumbs */
+#crumbs {
+  display: none;
+}
 .blog #content article {
   border-top: 1px black dotted;
 }
@@ -1144,17 +1188,6 @@ and more scalable.
 .archive.author .author-meta .author-info {
   color: #000000;
 }
-.page-template-page-support-php .page-title {
-  color: #9f111e;
-  font-size: 1.5em;
-  font-weight: 600;
-}
-.page-template-page-support-php h4 {
-  color: #9f111e;
-  font-size: 1.333;
-  font-weight: 500;
-  margin-bottom: 0;
-}
 #content {
   margin-top: 0;
   /* Add highlight */
@@ -1205,9 +1238,11 @@ and more scalable.
   margin-bottom: 1.8em;
 }
 #content #inner-content .homepage-galleries h4.galleries {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
   color: #64e92b;
   font-size: 1.5em;
-  font-weight: 400;
   border-bottom: 1px black dotted;
 }
 #content #inner-content .homepage-galleries .post-thumbnail {
@@ -1251,6 +1286,9 @@ and more scalable.
   margin-bottom: 0;
 }
 .post-info .category a {
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
   color: #21d1e7;
 }
 .post-info time {
@@ -1473,35 +1511,22 @@ and more scalable.
   float: right;
 }
 /* end .wp-prev-next */
-.post-navigation {
-  margin-left: 20px;
-}
-.post-navigation .prev-post,
-.post-navigation .next-post {
-  display: inline;
-}
-.post-navigation .prev-post a,
-.post-navigation .next-post a {
-  font-weight: 700;
-}
-.post-navigation .prev-post {
-  margin-right: 10px;
-}
-.post-navigation .next-post {
-  margin-left: 10px;
-}
 /******************************************************************
 10. COMMENT STYLES
 ******************************************************************/
 /* h3 comment title */
-#comments {
-  font-weight: 600;
+#comments,
+#nocomments {
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
   display: inline-block;
   /* number of comments span */
 
 }
 #toggle-comments-container {
   display: inline-block;
+  margin-left: 0.5em;
 }
 #toggle-comments-container a,
 #toggle-comments-container a:hover,
@@ -1699,6 +1724,9 @@ and more scalable.
 .sidebar .widget .widget-text p {
   margin-top: 0;
 }
+.sidebar .widget .widget-text address {
+  font-style: normal;
+}
 .sidebar .widget .widgettitle {
   margin-bottom: 0;
 }
@@ -1717,6 +1745,9 @@ and more scalable.
 }
 #about .widget .widgettitle,
 .sidebar .about .widgettitle {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
   color: #f81a33;
 }
 #about .widget .post-thumbnail,
@@ -1731,6 +1762,9 @@ and more scalable.
 .sidebar .about-block .widgettitle,
 #about .widget.about-block .widget-text,
 .sidebar .about-block .widget-text {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
   color: #ffffff;
   background-color: #f81a33;
   padding: 0 1em;
@@ -1738,6 +1772,12 @@ and more scalable.
 #about .widget.about-block .widgettitle,
 .sidebar .about-block .widgettitle {
   padding-top: .5em;
+}
+#about .widget.about-block .widget-text,
+.sidebar .about-block .widget-text {
+  font-family: "Amplitude Light";
+  font-style: normal;
+  font-weight: normal;
 }
 #about .widget.about-block .widget-text ul,
 .sidebar .about-block .widget-text ul {
@@ -1755,6 +1795,9 @@ and more scalable.
   margin: 1em 0 .5em 0;
 }
 #blogright .widget_custom_recent_entries ul li .category a {
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
   color: #21d1e7;
   font-size: 110%;
 }
@@ -1775,6 +1818,9 @@ and more scalable.
 }
 #homeright .widget_custom_recent_entries h4 {
   color: #ffffff;
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
   background-color: #21d1e7;
   padding: 0 1em;
 }
@@ -1792,6 +1838,9 @@ and more scalable.
   line-height: 1.5em;
 }
 #homeright .widget_custom_recent_entries ul li .category a {
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
   color: #21d1e7;
   font-size: 110%;
 }
@@ -1871,6 +1920,9 @@ and more scalable.
   color: #e8e8e8;
 }
 .sidebar .support .widgettitle {
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
   padding-top: .5em;
 }
 .sidebar .news .widgettitle,
@@ -1894,9 +1946,15 @@ and more scalable.
   color: #e8e8e8;
 }
 .sidebar .news .widgettitle {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
   padding-top: .5em;
 }
 #galleries .widget .widgettitle {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
   color: #64e92b;
 }
 #galleries .widget ul {
@@ -1920,12 +1978,18 @@ and more scalable.
   margin-top: 1.5em;
 }
 #support .widget .widgettitle {
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
   color: #9f111e;
 }
 #support .widget .post-thumbnail .thumbnail-caption {
   background-color: #9f111e;
 }
 #resources .widget .widgettitle {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
   color: #008bca;
 }
 #resources .widget .post-thumbnail {
@@ -2108,6 +2172,9 @@ tweeners.
   
   ******************************************************************/
   /*********************
+  LAYOUT & GRID STYLES
+  *********************/
+  /*********************
   NAVIGATION STYLES
   *********************/
   /* .menu is clearfixed inside mixins.scss */
@@ -2170,6 +2237,19 @@ tweeners.
   /*********************
   POSTS & CONTENT STYLES
   *********************/
+  /* Custom Breadcrumbs */
+  #crumbs {
+    display: block;
+    margin-top: 1em;
+  }
+  #crumbs a {
+    font-size: .85em;
+    color: #6d6e70;
+  }
+  #crumbs a:hover,
+  #crumbs a:focus {
+    color: #565759;
+  }
   /* style the gallery thumbnails on the homepage */
   /* float archive page & search results thumbnail */
   .search #content article .post-thumbnail,
@@ -2480,6 +2560,9 @@ you can add resource intensive styles.
     color: #f81a33;
   }
   .top-nav li.news a {
+    font-family: AmplitudeWide;
+    font-style: normal;
+    font-weight: bold;
     padding-left: 1.7em;
     padding-right: 1em;
     background-image: url(../images/news.png);
@@ -2491,6 +2574,9 @@ you can add resource intensive styles.
     color: #21d1e7;
   }
   .top-nav li.galleries a {
+    font-family: "Amplitude Medium";
+    font-style: normal;
+    font-weight: bold;
     padding-left: 1.7em;
     padding-right: 1em;
     background-image: url(../images/galleries.png);
@@ -2513,6 +2599,9 @@ you can add resource intensive styles.
     color: #93bf36;
   }
   .top-nav li.support a {
+    font-family: AmplitudeWide;
+    font-style: normal;
+    font-weight: bold;
     padding-left: 1.7em;
     padding-right: 1em;
     background-image: url(../images/support.png);
@@ -2524,6 +2613,9 @@ you can add resource intensive styles.
     color: #9f111e;
   }
   .top-nav li.links a {
+    font-family: "Amplitude Medium";
+    font-style: normal;
+    font-weight: bold;
     padding-left: 1.7em;
     background-image: url(../images/links.png);
     background-position: left;

@@ -6,7 +6,9 @@
 
 					<div id="main" class="ninecol first clearfix" role="main">
 
-						<h2 class="news"><a href="<?php echo home_url(); ?>/news" title="Go back to the main news page">ARChive news</a></h2>
+						<?php if (function_exists('arc_custom_breadcrumbs')) arc_custom_breadcrumbs(); ?>
+
+						<h1 class="page-title h2 news">ARChive news</h1>
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>	
 								

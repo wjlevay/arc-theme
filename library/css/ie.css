@@ -92,6 +92,22 @@ TYPOGRAPHY
     	font-style: normal;
 	}
 */
+/* Webtype font styles */
+.amplitudelight {
+  font-family: "Amplitude Light";
+  font-style: normal;
+  font-weight: normal;
+}
+.amplitudemedium {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
+}
+.amplitudewidebold {
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
+}
 /* 
 use the best ampersand 
 http://simplebits.com/notebook/2008/08/14/ampersands-2/
@@ -277,6 +293,9 @@ upon your base.less styles.
 
 ******************************************************************/
 /*********************
+LAYOUT & GRID STYLES
+*********************/
+/*********************
 NAVIGATION STYLES
 *********************/
 /* .menu is clearfixed inside mixins.scss */
@@ -339,6 +358,19 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+/* Custom Breadcrumbs */
+#crumbs {
+  display: block;
+  margin-top: 1em;
+}
+#crumbs a {
+  font-size: .85em;
+  color: #6d6e70;
+}
+#crumbs a:hover,
+#crumbs a:focus {
+  color: #565759;
+}
 /* style the gallery thumbnails on the homepage */
 /* float archive page & search results thumbnail */
 .search #content article .post-thumbnail,
@@ -642,6 +674,9 @@ NAVIGATION STYLES
   color: #f81a33;
 }
 .top-nav li.news a {
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
   padding-left: 1.7em;
   padding-right: 1em;
   background-image: url(../images/news.png);
@@ -653,6 +688,9 @@ NAVIGATION STYLES
   color: #21d1e7;
 }
 .top-nav li.galleries a {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
   padding-left: 1.7em;
   padding-right: 1em;
   background-image: url(../images/galleries.png);
@@ -675,6 +713,9 @@ NAVIGATION STYLES
   color: #93bf36;
 }
 .top-nav li.support a {
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
   padding-left: 1.7em;
   padding-right: 1em;
   background-image: url(../images/support.png);
@@ -686,6 +727,9 @@ NAVIGATION STYLES
   color: #9f111e;
 }
 .top-nav li.links a {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
   padding-left: 1.7em;
   background-image: url(../images/links.png);
   background-position: left;

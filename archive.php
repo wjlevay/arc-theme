@@ -6,6 +6,8 @@
 
 						<div id="main" class="ninecol first clearfix" role="main">
 
+							<?php if (function_exists('arc_custom_breadcrumbs')) arc_custom_breadcrumbs(); ?>
+
 							<?php if (is_category()) { ?>
 								<h1 class="archive-title h2">
 									<span><?php _e( 'posts categorized:', 'bonestheme' ); ?></span> <?php single_cat_title(); ?>

@@ -6,7 +6,9 @@
 
 					<div id="main" class="eightcol first clearfix" role="main">
 
-						<h2 class="news">ARChive news</h2>
+						<div id="crumbs"><a href="<?php echo home_url(); ?>">home</a> &raquo; <span class="current">ARChive news</span></div>
+
+						<h1 class="page-title h2 news">ARChive news</h1>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

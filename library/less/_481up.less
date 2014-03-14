@@ -15,7 +15,12 @@ upon your base.less styles.
 
 ******************************************************************/
 
+/*********************
+LAYOUT & GRID STYLES
+*********************/
 
+.wrap {
+}
 	
 /*********************
 NAVIGATION STYLES
@@ -97,6 +102,20 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+
+/* Custom Breadcrumbs */
+#crumbs {
+	display: block;
+	margin-top: 1em;
+	
+	a {
+		font-size: .85em;
+		color: @gray;
+		&:hover, &:focus {color: @gray-hover;}
+	}
+
+	.current {}
+}
 
 /* style the gallery thumbnails on the homepage */
 .homepage-galleries {
