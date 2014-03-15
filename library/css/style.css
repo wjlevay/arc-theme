@@ -1188,6 +1188,11 @@ and more scalable.
 .archive.author .author-meta .author-info {
   color: #000000;
 }
+.page-catalog iframe.database_frame {
+  width: 100%;
+  height: 800px;
+  border: 0;
+}
 #content {
   margin-top: 0;
   /* Add highlight */
@@ -2241,9 +2246,9 @@ tweeners.
   #crumbs {
     display: block;
     margin-top: 1em;
+    font-size: .85em;
   }
   #crumbs a {
-    font-size: .85em;
     color: #6d6e70;
   }
   #crumbs a:hover,
@@ -2474,7 +2479,7 @@ you can add resource intensive styles.
   
   }
   .top-nav li a {
-    font-size: 1em;
+    font-size: 1.025em;
     border-bottom: 0;
     padding: .25em;
     /*
@@ -2550,7 +2555,7 @@ you can add resource intensive styles.
   }
   .top-nav li.about a {
     padding-left: 1.7em;
-    padding-right: 1em;
+    padding-right: 1.5em;
     background-image: url(../images/about.png);
     background-position: left;
     background-repeat: no-repeat;
@@ -2564,7 +2569,7 @@ you can add resource intensive styles.
     font-style: normal;
     font-weight: bold;
     padding-left: 1.7em;
-    padding-right: 1em;
+    padding-right: 1.5em;
     background-image: url(../images/news.png);
     background-position: left;
     background-repeat: no-repeat;
@@ -2578,7 +2583,7 @@ you can add resource intensive styles.
     font-style: normal;
     font-weight: bold;
     padding-left: 1.7em;
-    padding-right: 1em;
+    padding-right: 1.5em;
     background-image: url(../images/galleries.png);
     background-position: left;
     background-repeat: no-repeat;
@@ -2589,7 +2594,7 @@ you can add resource intensive styles.
   }
   .top-nav li.catalog a {
     padding-left: 1.7em;
-    padding-right: 1em;
+    padding-right: 1.5em;
     background-image: url(../images/catalog.png);
     background-position: left;
     background-repeat: no-repeat;
@@ -2603,7 +2608,7 @@ you can add resource intensive styles.
     font-style: normal;
     font-weight: bold;
     padding-left: 1.7em;
-    padding-right: 1em;
+    padding-right: 1.5em;
     background-image: url(../images/support.png);
     background-position: left;
     background-repeat: no-repeat;
@@ -2671,6 +2676,7 @@ you can add resource intensive styles.
   .sidebar .widget.hide {
     display: block;
   }
+  /* Extra space between nav menu and top of sidebar */
   .widget {
     padding: 0;
     margin: 0;
@@ -2768,6 +2774,16 @@ you can add resource intensive styles.
   }
   .social-icons {
     margin-top: .25em;
+  }
+  /*********************
+  CONTENT STYLES
+  *********************/
+  .home #main {
+    padding-top: 3.45em;
+  }
+  /* Extra space between nav menu and top of sidebar */
+  .sidebar.threecol {
+    padding-top: 2em;
   }
   /*********************
   EXPANDING SEARCH BAR STYLES

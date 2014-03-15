@@ -362,9 +362,9 @@ POSTS & CONTENT STYLES
 #crumbs {
   display: block;
   margin-top: 1em;
+  font-size: .85em;
 }
 #crumbs a {
-  font-size: .85em;
   color: #6d6e70;
 }
 #crumbs a:hover,
@@ -588,7 +588,7 @@ NAVIGATION STYLES
 
 }
 .top-nav li a {
-  font-size: 1em;
+  font-size: 1.025em;
   border-bottom: 0;
   padding: .25em;
   /*
@@ -664,7 +664,7 @@ NAVIGATION STYLES
 }
 .top-nav li.about a {
   padding-left: 1.7em;
-  padding-right: 1em;
+  padding-right: 1.5em;
   background-image: url(../images/about.png);
   background-position: left;
   background-repeat: no-repeat;
@@ -678,7 +678,7 @@ NAVIGATION STYLES
   font-style: normal;
   font-weight: bold;
   padding-left: 1.7em;
-  padding-right: 1em;
+  padding-right: 1.5em;
   background-image: url(../images/news.png);
   background-position: left;
   background-repeat: no-repeat;
@@ -692,7 +692,7 @@ NAVIGATION STYLES
   font-style: normal;
   font-weight: bold;
   padding-left: 1.7em;
-  padding-right: 1em;
+  padding-right: 1.5em;
   background-image: url(../images/galleries.png);
   background-position: left;
   background-repeat: no-repeat;
@@ -703,7 +703,7 @@ NAVIGATION STYLES
 }
 .top-nav li.catalog a {
   padding-left: 1.7em;
-  padding-right: 1em;
+  padding-right: 1.5em;
   background-image: url(../images/catalog.png);
   background-position: left;
   background-repeat: no-repeat;
@@ -717,7 +717,7 @@ NAVIGATION STYLES
   font-style: normal;
   font-weight: bold;
   padding-left: 1.7em;
-  padding-right: 1em;
+  padding-right: 1.5em;
   background-image: url(../images/support.png);
   background-position: left;
   background-repeat: no-repeat;
@@ -785,6 +785,7 @@ SIDEBARS & ASIDES
 .sidebar .widget.hide {
   display: block;
 }
+/* Extra space between nav menu and top of sidebar */
 .widget {
   padding: 0;
   margin: 0;
@@ -874,6 +875,16 @@ NAVIGATION STYLES
 }
 .social-icons {
   margin-top: .25em;
+}
+/*********************
+CONTENT STYLES
+*********************/
+.home #main {
+  padding-top: 3.45em;
+}
+/* Extra space between nav menu and top of sidebar */
+.sidebar.threecol {
+  padding-top: 2em;
 }
 /*********************
 EXPANDING SEARCH BAR STYLES
