@@ -569,11 +569,9 @@ and more scalable.
 			font-size: 110%;
 			margin-bottom: 0;
 
-			.category {
-				a {
-					.amplitudewidebold;
-					color: @news;
-				}
+			.category, .category a {
+				.amplitudemedium;
+				color: @news;
 			}
 
 			time {color: @gray;}
@@ -788,8 +786,12 @@ and more scalable.
 	/* style things in the article-footer */
 	.article-footer {
 		.tags {
-			color: @gray;
 			font-size: 0.85em;
+
+			a {
+				color: @gray;
+				&:hover, &:focus {background-color: @highlight;}
+			}
 		}
 	}
 
@@ -1275,8 +1277,8 @@ and more scalable.
 					line-height: 1.5em;
 				}
 				img {margin: 1em 0 .5em 0;}
-				.category a {
-					.amplitudewidebold;
+				.category {
+					.amplitudemedium;
 					color: @news;
 					font-size: 110%;
 				}
@@ -1319,18 +1321,20 @@ and more scalable.
 					margin: 0;
 					line-height: 1.5em;
 				}
-				.category a {
-					.amplitudewidebold;
+				
+				.category {
+					.amplitudemedium;
 					color: @news;
 					font-size: 110%;
-
-					&:hover, &:focus {color: @links;}
 				}
+
 				.title a {
 					color: @black;
 					font-size: 130%;
+					font-weight: 400;
 					&:hover, &:focus {color: @black-hover;}
 				}
+
 				.author, .post-date {
 					color: @gray;
 					font-size: 110%;

@@ -1290,8 +1290,9 @@ and more scalable.
   font-size: 110%;
   margin-bottom: 0;
 }
+.post-info .category,
 .post-info .category a {
-  font-family: AmplitudeWide;
+  font-family: "Amplitude Medium";
   font-style: normal;
   font-weight: bold;
   color: #21d1e7;
@@ -1446,8 +1447,14 @@ and more scalable.
 }
 /* style things in the article-footer */
 .article-footer .tags {
-  color: #6d6e70;
   font-size: 0.85em;
+}
+.article-footer .tags a {
+  color: #6d6e70;
+}
+.article-footer .tags a:hover,
+.article-footer .tags a:focus {
+  background-color: #f0ffa0;
 }
 /******************************************************************
 09. PAGE NAVI STYLES
@@ -1799,8 +1806,8 @@ and more scalable.
 #blogright .widget_custom_recent_entries ul li img {
   margin: 1em 0 .5em 0;
 }
-#blogright .widget_custom_recent_entries ul li .category a {
-  font-family: AmplitudeWide;
+#blogright .widget_custom_recent_entries ul li .category {
+  font-family: "Amplitude Medium";
   font-style: normal;
   font-weight: bold;
   color: #21d1e7;
@@ -1842,20 +1849,17 @@ and more scalable.
   margin: 0;
   line-height: 1.5em;
 }
-#homeright .widget_custom_recent_entries ul li .category a {
-  font-family: AmplitudeWide;
+#homeright .widget_custom_recent_entries ul li .category {
+  font-family: "Amplitude Medium";
   font-style: normal;
   font-weight: bold;
   color: #21d1e7;
   font-size: 110%;
 }
-#homeright .widget_custom_recent_entries ul li .category a:hover,
-#homeright .widget_custom_recent_entries ul li .category a:focus {
-  color: #008bca;
-}
 #homeright .widget_custom_recent_entries ul li .title a {
   color: #000000;
   font-size: 130%;
+  font-weight: 400;
 }
 #homeright .widget_custom_recent_entries ul li .title a:hover,
 #homeright .widget_custom_recent_entries ul li .title a:focus {

@@ -6,6 +6,8 @@
 
 					<div id="main" class="twelvecol first clearfix" role="main">
 
+						<?php if (function_exists('arc_custom_breadcrumbs')) arc_custom_breadcrumbs(); ?>
+
 						<article id="post-not-found" class="hentry clearfix">
 
 							<header class="article-header">
@@ -16,7 +18,7 @@
 
 							<section class="entry-content">
 
-								<p><?php _e( 'The article you were looking for was not found, but maybe try looking again.', 'bonestheme' ); ?></p>
+								<p><?php _e( 'The page you were looking for is not here, but try looking again.', 'bonestheme' ); ?></p>
 
 							</section> <?php // end article section ?>
 

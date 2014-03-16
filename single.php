@@ -31,7 +31,7 @@
 									</section> <?php // end article section ?>
 
 									<footer class="article-footer">
-										<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Read more posts about:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
+										<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tagged:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
 
 										<?php // uncomment for post-navigation
 										/* <nav class="post-navigation">
