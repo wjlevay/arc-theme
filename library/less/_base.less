@@ -40,7 +40,7 @@ html, body {
 }
 body {
 	.amplitudelight;
-	font-size: 100%;
+	font-size: 110%;
 	line-height: 1.5;
 	color: @black;
 }
@@ -105,10 +105,15 @@ body {
 
 a, a:visited {
 	color: @link-color;
+	text-decoration: none;
 
 	/* on hover */
 	&:hover, &:focus {
-		color: @link-hover;
+		text-decoration: underline;
+
+		.wp-caption, .thumbnail-caption {
+			text-decoration: underline;
+		}
 	}
 
 	/* on click */
@@ -124,21 +129,6 @@ a, a:visited {
 		for mobile devices.
 		*/
 		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
-	}
-}
-
-.page-resources {
-	.linklist {
-		.linkgroup {border-top: 1px dotted black;}
-		.h3 {
-			margin-top: 1em;
-		}
-		ul {
-			a, a:visited {
-				color: @links-dark;
-				&:hover, &:focus {color: @links;}
-			}
-		}
 	}
 }
 
@@ -389,7 +379,7 @@ and more scalable.
 /* Custom Breadcrumbs */
 #crumbs {display: none;}
 
-.blog {
+/* .blog {
 	#content article {
 		border-top: 1px black dotted;
 		.post-thumbnail {padding-top: 2em;}
@@ -399,9 +389,9 @@ and more scalable.
 			.post-thumbnail {padding-top: 0;}
 		}
 	}
-}
+} */
 
-.search, .archive {
+.blog, .search, .archive {
 	#content article {
 		border-top: 1px black dotted;
 		padding-top: 1em;
@@ -465,9 +455,18 @@ and more scalable.
 	}
 }
 
+.page-resources {
+	.linklist {
+		.linkgroup {border-top: 1px dotted black;}
+		.h3 {
+			margin-top: 1em;
+		}
+	}
+}
+
 #content {
 	margin-top: 0;
-	a {text-decoration: none;}
+	a {}
 
 	/* Add highlight */
 	.highlight {background-color: @highlight;}
@@ -544,6 +543,7 @@ and more scalable.
 
 		.single-title {
 			font-size: 1.75em;
+			line-height: 1.25;
 			margin: 0;
 		}
 
@@ -552,7 +552,7 @@ and more scalable.
 			margin-top: 1em;
 		}
 
-		.archive-title { }
+		.archive-title {}
 
 		/* want to style individual post classes? Booya! */
 		.post-id {}         /* post by id (i.e. post-3) */
@@ -567,6 +567,7 @@ and more scalable.
 		/* post meta */
 		.post-info {
 			font-size: 110%;
+			line-height: 1;
 			margin-bottom: 0;
 
 			.category, .category a {
@@ -763,7 +764,7 @@ and more scalable.
 		.thumbnail-caption, .thumbnail-caption a {
 			position: absolute;
 			left: 0;
-			bottom: 6px;
+			bottom: 7px;
 			padding: 0 1em;
 			color: @white;
 		}
@@ -772,6 +773,12 @@ and more scalable.
 	.category-features, .category-blog {
 		.thumbnail-caption {
 			background-color: @news;
+		}
+	}
+
+	.blog, .archive {
+		.thumbnail-caption {
+			bottom: 25px;
 		}
 	}
 
@@ -812,13 +819,11 @@ and more scalable.
 
 			a {
 				display: block;
-				text-decoration: none;
 				position: relative;
 
 				&:hover,
 				&:focus {
 					color: #f01d4f;
-					text-decoration: underline;
 				}
 			}
 
@@ -1036,11 +1041,8 @@ and more scalable.
 
 			a {
 				color: @gray;
-				text-decoration: none;
 
-				&:hover {
-					text-decoration: underline;
-				}
+				&:hover {}
 
 			}
 
@@ -1358,10 +1360,8 @@ and more scalable.
 			a {
 				color: @white;
 				background-color: @catalog-dark;
-				text-decoration: none;
 				padding: 0 1em 2px 1em;
 				margin-left: -1em;
-				&:hover, &:focus {color: @white-hover;}
 			}
 		}
 		.widgettitle {
@@ -1386,10 +1386,8 @@ and more scalable.
 		a {
 			color: @white;
 			background-color: @support-dark;
-			text-decoration: none;
 			padding: 0 1em 2px 1em;
 			margin-left: -1em;
-			&:hover, &:focus {color: @white-hover;}
 		}
 	}
 	.widgettitle {
@@ -1406,10 +1404,8 @@ and more scalable.
 		a {
 			color: @white;
 			background-color: @links-dark;
-			text-decoration: none;
 			padding: 0 1em 2px 1em;
-			margin-left: -1em;
-			&:hover, &:focus {color: @white-hover;}
+			margin-left: -17px;
 		}
 	}
 	.widgettitle {
@@ -1480,8 +1476,7 @@ and more scalable.
 	margin-top: 1em;
 	#inner-footer {
 		border-top: 1px dotted @black;
-		font-size: .75em;
-		color: @gray;
+		font-size: .85em;
 
 		#footer-widgets {
 
@@ -1491,17 +1486,14 @@ and more scalable.
 
 			a {
 				color: @gray;
-				text-decoration: none;
 				&:hover,
-				&:focus {
-					color: @gray-hover;
-				}
+				&:focus {}
 			}
 
 			.widget {
 
 				li {
-					margin-top: 1.33em;
+					margin-top: 1em;
 					font-weight: bold;
 
 					.sub-menu {
@@ -1517,7 +1509,7 @@ and more scalable.
 			}
 
 			.widget_text {
-				margin-top: 1.33em;
+				margin-top: 1em;
 			}
 		}
 	}

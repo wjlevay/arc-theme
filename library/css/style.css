@@ -670,9 +670,9 @@ BUTTONS
 *********************/
 .button,
 .button:visited {
-  border: 1px solid #be0d37;
-  border-top-color: #db0f3f;
-  border-left-color: #db0f3f;
+  border: 1px solid #4c4d4e;
+  border-top-color: #5b5c5e;
+  border-left-color: #5b5c5e;
   padding: 4px 12px;
   color: #ffffff;
   display: inline-block;
@@ -691,36 +691,36 @@ BUTTONS
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  background-color: #e40f42;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f01d4f), to(#e40f42));
-  background-image: -webkit-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: -moz-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: -o-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: linear-gradient(to bottom, #f01d4f, #e40f42);
+  background-color: #606163;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#6d6e70), to(#606163));
+  background-image: -webkit-linear-gradient(top, #6d6e70, #606163);
+  background-image: -moz-linear-gradient(top, #6d6e70, #606163);
+  background-image: -o-linear-gradient(top, #6d6e70, #606163);
+  background-image: linear-gradient(to bottom, #6d6e70, #606163);
 }
 .button:hover,
 .button:visited:hover,
 .button:focus,
 .button:visited:focus {
   color: #ffffff;
-  border: 1px solid #be0d37;
-  border-top-color: #9d0a2d;
-  border-left-color: #9d0a2d;
-  background-color: #cc0e3b;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e40f42), to(#cc0e3b));
-  background-image: -webkit-linear-gradient(top, #e40f42, #cc0e3b);
-  background-image: -moz-linear-gradient(top, #e40f42, #cc0e3b);
-  background-image: -o-linear-gradient(top, #e40f42, #cc0e3b);
-  background-image: linear-gradient(to bottom, #e40f42, #cc0e3b);
+  border: 1px solid #4c4d4e;
+  border-top-color: #3b3b3c;
+  border-left-color: #3b3b3c;
+  background-color: #545556;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#606163), to(#545556));
+  background-image: -webkit-linear-gradient(top, #606163, #545556);
+  background-image: -moz-linear-gradient(top, #606163, #545556);
+  background-image: -o-linear-gradient(top, #606163, #545556);
+  background-image: linear-gradient(to bottom, #606163, #545556);
 }
 .button:active,
 .button:visited:active {
-  background-color: #f01d4f;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e40f42), to(#f01d4f));
-  background-image: -webkit-linear-gradient(top, #e40f42, #f01d4f);
-  background-image: -moz-linear-gradient(top, #e40f42, #f01d4f);
-  background-image: -o-linear-gradient(top, #e40f42, #f01d4f);
-  background-image: linear-gradient(to bottom, #e40f42, #f01d4f);
+  background-color: #6d6e70;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#606163), to(#6d6e70));
+  background-image: -webkit-linear-gradient(top, #606163, #6d6e70);
+  background-image: -moz-linear-gradient(top, #606163, #6d6e70);
+  background-image: -o-linear-gradient(top, #606163, #6d6e70);
+  background-image: linear-gradient(to bottom, #606163, #6d6e70);
 }
 .blue-button,
 .blue-button:visited {
@@ -804,7 +804,7 @@ body {
   font-family: "Amplitude Light";
   font-style: normal;
   font-weight: normal;
-  font-size: 100%;
+  font-size: 110%;
   line-height: 1.5;
   color: #000000;
 }
@@ -863,7 +863,8 @@ body {
 *********************/
 a,
 a:visited {
-  color: #f01d4f;
+  color: #6d6e70;
+  text-decoration: none;
   /* on hover */
 
   /* on click */
@@ -875,7 +876,17 @@ a:hover,
 a:visited:hover,
 a:focus,
 a:visited:focus {
-  color: #d10e3c;
+  text-decoration: underline;
+}
+a:hover .wp-caption,
+a:visited:hover .wp-caption,
+a:focus .wp-caption,
+a:visited:focus .wp-caption,
+a:hover .thumbnail-caption,
+a:visited:hover .thumbnail-caption,
+a:focus .thumbnail-caption,
+a:visited:focus .thumbnail-caption {
+  text-decoration: underline;
 }
 a:link,
 a:visited:link {
@@ -886,22 +897,6 @@ a:visited:link {
 		*/
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
-}
-.page-resources .linklist .linkgroup {
-  border-top: 1px dotted black;
-}
-.page-resources .linklist .h3 {
-  margin-top: 1em;
-}
-.page-resources .linklist ul a,
-.page-resources .linklist ul a:visited {
-  color: #20469e;
-}
-.page-resources .linklist ul a:hover,
-.page-resources .linklist ul a:visited:hover,
-.page-resources .linklist ul a:focus,
-.page-resources .linklist ul a:visited:focus {
-  color: #008bca;
 }
 /******************************************************************
 05. H1, H2, H3, H4, H5 STYLES
@@ -1136,23 +1131,24 @@ and more scalable.
 #crumbs {
   display: none;
 }
-.blog #content article {
-  border-top: 1px black dotted;
-}
-.blog #content article .post-thumbnail {
-  padding-top: 2em;
-}
-.blog #content article:first-of-type {
-  border: 0;
-}
-.blog #content article:first-of-type .post-thumbnail {
-  padding-top: 0;
-}
+/* .blog {
+	#content article {
+		border-top: 1px black dotted;
+		.post-thumbnail {padding-top: 2em;}
+
+		&:first-of-type {
+			border: 0;
+			.post-thumbnail {padding-top: 0;}
+		}
+	}
+} */
+.blog #content article,
 .search #content article,
 .archive #content article {
   border-top: 1px black dotted;
   padding-top: 1em;
 }
+.blog #content article:first-of-type,
 .search #content article:first-of-type,
 .archive #content article:first-of-type {
   border: 0;
@@ -1193,6 +1189,12 @@ and more scalable.
   height: 800px;
   border: 0;
 }
+.page-resources .linklist .linkgroup {
+  border-top: 1px dotted black;
+}
+.page-resources .linklist .h3 {
+  margin-top: 1em;
+}
 #content {
   margin-top: 0;
   /* Add highlight */
@@ -1201,9 +1203,6 @@ and more scalable.
 
   /* Make sure videos and embeds fit their containers */
 
-}
-#content a {
-  text-decoration: none;
 }
 #content .highlight {
   background-color: #f0ffa0;
@@ -1270,6 +1269,7 @@ and more scalable.
 }
 .single-title {
   font-size: 1.75em;
+  line-height: 1.25;
   margin: 0;
 }
 .page-title {
@@ -1288,6 +1288,7 @@ and more scalable.
 /* post meta */
 .post-info {
   font-size: 110%;
+  line-height: 1;
   margin-bottom: 0;
 }
 .post-info .category,
@@ -1431,13 +1432,17 @@ and more scalable.
 .post-thumbnail .thumbnail-caption a {
   position: absolute;
   left: 0;
-  bottom: 6px;
+  bottom: 7px;
   padding: 0 1em;
   color: #ffffff;
 }
 .category-features .thumbnail-caption,
 .category-blog .thumbnail-caption {
   background-color: #21d1e7;
+}
+.blog .thumbnail-caption,
+.archive .thumbnail-caption {
+  bottom: 25px;
 }
 .page-galleries .thumbnail-caption {
   background-color: #64e92b;
@@ -1488,13 +1493,11 @@ and more scalable.
 }
 .bones_page_navi li a {
   display: block;
-  text-decoration: none;
   position: relative;
 }
 .bones_page_navi li a:hover,
 .bones_page_navi li a:focus {
   color: #f01d4f;
-  text-decoration: underline;
 }
 .bones_page_navi li.bpn-current {
   border-bottom: 2px solid #f01d4f;
@@ -1622,10 +1625,6 @@ and more scalable.
 }
 .commentlist .vcard time a {
   color: #6d6e70;
-  text-decoration: none;
-}
-.commentlist .vcard time a:hover {
-  text-decoration: underline;
 }
 .commentlist .vcard img.avatar {
   position: absolute;
@@ -1889,15 +1888,8 @@ and more scalable.
 #homecatalog .widget .widget-text a {
   color: #ffffff;
   background-color: #59921b;
-  text-decoration: none;
   padding: 0 1em 2px 1em;
   margin-left: -1em;
-}
-#homecatalog .widget .widgettitle a:hover,
-#homecatalog .widget .widget-text a:hover,
-#homecatalog .widget .widgettitle a:focus,
-#homecatalog .widget .widget-text a:focus {
-  color: #e8e8e8;
 }
 #homecatalog .widget .widgettitle {
   margin-top: 0;
@@ -1922,15 +1914,8 @@ and more scalable.
 .sidebar .support .widget-text a {
   color: #ffffff;
   background-color: #700106;
-  text-decoration: none;
   padding: 0 1em 2px 1em;
   margin-left: -1em;
-}
-.sidebar .support .widgettitle a:hover,
-.sidebar .support .widget-text a:hover,
-.sidebar .support .widgettitle a:focus,
-.sidebar .support .widget-text a:focus {
-  color: #e8e8e8;
 }
 .sidebar .support .widgettitle {
   font-family: AmplitudeWide;
@@ -1948,15 +1933,8 @@ and more scalable.
 .sidebar .news .widget-text a {
   color: #ffffff;
   background-color: #20469e;
-  text-decoration: none;
   padding: 0 1em 2px 1em;
-  margin-left: -1em;
-}
-.sidebar .news .widgettitle a:hover,
-.sidebar .news .widget-text a:hover,
-.sidebar .news .widgettitle a:focus,
-.sidebar .news .widget-text a:focus {
-  color: #e8e8e8;
+  margin-left: -17px;
 }
 .sidebar .news .widgettitle {
   font-family: "Amplitude Medium";
@@ -2020,22 +1998,16 @@ and more scalable.
 }
 .footer #inner-footer {
   border-top: 1px dotted #000000;
-  font-size: .75em;
-  color: #6d6e70;
+  font-size: .85em;
 }
 .footer #inner-footer #footer-widgets address {
   font-style: normal;
 }
 .footer #inner-footer #footer-widgets a {
   color: #6d6e70;
-  text-decoration: none;
-}
-.footer #inner-footer #footer-widgets a:hover,
-.footer #inner-footer #footer-widgets a:focus {
-  color: #565759;
 }
 .footer #inner-footer #footer-widgets .widget li {
-  margin-top: 1.33em;
+  margin-top: 1em;
   font-weight: bold;
 }
 .footer #inner-footer #footer-widgets .widget li .sub-menu {
@@ -2047,7 +2019,7 @@ and more scalable.
   font-weight: normal;
 }
 .footer #inner-footer #footer-widgets .widget_text {
-  margin-top: 1.33em;
+  margin-top: 1em;
 }
 /*
 	if you checked out the link above:
@@ -2265,11 +2237,13 @@ tweeners.
   }
   /* style the gallery thumbnails on the homepage */
   /* float archive page & search results thumbnail */
+  .blog #content article .post-thumbnail,
   .search #content article .post-thumbnail,
   .archive #content article .post-thumbnail {
     float: left;
     margin-right: 2em;
-    padding-bottom: 2em;
+    padding-top: 0.333em;
+    padding-bottom: 1em;
   }
   /* entry content */
   .entry-content {
@@ -2487,7 +2461,7 @@ you can add resource intensive styles.
   
   }
   .top-nav li a {
-    font-size: 1.025em;
+    font-size: 0.9em;
     border-bottom: 0;
     padding: .25em;
     /*
@@ -2774,7 +2748,7 @@ you can add resource intensive styles.
     position: relative;
   }
   .top-nav li a {
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
   .top-nav li ul.sub-menu li a,
   .top-nav li ul.children li a {

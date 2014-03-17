@@ -63,10 +63,10 @@ http://0to255.com/
 @gray:				#6d6e70;
 @gray-hover:		darken(@gray, 9%);
 
-@bones-pink:        #f01d4f;
+@arc-gray:        	#6d6e70;
 @bones-blue:        #1990db;
 
-@link-color:        @bones-pink;
+@link-color:        @arc-gray;
 @link-hover:        darken(@link-color, 9%);
 
 /*
@@ -255,9 +255,9 @@ BUTTONS
 *********************/
 
 .button, .button:visited {
-	border: 1px solid darken(@bones-pink, 13%);
-	border-top-color: darken(@bones-pink, 7%);
-	border-left-color: darken(@bones-pink, 7%);
+	border: 1px solid darken(@arc-gray, 13%);
+	border-top-color: darken(@arc-gray, 7%);
+	border-left-color: darken(@arc-gray, 7%);
 	padding: 4px 12px;
 	color: @white;
 	display: inline-block;
@@ -270,18 +270,18 @@ BUTTONS
 	line-height: 21px;
 	.transition();
 	.border-radius(4px);
-	.css-gradient(@bones-pink,darken(@bones-pink, 5%));
+	.css-gradient(@arc-gray,darken(@arc-gray, 5%));
 
 	&:hover, &:focus {
 		color: @white;
-	  border: 1px solid darken(@bones-pink, 13%);
-	  border-top-color: darken(@bones-pink, 20%);
-	 	border-left-color: darken(@bones-pink, 20%);
-		.css-gradient(darken(@bones-pink, 5%),darken(@bones-pink, 10%));
+	  border: 1px solid darken(@arc-gray, 13%);
+	  border-top-color: darken(@arc-gray, 20%);
+	 	border-left-color: darken(@arc-gray, 20%);
+		.css-gradient(darken(@arc-gray, 5%),darken(@arc-gray, 10%));
 	}
 	
 	&:active {
-		.css-gradient(darken(@bones-pink, 5%),@bones-pink);
+		.css-gradient(darken(@arc-gray, 5%),@arc-gray);
 	}	
 }
 

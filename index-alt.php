@@ -12,13 +12,14 @@
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+						<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
 
-								<header class="article-header">
+							<header class="article-header">
 
-								<?php // check for featured image and display without caption
-								if ( '' != get_the_post_thumbnail() ) { ?>
-								<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'bones-thumb-220' ); ?><span class="thumbnail-caption"><?php the_post_thumbnail_caption(); ?></span></a></div>
+								<?php // check for featured image and display
+								$no_image = get_post_meta( $post->ID, 'no_image', true ); // check whether image should be supressed
+								if ( '' != get_the_post_thumbnail() && 'yes' != $no_image ) { ?>
+								<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); ?><span class="thumbnail-caption"><?php the_post_thumbnail_caption(); ?></span></a></div>
 								<?php } else {
 									echo '';
 								} 
@@ -32,18 +33,18 @@
 								<h1 class="entry-title single-title" itemprop="headline"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 								<p class="byline vcard"><span class="author"><?php echo get_the_author(); ?>, <?php the_author_meta( 'nickname' ); ?></p></span></p>
 
-								</header> <?php // end article header ?>
+							</header> <?php // end article header ?>
 
-								<section class="entry-content">
-										<?php the_excerpt( '<span class="read-more">' . __( 'read more &gt;&gt;', 'bonestheme' ) . '</span>' ); ?>
+							<section class="entry-content clearfix">
+									<?php the_content( '<span class="read-more">' . __( 'read more &gt;&gt;', 'bonestheme' ) . '</span>' ); ?>
+							
+							</section> <?php // end article section ?>
 
-								</section> <?php // end article section ?>
+							<footer class="article-footer">
 
-								<footer class="article-footer">
+							</footer> <?php // end article footer ?>
 
-								</footer> <?php // end article footer ?>
-
-							</article> <?php // end article ?>
+						</article> <?php // end article ?>
 
 						<?php endwhile; ?>
 

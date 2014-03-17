@@ -10,7 +10,7 @@
 
 							<?php if (is_category()) { ?>
 								<h1 class="archive-title h2">
-									<span><?php _e( 'posts categorized:', 'bonestheme' ); ?></span> <?php single_cat_title(); ?>
+									<span><?php _e( '', 'bonestheme' ); ?></span> <?php single_cat_title(); ?>
 								</h1>
 
 							<?php } elseif (is_tag()) { ?>
@@ -42,7 +42,7 @@
 
 								<?php // check for featured image and display without caption
 								if ( '' != get_the_post_thumbnail() ) { ?>
-								<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'bones-thumb-220' ); ?></a></div>
+								<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'bones-thumb-220' ); ?><span class="thumbnail-caption"><?php the_post_thumbnail_caption(); ?></span></a></div>
 								<?php } else {
 									echo '';
 								} 
@@ -100,7 +100,7 @@
 
 						<?php get_sidebar( 'blogright' ); ?>
 
-								</div> <?php // end #inner-content ?>
+					</div> <?php // end #inner-content ?>
 
 			</div> <?php // end #content ?>
 
