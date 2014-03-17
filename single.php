@@ -14,9 +14,16 @@
 								
 								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-									<div class="post-thumbnail"><?php the_post_thumbnail( 'bones-thumb-713' ); ?><span class="thumbnail-caption"><?php the_post_thumbnail_caption(); ?></span></div>
-
 									<header class="article-header">
+
+										<?php // check for featured image and display
+										$no_image = get_post_meta( $post->ID, 'no_image', true ); // check whether image should be supressed
+										if ( '' != get_the_post_thumbnail() && 'yes' != $no_image ) { ?>
+										<div class="post-thumbnail"><?php the_post_thumbnail( 'bones-thumb-713' ); ?><span class="thumbnail-caption"><?php the_post_thumbnail_caption(); ?></span></div>
+										<?php } else {
+											echo '';
+										} 
+										?>
 
 										<p class="post-info"><?php
 											printf( __( '<span class="category">%1$s</span> <time class="updated" datetime="%2$s" pubdate>%3$s</time>', 'bonestheme' ), get_the_category_list(', '), get_the_time( 'Y-m-j' ), get_the_time( get_option('date_format')) );

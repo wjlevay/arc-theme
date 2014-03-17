@@ -17,7 +17,8 @@
 							<header class="article-header">
 
 								<?php // check for featured image and display
-								if ( '' != get_the_post_thumbnail() ) { ?>
+								$no_image = get_post_meta( $post->ID, 'no_image', true ); // check whether image should be supressed
+								if ( '' != get_the_post_thumbnail() && 'yes' != $no_image ) { ?>
 								<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); ?><span class="thumbnail-caption"><?php the_post_thumbnail_caption(); ?></span></a></div>
 								<?php } else {
 									echo '';
