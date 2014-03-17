@@ -1367,14 +1367,14 @@ and more scalable.
   width: 100%;
 }
 .wp-caption p.wp-caption-text {
-  font-size: 0.85em;
+  font-size: 1em;
   margin: 0;
   padding: 0 1em;
   color: #ffffff;
 }
 /* end .wp-caption */
 .thumbnail-caption {
-  font-size: 0.85em;
+  font-size: 1em;
 }
 /* set background colors for captions */
 .page-about .wp-caption,
@@ -1881,12 +1881,16 @@ and more scalable.
 #homecatalog .widget .widget-text ul {
   padding-left: .5em;
 }
+#homecatalog .widget .widgettitle ul li a,
+#homecatalog .widget .widget-text ul li a {
+  background-color: #93bf36;
+}
 #homecatalog .widget .widgettitle a,
 #homecatalog .widget .widget-text a {
   color: #ffffff;
   background-color: #59921b;
   text-decoration: none;
-  padding: 0 1em .2em 1em;
+  padding: 0 1em 2px 1em;
   margin-left: -1em;
 }
 #homecatalog .widget .widgettitle a:hover,
@@ -1919,7 +1923,7 @@ and more scalable.
   color: #ffffff;
   background-color: #700106;
   text-decoration: none;
-  padding: 0 1em .2em 1em;
+  padding: 0 1em 2px 1em;
   margin-left: -1em;
 }
 .sidebar .support .widgettitle a:hover,
@@ -1945,7 +1949,7 @@ and more scalable.
   color: #ffffff;
   background-color: #20469e;
   text-decoration: none;
-  padding: 0 1em .2em 1em;
+  padding: 0 1em 2px 1em;
   margin-left: -1em;
 }
 .sidebar .news .widgettitle a:hover,

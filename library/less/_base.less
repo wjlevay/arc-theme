@@ -679,7 +679,7 @@ and more scalable.
 			}
 
 			p.wp-caption-text {
-				font-size: 0.85em;
+				font-size: 1em;
 				margin: 0;
 				padding: 0 1em;
 				color: @white;
@@ -687,7 +687,7 @@ and more scalable.
 
 		} /* end .wp-caption */
 
-		.thumbnail-caption {font-size: 0.85em;}
+		.thumbnail-caption {font-size: 1em;}
 
 		/* set background colors for captions */
 		.page-about {
@@ -1351,12 +1351,15 @@ and more scalable.
 			color: @white;
 			background-color: @catalog;
 			padding: 0 1em;
-			ul {padding-left: .5em;}
+			ul {
+				padding-left: .5em;
+				li a {background-color: @catalog;}
+			}
 			a {
 				color: @white;
 				background-color: @catalog-dark;
 				text-decoration: none;
-				padding: 0 1em .2em 1em;
+				padding: 0 1em 2px 1em;
 				margin-left: -1em;
 				&:hover, &:focus {color: @white-hover;}
 			}
@@ -1384,7 +1387,7 @@ and more scalable.
 			color: @white;
 			background-color: @support-dark;
 			text-decoration: none;
-			padding: 0 1em .2em 1em;
+			padding: 0 1em 2px 1em;
 			margin-left: -1em;
 			&:hover, &:focus {color: @white-hover;}
 		}
@@ -1404,7 +1407,7 @@ and more scalable.
 			color: @white;
 			background-color: @links-dark;
 			text-decoration: none;
-			padding: 0 1em .2em 1em;
+			padding: 0 1em 2px 1em;
 			margin-left: -1em;
 			&:hover, &:focus {color: @white-hover;}
 		}
