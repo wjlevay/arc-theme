@@ -44,7 +44,7 @@
 								</header> <?php // end article header ?>
 
 								<section class="entry-content">
-										<?php the_excerpt( '<span class="read-more">' . __( 'read more &gt;&gt;', 'bonestheme' ) . '</span>' ); ?>
+										<?php the_excerpt( '<span class="read-more">' . __( 'read&nbsp;more&nbsp;&gt;&gt;', 'bonestheme' ) . '</span>' ); ?>
 
 								</section> <?php // end article section ?>
 

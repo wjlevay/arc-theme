@@ -25,6 +25,7 @@ and will be used across all viewports.
 12. SIDEBARS & ASIDES
 13. FOOTER STYLES
 14. EXPANDING SEARCH BAR STYLES
+15. CATALOG TABLE STYLES
 
 ******************************************************************/
 
@@ -786,7 +787,7 @@ and more scalable.
 
 	.blog, .archive {
 		.thumbnail-caption {
-			bottom: 25px;
+			bottom: 7px;
 		}
 	}
 
@@ -1678,4 +1679,35 @@ input[type="search"].sb-search-input::-webkit-search-decoration {
 .sb-search.sb-search-open .sb-search-submit,
 .no-js .sb-search .sb-search-submit {
 	z-index: 90;
+}
+
+/*********************
+14. CATALOG TABLE STYLES
+*********************/
+.page-catalogs {
+	table {
+	    border-collapse: collapse;
+	    margin-bottom: 3em;
+	    width: 100%;
+	    background: #fff;
+	    font-size: 0.8em;
+	    line-height: 1.25;
+	}
+	td, th {
+	    padding: 0.25em;
+	    text-align: left;
+	    border: 2px solid #fff;
+	}
+	th {
+		.amplitudemedium;
+	    background-color: @white;
+	    white-space: nowrap;
+	}
+	tbody th {
+		background-color: @white;
+	}
+	tbody tr:nth-child(2n-1) {
+	    background-color: @table;
+
+	}
 }
