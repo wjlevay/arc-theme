@@ -189,9 +189,9 @@ BUTTONS
 *********************/
 .button,
 .button:visited {
-  border: 1px solid #4c4d4e;
-  border-top-color: #5b5c5e;
-  border-left-color: #5b5c5e;
+  border: 1px solid #9a9da0;
+  border-top-color: #aaacaf;
+  border-left-color: #aaacaf;
   padding: 4px 12px;
   color: #ffffff;
   display: inline-block;
@@ -210,36 +210,36 @@ BUTTONS
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  background-color: #606163;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#6d6e70), to(#606163));
-  background-image: -webkit-linear-gradient(top, #6d6e70, #606163);
-  background-image: -moz-linear-gradient(top, #6d6e70, #606163);
-  background-image: -o-linear-gradient(top, #6d6e70, #606163);
-  background-image: linear-gradient(to bottom, #6d6e70, #606163);
+  background-color: #afb1b4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#bcbec0), to(#afb1b4));
+  background-image: -webkit-linear-gradient(top, #bcbec0, #afb1b4);
+  background-image: -moz-linear-gradient(top, #bcbec0, #afb1b4);
+  background-image: -o-linear-gradient(top, #bcbec0, #afb1b4);
+  background-image: linear-gradient(to bottom, #bcbec0, #afb1b4);
 }
 .button:hover,
 .button:visited:hover,
 .button:focus,
 .button:visited:focus {
   color: #ffffff;
-  border: 1px solid #4c4d4e;
-  border-top-color: #3b3b3c;
-  border-left-color: #3b3b3c;
-  background-color: #545556;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#606163), to(#545556));
-  background-image: -webkit-linear-gradient(top, #606163, #545556);
-  background-image: -moz-linear-gradient(top, #606163, #545556);
-  background-image: -o-linear-gradient(top, #606163, #545556);
-  background-image: linear-gradient(to bottom, #606163, #545556);
+  border: 1px solid #9a9da0;
+  border-top-color: #878b8f;
+  border-left-color: #878b8f;
+  background-color: #a2a5a7;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#afb1b4), to(#a2a5a7));
+  background-image: -webkit-linear-gradient(top, #afb1b4, #a2a5a7);
+  background-image: -moz-linear-gradient(top, #afb1b4, #a2a5a7);
+  background-image: -o-linear-gradient(top, #afb1b4, #a2a5a7);
+  background-image: linear-gradient(to bottom, #afb1b4, #a2a5a7);
 }
 .button:active,
 .button:visited:active {
-  background-color: #6d6e70;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#606163), to(#6d6e70));
-  background-image: -webkit-linear-gradient(top, #606163, #6d6e70);
-  background-image: -moz-linear-gradient(top, #606163, #6d6e70);
-  background-image: -o-linear-gradient(top, #606163, #6d6e70);
-  background-image: linear-gradient(to bottom, #606163, #6d6e70);
+  background-color: #bcbec0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#afb1b4), to(#bcbec0));
+  background-image: -webkit-linear-gradient(top, #afb1b4, #bcbec0);
+  background-image: -moz-linear-gradient(top, #afb1b4, #bcbec0);
+  background-image: -o-linear-gradient(top, #afb1b4, #bcbec0);
+  background-image: linear-gradient(to bottom, #afb1b4, #bcbec0);
 }
 .blue-button,
 .blue-button:visited {
@@ -620,16 +620,16 @@ NAVIGATION STYLES
 .top-nav li ul.children .galleries {
   background-color: #64e92b;
 }
-.top-nav li ul.sub-menu .catalog,
-.top-nav li ul.children .catalog {
+.top-nav li ul.sub-menu .catalogs,
+.top-nav li ul.children .catalogs {
   background-color: #93bf36;
 }
 .top-nav li ul.sub-menu .support,
 .top-nav li ul.children .support {
   background-color: #9f111e;
 }
-.top-nav li ul.sub-menu .links,
-.top-nav li ul.children .links {
+.top-nav li ul.sub-menu .services,
+.top-nav li ul.children .services {
   background-color: #008bca;
 }
 .top-nav li ul.sub-menu li,
@@ -703,23 +703,36 @@ NAVIGATION STYLES
 .top-nav li.galleries a:focus {
   color: #64e92b;
 }
-.top-nav li.catalog a {
+.top-nav li.catalogs a {
   padding-left: 1.7em;
   padding-right: 1.5em;
-  background-image: url(../images/catalog.png);
+  background-image: url(../images/catalogs.png);
   background-position: left;
   background-repeat: no-repeat;
 }
-.top-nav li.catalog a:hover,
-.top-nav li.catalog a:focus {
+.top-nav li.catalogs a:hover,
+.top-nav li.catalogs a:focus {
   color: #93bf36;
 }
-.top-nav li.support a {
+.top-nav li.services a {
   font-family: AmplitudeWide;
   font-style: normal;
   font-weight: bold;
   padding-left: 1.7em;
   padding-right: 1.5em;
+  background-image: url(../images/services.png);
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.top-nav li.services a:hover,
+.top-nav li.services a:focus {
+  color: #008bca;
+}
+.top-nav li.support a {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
+  padding-left: 1.7em;
   background-image: url(../images/support.png);
   background-position: left;
   background-repeat: no-repeat;
@@ -727,19 +740,6 @@ NAVIGATION STYLES
 .top-nav li.support a:hover,
 .top-nav li.support a:focus {
   color: #9f111e;
-}
-.top-nav li.links a {
-  font-family: "Amplitude Medium";
-  font-style: normal;
-  font-weight: bold;
-  padding-left: 1.7em;
-  background-image: url(../images/links.png);
-  background-position: left;
-  background-repeat: no-repeat;
-}
-.top-nav li.links a:hover,
-.top-nav li.links a:focus {
-  color: #008bca;
 }
 /* end .top-nav */
 /*********************

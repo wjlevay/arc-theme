@@ -4,7 +4,7 @@
 
 				<div id="inner-content" class="wrap clearfix">
 
-					<div id="main" class="eightcol first clearfix" role="main">
+					<div id="main" class="ninecol first clearfix" role="main">
 
 						<div id="crumbs"><a href="<?php echo home_url(); ?>">home</a> &raquo; <span class="current">ARChive news</span></div>
 

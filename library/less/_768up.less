@@ -86,9 +86,9 @@ NAVIGATION STYLES
 			.about {background-color: @about;}
 			.news {background-color: @news;}
 			.galleries {background-color: @galleries;}
-			.catalog {background-color: @catalog;}
+			.catalogs {background-color: @catalogs;}
 			.support {background-color: @support;}
-			.links {background-color: @links;}
+			.services {background-color: @services;}
 
 			li {
 
@@ -166,30 +166,30 @@ NAVIGATION STYLES
 		background-repeat: no-repeat;
 		&:hover, &:focus {color: @galleries;}
 	}
-	li.catalog a {
+	li.catalogs a {
 		padding-left: 1.7em;
 		padding-right: 1.5em;
-		background-image: url(../images/catalog.png);
+		background-image: url(../images/catalogs.png);
 		background-position: left;
 		background-repeat: no-repeat;
-		&:hover, &:focus {color: @catalog;}
+		&:hover, &:focus {color: @catalogs;}
 		}
-	li.support a {
+	li.services a {
 		.amplitudewidebold;
 		padding-left: 1.7em;
 		padding-right: 1.5em;
+		background-image: url(../images/services.png);
+		background-position: left;
+		background-repeat: no-repeat;
+		&:hover, &:focus {color: @services;}
+	}
+	li.support a {
+		.amplitudemedium;
+		padding-left: 1.7em;
 		background-image: url(../images/support.png);
 		background-position: left;
 		background-repeat: no-repeat;
 		&:hover, &:focus {color: @support;}
-	}
-	li.links a {
-		.amplitudemedium;
-		padding-left: 1.7em;
-		background-image: url(../images/links.png);
-		background-position: left;
-		background-repeat: no-repeat;
-		&:hover, &:focus {color: @links;}
 	}
 
 	/* highlight current page */

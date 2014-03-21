@@ -38,11 +38,19 @@ and will be used across all viewports.
 html, body {
 	/* height: 100%; */
 }
+
 body {
 	.amplitudelight;
 	font-size: 110%;
 	line-height: 1.5;
 	color: @black;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: 'Amplitude Light', sans-serif;
 }
 
 /********************
@@ -198,7 +206,7 @@ h5, .h5 {
 
 	a {
 		color: @news;
-		&:hover, &:focus {color: @links;}
+		&:hover, &:focus {color: @services;}
 	}
 }
 
@@ -216,23 +224,23 @@ h5, .h5 {
 	}
 }
 
-.page-catalog {
+.page-catalogs {
 	h1, .h1, h2, .h2, h3, .h3 {
-		color: @catalog;
+		color: @catalogs;
 	}
 }
 
 .page-support {
 	h1, .h1, h2, .h2, h3, .h3 {
-		.amplitudewidebold;
+		.amplitudemedium;
 		color: @support;
 	}
 }
 
-.page-resources {
+.page-services {
 	h1, .h1, h2, .h2, h3, .h3 {
-		.amplitudemedium;
-		color: @links;
+		.amplitudewidebold;
+		color: @services;
 	}
 }
 
@@ -447,7 +455,7 @@ and more scalable.
 	}
 }
 
-.page-catalog {
+.page-catalogs {
 	iframe.database_frame {
 		width: 100%;
 		height: 800px;
@@ -455,7 +463,7 @@ and more scalable.
 	}
 }
 
-.page-resources {
+.page-services {
 	.linklist {
 		.linkgroup {border-top: 1px dotted black;}
 		.h3 {
@@ -704,16 +712,16 @@ and more scalable.
 			.wp-caption, .thumbnail-caption {background-color: @galleries;}
 		}
 
-		.page-catalog {
-			.wp-caption, .thumbnail-caption {background-color: @catalog;}
+		.page-catalogs {
+			.wp-caption, .thumbnail-caption {background-color: @catalogs;}
 		}
 
 		.page-support {
 			.wp-caption, .thumbnail-caption {background-color: @support;}
 		}
 
-		.page-resources {
-			.wp-caption, .thumbnail-caption {background-color: @links;}
+		.page-services {
+			.wp-caption, .thumbnail-caption {background-color: @services;}
 		} 
 		/* end .thumbnail-caption */
 
@@ -794,10 +802,15 @@ and more scalable.
 	.article-footer {
 		.tags {
 			font-size: 0.85em;
+			color: @arc-gray;
+
+			.tags-title {color: @black;}
 
 			a {
-				color: @gray;
-				&:hover, &:focus {background-color: @highlight;}
+				&:hover, &:focus {
+					text-decoration: none;
+					background-color: @highlight;
+				}
 			}
 		}
 	}
@@ -1351,15 +1364,15 @@ and more scalable.
 		.widgettitle, .widget-text {
 			max-width: 220px;
 			color: @white;
-			background-color: @catalog;
+			background-color: @catalogs;
 			padding: 0 1em;
 			ul {
 				padding-left: .5em;
-				li a {background-color: @catalog;}
+				li a {background-color: @catalogs;}
 			}
 			a {
 				color: @white;
-				background-color: @catalog-dark;
+				background-color: @catalogs-dark;
 				padding: 0 1em 2px 1em;
 				margin-left: -1em;
 			}
@@ -1391,7 +1404,7 @@ and more scalable.
 		}
 	}
 	.widgettitle {
-		.amplitudewidebold;
+		.amplitudemedium;
 		padding-top: .5em;
 	}
 }
@@ -1399,11 +1412,11 @@ and more scalable.
 .sidebar .news {
 	.widgettitle, .widget-text {
 		color: @white;
-		background-color: @links;
+		background-color: @services;
 		padding: 0 1em;
 		a {
 			color: @white;
-			background-color: @links-dark;
+			background-color: @services-dark;
 			padding: 0 1em 2px 1em;
 			margin-left: -17px;
 		}
@@ -1432,11 +1445,11 @@ and more scalable.
 }
 
 #catalog .widget {
-	.widgettitle {color: @catalog;}
+	.widgettitle {color: @catalogs;}
 	.post-thumbnail {
 		margin-top: 1.5em;
 		.thumbnail-caption {
-			background-color: @catalog;
+			background-color: @catalogs;
 		}
 	}
 }
@@ -1444,7 +1457,7 @@ and more scalable.
 #support .widget {
 	margin-top: 1.5em;
 	.widgettitle {
-		.amplitudewidebold;
+		.amplitudemedium;
 		color: @support;
 	}
 	.post-thumbnail {
@@ -1457,12 +1470,12 @@ and more scalable.
 #resources .widget {
 	.widgettitle {
 		.amplitudemedium;
-		color: @links;
+		color: @services;
 	}
 	.post-thumbnail {
 		margin-top: 1.5em;
 		.thumbnail-caption {
-			background-color: @links;
+			background-color: @services;
 		}
 	}
 }
@@ -1480,12 +1493,21 @@ and more scalable.
 
 		#footer-widgets {
 
+			.sidebar.threecol {padding-top: 1em;}
+
+			.contact .widgettitle {
+				font-size: 100%;
+				color: @black;
+				.amplitudewidebold;
+			}
+
 			address {
 				font-style: normal;
+				color: @arc-gray;
 			}
 
 			a {
-				color: @gray;
+				color: @arc-gray;
 				&:hover,
 				&:focus {}
 			}
@@ -1496,16 +1518,27 @@ and more scalable.
 					margin-top: 1em;
 					font-weight: bold;
 
+					a {color: @black;}
+
 					.sub-menu {
 						margin-top: 0;
 						padding-left: 0;
 
 						li {
 							margin-top: 0;
-							font-weight: normal;
+							.amplitudelight;
+
+							a {color: @arc-gray;}
 						}
 					}
 				}
+
+				li.about,
+				li.catalogs, {.amplitudelight;}
+				li.news,
+				li.services {.amplitudewidebold;}
+				li.galleries,
+				li.support {.amplitudemedium;}
 			}
 
 			.widget_text {

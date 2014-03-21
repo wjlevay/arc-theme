@@ -384,4 +384,24 @@ function the_post_thumbnail_caption() {
   }
 }
 
+// Set Featured Images for migrated blog posts
+// http://www.gavick.com/magazine/wordpress-quick-tip-4-automatically-set-the-first-post-image-as-a-featured-image.html
+
+function auto_featured_image() {
+    global $post;
+
+    if (!has_post_thumbnail($post->ID)) {
+        $attached_image = get_children( "post_parent=$post->ID&post_type=attachment&post_mime_type=image&numberposts=1" );
+        
+	  if ($attached_image) {
+              foreach ($attached_image as $attachment_id => $attachment) {
+                   set_post_thumbnail($post->ID, $attachment_id);
+              }
+         }
+    }
+}
+
+// Use it temporarily to generate all featured images
+// add_action('the_post', 'auto_featured_image');
+
 ?>

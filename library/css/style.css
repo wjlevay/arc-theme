@@ -466,10 +466,10 @@ to remove them if you like or add your own. If you want to update
 the normalize styles, make sure to edit from this point up.
 ******************************************************************/
 p {
-  -webkit-hyphens: auto;
-  -epub-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
+  -webkit-hyphens: manual;
+  -epub-hyphens: manual;
+  -moz-hyphens: manual;
+  hyphens: manual;
 }
 b,
 strong,
@@ -670,9 +670,9 @@ BUTTONS
 *********************/
 .button,
 .button:visited {
-  border: 1px solid #4c4d4e;
-  border-top-color: #5b5c5e;
-  border-left-color: #5b5c5e;
+  border: 1px solid #9a9da0;
+  border-top-color: #aaacaf;
+  border-left-color: #aaacaf;
   padding: 4px 12px;
   color: #ffffff;
   display: inline-block;
@@ -691,36 +691,36 @@ BUTTONS
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  background-color: #606163;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#6d6e70), to(#606163));
-  background-image: -webkit-linear-gradient(top, #6d6e70, #606163);
-  background-image: -moz-linear-gradient(top, #6d6e70, #606163);
-  background-image: -o-linear-gradient(top, #6d6e70, #606163);
-  background-image: linear-gradient(to bottom, #6d6e70, #606163);
+  background-color: #afb1b4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#bcbec0), to(#afb1b4));
+  background-image: -webkit-linear-gradient(top, #bcbec0, #afb1b4);
+  background-image: -moz-linear-gradient(top, #bcbec0, #afb1b4);
+  background-image: -o-linear-gradient(top, #bcbec0, #afb1b4);
+  background-image: linear-gradient(to bottom, #bcbec0, #afb1b4);
 }
 .button:hover,
 .button:visited:hover,
 .button:focus,
 .button:visited:focus {
   color: #ffffff;
-  border: 1px solid #4c4d4e;
-  border-top-color: #3b3b3c;
-  border-left-color: #3b3b3c;
-  background-color: #545556;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#606163), to(#545556));
-  background-image: -webkit-linear-gradient(top, #606163, #545556);
-  background-image: -moz-linear-gradient(top, #606163, #545556);
-  background-image: -o-linear-gradient(top, #606163, #545556);
-  background-image: linear-gradient(to bottom, #606163, #545556);
+  border: 1px solid #9a9da0;
+  border-top-color: #878b8f;
+  border-left-color: #878b8f;
+  background-color: #a2a5a7;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#afb1b4), to(#a2a5a7));
+  background-image: -webkit-linear-gradient(top, #afb1b4, #a2a5a7);
+  background-image: -moz-linear-gradient(top, #afb1b4, #a2a5a7);
+  background-image: -o-linear-gradient(top, #afb1b4, #a2a5a7);
+  background-image: linear-gradient(to bottom, #afb1b4, #a2a5a7);
 }
 .button:active,
 .button:visited:active {
-  background-color: #6d6e70;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#606163), to(#6d6e70));
-  background-image: -webkit-linear-gradient(top, #606163, #6d6e70);
-  background-image: -moz-linear-gradient(top, #606163, #6d6e70);
-  background-image: -o-linear-gradient(top, #606163, #6d6e70);
-  background-image: linear-gradient(to bottom, #606163, #6d6e70);
+  background-color: #bcbec0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#afb1b4), to(#bcbec0));
+  background-image: -webkit-linear-gradient(top, #afb1b4, #bcbec0);
+  background-image: -moz-linear-gradient(top, #afb1b4, #bcbec0);
+  background-image: -o-linear-gradient(top, #afb1b4, #bcbec0);
+  background-image: linear-gradient(to bottom, #afb1b4, #bcbec0);
 }
 .blue-button,
 .blue-button:visited {
@@ -808,6 +808,12 @@ body {
   line-height: 1.5;
   color: #000000;
 }
+button,
+input,
+select,
+textarea {
+  font-family: 'Amplitude Light', sans-serif;
+}
 /********************
 02. WORDPRESS BODY CLASSES
     style a page via class
@@ -863,7 +869,7 @@ body {
 *********************/
 a,
 a:visited {
-  color: #6d6e70;
+  color: #bcbec0;
   text-decoration: none;
   /* on hover */
 
@@ -1016,12 +1022,12 @@ h5,
   font-weight: bold;
   color: #64e92b;
 }
-.page-catalog h1,
-.page-catalog .h1,
-.page-catalog h2,
-.page-catalog .h2,
-.page-catalog h3,
-.page-catalog .h3 {
+.page-catalogs h1,
+.page-catalogs .h1,
+.page-catalogs h2,
+.page-catalogs .h2,
+.page-catalogs h3,
+.page-catalogs .h3 {
   color: #93bf36;
 }
 .page-support h1,
@@ -1030,18 +1036,18 @@ h5,
 .page-support .h2,
 .page-support h3,
 .page-support .h3 {
-  font-family: AmplitudeWide;
+  font-family: "Amplitude Medium";
   font-style: normal;
   font-weight: bold;
   color: #9f111e;
 }
-.page-resources h1,
-.page-resources .h1,
-.page-resources h2,
-.page-resources .h2,
-.page-resources h3,
-.page-resources .h3 {
-  font-family: "Amplitude Medium";
+.page-services h1,
+.page-services .h1,
+.page-services h2,
+.page-services .h2,
+.page-services h3,
+.page-services .h3 {
+  font-family: AmplitudeWide;
   font-style: normal;
   font-weight: bold;
   color: #008bca;
@@ -1184,15 +1190,15 @@ and more scalable.
 .archive.author .author-meta .author-info {
   color: #000000;
 }
-.page-catalog iframe.database_frame {
+.page-catalogs iframe.database_frame {
   width: 100%;
   height: 800px;
   border: 0;
 }
-.page-resources .linklist .linkgroup {
+.page-services .linklist .linkgroup {
   border-top: 1px dotted black;
 }
-.page-resources .linklist .h3 {
+.page-services .linklist .h3 {
   margin-top: 1em;
 }
 #content {
@@ -1392,16 +1398,16 @@ and more scalable.
 .page-galleries .thumbnail-caption {
   background-color: #64e92b;
 }
-.page-catalog .wp-caption,
-.page-catalog .thumbnail-caption {
+.page-catalogs .wp-caption,
+.page-catalogs .thumbnail-caption {
   background-color: #93bf36;
 }
 .page-support .wp-caption,
 .page-support .thumbnail-caption {
   background-color: #9f111e;
 }
-.page-resources .wp-caption,
-.page-resources .thumbnail-caption {
+.page-services .wp-caption,
+.page-services .thumbnail-caption {
   background-color: #008bca;
 }
 /* end .thumbnail-caption */
@@ -1453,12 +1459,14 @@ and more scalable.
 /* style things in the article-footer */
 .article-footer .tags {
   font-size: 0.85em;
+  color: #bcbec0;
 }
-.article-footer .tags a {
-  color: #6d6e70;
+.article-footer .tags .tags-title {
+  color: #000000;
 }
 .article-footer .tags a:hover,
 .article-footer .tags a:focus {
+  text-decoration: none;
   background-color: #f0ffa0;
 }
 /******************************************************************
@@ -1918,7 +1926,7 @@ and more scalable.
   margin-left: -1em;
 }
 .sidebar .support .widgettitle {
-  font-family: AmplitudeWide;
+  font-family: "Amplitude Medium";
   font-style: normal;
   font-weight: bold;
   padding-top: .5em;
@@ -1969,7 +1977,7 @@ and more scalable.
   margin-top: 1.5em;
 }
 #support .widget .widgettitle {
-  font-family: AmplitudeWide;
+  font-family: "Amplitude Medium";
   font-style: normal;
   font-weight: bold;
   color: #9f111e;
@@ -2000,15 +2008,29 @@ and more scalable.
   border-top: 1px dotted #000000;
   font-size: .85em;
 }
+.footer #inner-footer #footer-widgets .sidebar.threecol {
+  padding-top: 1em;
+}
+.footer #inner-footer #footer-widgets .contact .widgettitle {
+  font-size: 100%;
+  color: #000000;
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
+}
 .footer #inner-footer #footer-widgets address {
   font-style: normal;
+  color: #bcbec0;
 }
 .footer #inner-footer #footer-widgets a {
-  color: #6d6e70;
+  color: #bcbec0;
 }
 .footer #inner-footer #footer-widgets .widget li {
   margin-top: 1em;
   font-weight: bold;
+}
+.footer #inner-footer #footer-widgets .widget li a {
+  color: #000000;
 }
 .footer #inner-footer #footer-widgets .widget li .sub-menu {
   margin-top: 0;
@@ -2016,7 +2038,30 @@ and more scalable.
 }
 .footer #inner-footer #footer-widgets .widget li .sub-menu li {
   margin-top: 0;
+  font-family: "Amplitude Light";
+  font-style: normal;
   font-weight: normal;
+}
+.footer #inner-footer #footer-widgets .widget li .sub-menu li a {
+  color: #bcbec0;
+}
+.footer #inner-footer #footer-widgets .widget li.about,
+.footer #inner-footer #footer-widgets .widget li.catalogs {
+  font-family: "Amplitude Light";
+  font-style: normal;
+  font-weight: normal;
+}
+.footer #inner-footer #footer-widgets .widget li.news,
+.footer #inner-footer #footer-widgets .widget li.services {
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
+}
+.footer #inner-footer #footer-widgets .widget li.galleries,
+.footer #inner-footer #footer-widgets .widget li.support {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
 }
 .footer #inner-footer #footer-widgets .widget_text {
   margin-top: 1em;
@@ -2491,16 +2536,16 @@ you can add resource intensive styles.
   .top-nav li ul.children .galleries {
     background-color: #64e92b;
   }
-  .top-nav li ul.sub-menu .catalog,
-  .top-nav li ul.children .catalog {
+  .top-nav li ul.sub-menu .catalogs,
+  .top-nav li ul.children .catalogs {
     background-color: #93bf36;
   }
   .top-nav li ul.sub-menu .support,
   .top-nav li ul.children .support {
     background-color: #9f111e;
   }
-  .top-nav li ul.sub-menu .links,
-  .top-nav li ul.children .links {
+  .top-nav li ul.sub-menu .services,
+  .top-nav li ul.children .services {
     background-color: #008bca;
   }
   .top-nav li ul.sub-menu li,
@@ -2574,23 +2619,36 @@ you can add resource intensive styles.
   .top-nav li.galleries a:focus {
     color: #64e92b;
   }
-  .top-nav li.catalog a {
+  .top-nav li.catalogs a {
     padding-left: 1.7em;
     padding-right: 1.5em;
-    background-image: url(../images/catalog.png);
+    background-image: url(../images/catalogs.png);
     background-position: left;
     background-repeat: no-repeat;
   }
-  .top-nav li.catalog a:hover,
-  .top-nav li.catalog a:focus {
+  .top-nav li.catalogs a:hover,
+  .top-nav li.catalogs a:focus {
     color: #93bf36;
   }
-  .top-nav li.support a {
+  .top-nav li.services a {
     font-family: AmplitudeWide;
     font-style: normal;
     font-weight: bold;
     padding-left: 1.7em;
     padding-right: 1.5em;
+    background-image: url(../images/services.png);
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+  .top-nav li.services a:hover,
+  .top-nav li.services a:focus {
+    color: #008bca;
+  }
+  .top-nav li.support a {
+    font-family: "Amplitude Medium";
+    font-style: normal;
+    font-weight: bold;
+    padding-left: 1.7em;
     background-image: url(../images/support.png);
     background-position: left;
     background-repeat: no-repeat;
@@ -2598,19 +2656,6 @@ you can add resource intensive styles.
   .top-nav li.support a:hover,
   .top-nav li.support a:focus {
     color: #9f111e;
-  }
-  .top-nav li.links a {
-    font-family: "Amplitude Medium";
-    font-style: normal;
-    font-weight: bold;
-    padding-left: 1.7em;
-    background-image: url(../images/links.png);
-    background-position: left;
-    background-repeat: no-repeat;
-  }
-  .top-nav li.links a:hover,
-  .top-nav li.links a:focus {
-    color: #008bca;
   }
   /* end .top-nav */
   /*********************
@@ -2850,8 +2895,8 @@ query for retina AND a certain size if you want. Go Nuts.
     background-position: left;
     background-repeat: no-repeat;
   }
-  .nav li.links a {
-    background: url(../images/links@2x.png);
+  .nav li.services a {
+    background: url(../images/services@2x.png);
     background-size: 25px 25px;
     background-position: left;
     background-repeat: no-repeat;
@@ -2862,8 +2907,8 @@ query for retina AND a certain size if you want. Go Nuts.
     background-position: left;
     background-repeat: no-repeat;
   }
-  .nav li.catalog a {
-    background-image: url(../images/catalog@2x.png);
+  .nav li.catalogs a {
+    background-image: url(../images/catalogs@2x.png);
     background-size: 25px 25px;
     background-position: left;
     background-repeat: no-repeat;
