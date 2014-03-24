@@ -1400,8 +1400,8 @@ and more scalable.
 		a {
 			color: @white;
 			background-color: @support-dark;
-			padding: 0 1em 2px 1em;
-			margin-left: -1em;
+			padding: 0 16px 2px 16px;
+			margin-left: -16px;
 		}
 	}
 	.widgettitle {
@@ -1428,7 +1428,7 @@ and more scalable.
 	}
 }
 
-#galleries .widget {
+#galleries .widget, .sidebar .galleries {
 	.widgettitle {
 		.amplitudemedium;
 		color: @galleries;
@@ -1580,105 +1580,107 @@ and more scalable.
 
 /* This is for a static, open search box. See _481up.less for expanding search bar styles */
 
-.sb-search {
-	position: relative;
-	min-width: 40px;
-	height: 40px;
-	float: right;
-}
+#site-navigation {
+	.sb-search {
+		position: relative;
+		min-width: 40px;
+		height: 40px;
+		float: right;
+	}
 
-.sb-search-input {
-	position: absolute;
-	top: 0;
-	right: 0;
-	border: none;
-	outline: none;
-	background: @highlight;
-	width: 80%;
-	height: 30px;
-	margin: 0;
-	z-index: 10;
-	font-size: 16px;
-	color: @gray;
-}
+	.sb-search-input {
+		position: absolute;
+		top: 0;
+		right: 0;
+		border: none;
+		outline: none;
+		background: @highlight;
+		width: 80%;
+		height: 30px;
+		margin: 0;
+		z-index: 10;
+		font-size: 16px;
+		color: @gray;
+	}
 
-input[type="search"].sb-search-input {
-    -webkit-appearance: none;
-    -webkit-border-radius: 0px;
-}
+	input[type="search"].sb-search-input {
+	    -webkit-appearance: none;
+	    -webkit-border-radius: 0px;
+	}
 
-input[type="search"].sb-search-input::-webkit-search-cancel-button,
-input[type="search"].sb-search-input::-webkit-search-decoration {
-	padding-left: 10px;
-}
+	input[type="search"].sb-search-input::-webkit-search-cancel-button,
+	input[type="search"].sb-search-input::-webkit-search-decoration {
+		padding-left: 10px;
+	}
 
-.sb-search-input::-webkit-input-placeholder {
-	color: @gray;
-}
+	.sb-search-input::-webkit-input-placeholder {
+		color: @gray;
+	}
 
-.sb-search-input:-moz-placeholder {
-	color: @gray;
-}
+	.sb-search-input:-moz-placeholder {
+		color: @gray;
+	}
 
-.sb-search-input::-moz-placeholder {
-	color: @gray;
-}
+	.sb-search-input::-moz-placeholder {
+		color: @gray;
+	}
 
-.sb-search-input:-ms-input-placeholder {
-	color: @gray;
-}
+	.sb-search-input:-ms-input-placeholder {
+		color: @gray;
+	}
 
-.sb-icon-search,
-.sb-search-submit  {
-	width: 40px;
-	display: block;
-	position: absolute;
-	right: 0;
-	top: 0;
-	padding: 0;
-	margin: 0;
-	text-align: center;
-}
+	.sb-icon-search,
+	.sb-search-submit  {
+		width: 40px;
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+	}
 
-.sb-search-submit {
-	background: #fff; /* IE needs this */
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
-    filter: alpha(opacity=0); /* IE 5-7 */
-    opacity: 0;
-	color: transparent;
-	border: none;
-	outline: none;
-	z-index: -1;
-}
+	.sb-search-submit {
+		background: #fff; /* IE needs this */
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+	    filter: alpha(opacity=0); /* IE 5-7 */
+	    opacity: 0;
+		color: transparent;
+		border: none;
+		outline: none;
+		z-index: -1;
+	}
 
-.sb-icon-search {
-	color: #000;
-	background: #fff;
-	z-index: 90;
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	-webkit-font-smoothing: antialiased;
-}
+	.sb-icon-search {
+		color: #000;
+		background: #fff;
+		z-index: 90;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+	}
 
-/* Closed and Open states are the same at this screen size */
-.sb-search, .sb-search.sb-search-open,
-.no-js .sb-search {
-	width: 100%;
-}
+	/* Closed and Open states are the same at this screen size */
+	.sb-search, .sb-search.sb-search-open,
+	.no-js .sb-search {
+		width: 100%;
+	}
 
-.sb-search.sb-search-open .sb-icon-search,
-.no-js .sb-search .sb-icon-search {
-	background: #fff;
-	color: #000;
-	z-index: 11;
-}
+	.sb-search.sb-search-open .sb-icon-search,
+	.no-js .sb-search .sb-icon-search {
+		background: #fff;
+		color: #000;
+		z-index: 11;
+	}
 
-.sb-search.sb-search-open .sb-search-submit,
-.no-js .sb-search .sb-search-submit {
-	z-index: 90;
+	.sb-search.sb-search-open .sb-search-submit,
+	.no-js .sb-search .sb-search-submit {
+		z-index: 90;
+	}
 }
 
 /*********************
@@ -1686,10 +1688,6 @@ input[type="search"].sb-search-input::-webkit-search-decoration {
 *********************/
 .page-catalogs {
 	table {
-	    border-collapse: collapse;
-	    margin-bottom: 3em;
-	    width: 100%;
-	    background: #fff;
 	    font-size: 0.8em;
 	    line-height: 1.25;
 	}
@@ -1703,11 +1701,31 @@ input[type="search"].sb-search-input::-webkit-search-decoration {
 	    background-color: @white;
 	    white-space: nowrap;
 	}
-	tbody th {
+
+	/* TablePress-specific styles */
+	/* Table head color */
+	.tablepress thead th,
+	.tablepress tfoot th {
+		background-color: @table;
+	}
+
+	/* Table head highlight color */
+	.tablepress thead .sorting_asc,
+	.tablepress thead .sorting_desc,
+	.tablepress thead .sorting:hover {
+		background-color: @table-dark;
+	}
+
+	/* Odd and even row colors */
+	.tablepress .odd td {
+		background-color: @table;
+	}
+	.tablepress .even td {
 		background-color: @white;
 	}
-	tbody tr:nth-child(2n-1) {
-	    background-color: @table;
 
+	/* Row hover color */
+	.tablepress .row-hover tr:hover td {
+		background-color: @white-hover;
 	}
 }

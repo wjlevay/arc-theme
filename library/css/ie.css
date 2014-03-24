@@ -428,7 +428,7 @@ do they need tweaking?
 /*********************
 EXPANDING SEARCH BAR STYLES
 *********************/
-.sb-search {
+#site-navigation .sb-search {
   width: 0%;
   overflow: hidden;
   -webkit-transition: width 0.3s;
@@ -436,12 +436,12 @@ EXPANDING SEARCH BAR STYLES
   transition: width 0.3s;
   -webkit-backface-visibility: hidden;
 }
-.sb-search-input {
+#site-navigation .sb-search-input {
   font-size: 20px;
   width: 90%;
 }
-.sb-icon-search,
-.sb-search-submit {
+#site-navigation .sb-icon-search,
+#site-navigation .sb-search-submit {
   cursor: pointer;
 }
 /* import grid */
@@ -840,7 +840,7 @@ mobile. Make sure to double check these!
 /*********************
 EXPANDING SEARCH BAR STYLES
 *********************/
-.sb-search-input {
+#site-navigation .sb-search-input {
   width: 100%;
 }
 /******************************************************************
@@ -899,7 +899,7 @@ CONTENT STYLES
 /*********************
 EXPANDING SEARCH BAR STYLES
 *********************/
-.sb-search {
+#site-navigation .sb-search {
   margin-top: .25em;
   height: 50px;
 }
