@@ -870,7 +870,7 @@ textarea {
 *********************/
 a,
 a:visited {
-  color: #a7a9ac;
+  color: #6d6e70;
   text-decoration: none;
   /* on hover */
 
@@ -1460,7 +1460,7 @@ and more scalable.
 /* style things in the article-footer */
 .article-footer .tags {
   font-size: 0.85em;
-  color: #a7a9ac;
+  color: #6d6e70;
 }
 .article-footer .tags .tags-title {
   color: #000000;
@@ -1932,24 +1932,36 @@ and more scalable.
   font-weight: bold;
   padding-top: .5em;
 }
-.sidebar .news .widgettitle,
-.sidebar .news .widget-text {
+.sidebar .news-block .widgettitle,
+.sidebar .news-block .widget-text {
   color: #ffffff;
   background-color: #008bca;
   padding: 0 1em;
 }
-.sidebar .news .widgettitle a,
-.sidebar .news .widget-text a {
+.sidebar .news-block .widgettitle a,
+.sidebar .news-block .widget-text a {
   color: #ffffff;
   background-color: #20469e;
   padding: 0 1em 2px 1em;
   margin-left: -17px;
 }
-.sidebar .news .widgettitle {
+.sidebar .news-block .widgettitle {
   font-family: "Amplitude Medium";
   font-style: normal;
   font-weight: bold;
   padding-top: .5em;
+}
+.sidebar .news .widgettitle {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
+  color: #21d1e7;
+}
+.sidebar .news .post-thumbnail {
+  margin-top: 1em;
+}
+.sidebar .news .post-thumbnail .thumbnail-caption {
+  background-color: #21d1e7;
 }
 #galleries .widget .widgettitle,
 .sidebar .galleries .widgettitle {
@@ -2024,10 +2036,10 @@ and more scalable.
 }
 .footer #inner-footer #footer-widgets address {
   font-style: normal;
-  color: #a7a9ac;
+  color: #000000;
 }
 .footer #inner-footer #footer-widgets a {
-  color: #a7a9ac;
+  color: #6d6e70;
 }
 .footer #inner-footer #footer-widgets .widget li {
   margin-top: 1em;
@@ -2047,7 +2059,7 @@ and more scalable.
   font-weight: normal;
 }
 .footer #inner-footer #footer-widgets .widget li .sub-menu li a {
-  color: #a7a9ac;
+  color: #6d6e70;
 }
 .footer #inner-footer #footer-widgets .widget li.about,
 .footer #inner-footer #footer-widgets .widget li.catalogs {

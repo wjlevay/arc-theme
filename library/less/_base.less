@@ -803,7 +803,7 @@ and more scalable.
 	.article-footer {
 		.tags {
 			font-size: 0.85em;
-			color: @arc-gray;
+			color: @gray;
 
 			.tags-title {color: @black;}
 
@@ -1410,7 +1410,7 @@ and more scalable.
 	}
 }
 
-.sidebar .news {
+.sidebar .news-block {
 	.widgettitle, .widget-text {
 		color: @white;
 		background-color: @services;
@@ -1425,6 +1425,20 @@ and more scalable.
 	.widgettitle {
 		.amplitudemedium;
 		padding-top: .5em;
+	}
+}
+
+.sidebar .news {
+	.widgettitle {
+		.amplitudemedium;
+		color: @news;
+	}
+
+	.post-thumbnail {
+		margin-top: 1em;
+		.thumbnail-caption {
+			background-color: @news;
+		}
 	}
 }
 
@@ -1504,11 +1518,11 @@ and more scalable.
 
 			address {
 				font-style: normal;
-				color: @arc-gray;
+				color: @black;
 			}
 
 			a {
-				color: @arc-gray;
+				color: @gray;
 				&:hover,
 				&:focus {}
 			}
@@ -1529,7 +1543,7 @@ and more scalable.
 							margin-top: 0;
 							.amplitudelight;
 
-							a {color: @arc-gray;}
+							a {color: @gray;}
 						}
 					}
 				}
