@@ -50,15 +50,18 @@ The comments page for Bones
 
 	<?php if ( comments_open() ) : ?>
 		<?php // If comments are open, but there are no comments. ?>
-		<h3 id="comments" class="h3">no comments</h3>
+		<h3 id="comments" class="h3">no comments yet</h3>
 		<section id="comment-wrap"><?php // Added this div to allow the show/hide comments js to have something to hang onto ?>
 
 	<?php else : // comments are closed ?>
 
 		<?php // If comments are closed. ?>
-		<h3 id="nocomments" class="h3"><?php _e( 'comments are closed', 'bonestheme' ); ?></h3>
+		<h3 id="nocomments" class="h3"><?php _e( 'comments are closed...', 'bonestheme' ); ?></h3>
+		<p>...but you can always <a title="email the ARC" href="mailto:info@arcmusic.org">email us</a></p>
 		<section id="comment-wrap"><?php // Added this div to allow the show/hide comments js to have something to hang onto ?>
-
+			<ol class="commentlist">
+				<?php wp_list_comments( 'type=comment&callback=bones_comments' ); ?>
+			</ol>
 	<?php endif; ?>
 
 <?php endif; ?>
