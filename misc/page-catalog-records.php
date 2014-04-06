@@ -50,10 +50,12 @@ Template Name: Catalog: Recordings
 
 							<?php endif; ?>
 
+
+
 							<?php global $wpdb; // let's get some catalog data in a table!
 								$cat_records = $wpdb->get_results("SELECT * FROM wp_cat_records;");
 
-								echo "<table>
+								echo "<table id='catalogs'>
 									<thead>
 										<tr>
 											<th>Artist</th>
@@ -73,8 +75,8 @@ Template Name: Catalog: Recordings
 										echo "\t<td>".$cat_record->artist."</td>\n";
 										echo "\t<td>".$cat_record->title."</td>\n";
 										echo "\t<td>".$cat_record->label."</td>\n";
-										echo "\t<td>".$cat_record->cat_num."</td>\n";
-										echo "\t<td>".$cat_record->year."</td>\n";
+										echo "\t<td>".$cat_record->catalog_num."</td>\n";
+										echo "\t<td>".$cat_record->date."</td>\n";
 										echo "\t<td>".$cat_record->size."</td>\n";
 										echo "\t<td>".$cat_record->speed."</td>\n";
 										echo "\t<td>".$cat_record->format."</td>\n";

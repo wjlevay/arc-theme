@@ -1728,45 +1728,7 @@ and more scalable.
 14. CATALOG TABLE STYLES
 *********************/
 .page-catalogs {
-	table {
-	    font-size: 0.8em;
-	    line-height: 1.25;
-	}
-	td, th {
-	    padding: 0.25em;
-	    text-align: left;
-	    border: 2px solid #fff;
-	}
-	th {
-		.amplitudemedium;
-	    background-color: @white;
-	    white-space: nowrap;
-	}
 
-	/* TablePress-specific styles */
-	/* Table head color */
-	.tablepress thead th,
-	.tablepress tfoot th {
-		background-color: @table;
-	}
+	.entry-content h2 {display: none;}
 
-	/* Table head highlight color */
-	.tablepress thead .sorting_asc,
-	.tablepress thead .sorting_desc,
-	.tablepress thead .sorting:hover {
-		background-color: @table-dark;
-	}
-
-	/* Odd and even row colors */
-	.tablepress .odd td {
-		background-color: @table;
-	}
-	.tablepress .even td {
-		background-color: @white;
-	}
-
-	/* Row hover color */
-	.tablepress .row-hover tr:hover td {
-		background-color: @white-hover;
-	}
 }

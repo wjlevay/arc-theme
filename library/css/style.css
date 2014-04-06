@@ -2220,52 +2220,8 @@ and more scalable.
 /*********************
 14. CATALOG TABLE STYLES
 *********************/
-.page-catalogs {
-  /* TablePress-specific styles */
-
-  /* Table head color */
-
-  /* Table head highlight color */
-
-  /* Odd and even row colors */
-
-  /* Row hover color */
-
-}
-.page-catalogs table {
-  font-size: 0.8em;
-  line-height: 1.25;
-}
-.page-catalogs td,
-.page-catalogs th {
-  padding: 0.25em;
-  text-align: left;
-  border: 2px solid #fff;
-}
-.page-catalogs th {
-  font-family: "Amplitude Medium";
-  font-style: normal;
-  font-weight: bold;
-  background-color: #ffffff;
-  white-space: nowrap;
-}
-.page-catalogs .tablepress thead th,
-.page-catalogs .tablepress tfoot th {
-  background-color: #b3ff5a;
-}
-.page-catalogs .tablepress thead .sorting_asc,
-.page-catalogs .tablepress thead .sorting_desc,
-.page-catalogs .tablepress thead .sorting:hover {
-  background-color: #89fd00;
-}
-.page-catalogs .tablepress .odd td {
-  background-color: #b3ff5a;
-}
-.page-catalogs .tablepress .even td {
-  background-color: #ffffff;
-}
-.page-catalogs .tablepress .row-hover tr:hover td {
-  background-color: #e8e8e8;
+.page-catalogs .entry-content h2 {
+  display: none;
 }
 /*
 LARGER MOBILE DEVICES
