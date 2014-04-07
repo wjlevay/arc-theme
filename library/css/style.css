@@ -1609,8 +1609,9 @@ and more scalable.
   clear: both;
   overflow: hidden;
   list-style-type: none;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
   padding: 0.7335em 10px;
+  min-height: 85px;
   /* end .commentlist li ul.children */
 
 }
@@ -1618,7 +1619,7 @@ and more scalable.
   margin-bottom: 0;
 }
 .commentlist li ul.children {
-  margin: 0;
+  margin-bottom: 1em;
   /* variations */
 
   /* change number for different depth */
@@ -1641,13 +1642,13 @@ and more scalable.
   margin-left: 2.5em;
 }
 .commentlist li.depth-3 {
-  margin-left: 5em;
+  margin-left: 2.75em;
 }
 .commentlist li.depth-4 {
-  margin-left: 7.5em;
+  margin-left: 3em;
 }
 .commentlist li.depth-5 {
-  margin-left: 10em;
+  margin-left: 3.25em;
 }
 .commentlist .vcard {
   margin-left: 80px;
