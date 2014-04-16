@@ -1266,7 +1266,7 @@ and more scalable.
 /* end .hentry */
 .single-title a,
 .page-title a {
-  color: #000000;
+  color: #6d6e70;
 }
 .single-title a:hover,
 .page-title a:hover,
@@ -1306,18 +1306,14 @@ and more scalable.
   color: #21d1e7;
 }
 .post-info time {
-  color: #6d6e70;
+  color: #000000;
 }
 .byline {
   font-size: 110%;
-  color: #6d6e70;
+  color: #000000;
   margin-top: 0;
 }
 .byline a {
-  color: #000000;
-}
-.byline a:hover,
-.byline a:focus {
   color: #6d6e70;
 }
 /* entry content */
@@ -1519,12 +1515,8 @@ and more scalable.
   display: block;
   position: relative;
 }
-.bones_page_navi li a:hover,
-.bones_page_navi li a:focus {
-  color: #f01d4f;
-}
 .bones_page_navi li.bpn-current {
-  border-bottom: 2px solid #f01d4f;
+  border-bottom: 2px solid #000;
   position: relative;
 }
 .bones_page_navi li.bpn-current a {
@@ -1848,15 +1840,11 @@ and more scalable.
   font-size: 110%;
 }
 #blogright .widget_custom_recent_entries ul li .title a {
-  color: #000000;
+  color: #6d6e70;
   font-size: 130%;
 }
-#blogright .widget_custom_recent_entries ul li .title a:hover,
-#blogright .widget_custom_recent_entries ul li .title a:focus {
-  color: #404041;
-}
 #blogright .widget_custom_recent_entries ul li .author {
-  color: #6d6e70;
+  color: #000000;
   font-size: 110%;
 }
 #homeright .widget_custom_recent_entries {
@@ -1891,17 +1879,13 @@ and more scalable.
   font-size: 110%;
 }
 #homeright .widget_custom_recent_entries ul li .title a {
-  color: #000000;
+  color: #6d6e70;
   font-size: 130%;
   font-weight: 400;
 }
-#homeright .widget_custom_recent_entries ul li .title a:hover,
-#homeright .widget_custom_recent_entries ul li .title a:focus {
-  color: #404041;
-}
 #homeright .widget_custom_recent_entries ul li .author,
 #homeright .widget_custom_recent_entries ul li .post-date {
-  color: #6d6e70;
+  color: #000000;
   font-size: 110%;
 }
 #homecatalog .widget .widgettitle,
