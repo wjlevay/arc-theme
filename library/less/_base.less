@@ -434,9 +434,16 @@ and more scalable.
 
 .page-template-page-gallery-php {
 	#content article {border-bottom: 1px black dotted;}
+
 	.ngg-galleryoverview {
 		border-top: 1px black dotted;
 		padding-top: 2em;
+
+		&:before {
+			display: block;
+			margin-bottom: 1em;
+			content: "Click on the thumbnails to enlarge and view info."
+		}
 	}
 }
 

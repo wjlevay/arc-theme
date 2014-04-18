@@ -1180,6 +1180,11 @@ and more scalable.
   border-top: 1px black dotted;
   padding-top: 2em;
 }
+.page-template-page-gallery-php .ngg-galleryoverview:before {
+  display: block;
+  margin-bottom: 1em;
+  content: "Click on the thumbnails to enlarge and view info.";
+}
 .archive.author .author-meta .avatar {
   float: left;
   margin-right: 1em;
