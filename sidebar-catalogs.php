@@ -1,8 +1,8 @@
-				<div id="catalog" class="sidebar threecol last clearfix" role="complementary">
+				<div id="catalogs" class="sidebar threecol last clearfix" role="complementary">
 
-					<?php if ( is_active_sidebar( 'catalog' ) ) : ?>
+					<?php if ( is_active_sidebar( 'catalogs' ) ) : ?>
 
-						<?php dynamic_sidebar( 'catalog' ); ?>
+						<?php dynamic_sidebar( 'catalogs' ); ?>
 
 					<?php else : ?>
 
