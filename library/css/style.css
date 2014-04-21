@@ -1211,6 +1211,8 @@ and more scalable.
   margin-top: 0;
   /* Add highlight */
 
+  /* Font Weights */
+
   /* Responsive images */
 
   /* Make sure videos and embeds fit their containers */
@@ -1218,6 +1220,16 @@ and more scalable.
 }
 #content .highlight {
   background-color: #f0ffa0;
+}
+#content .lightweight {
+  font-family: "Amplitude Light";
+  font-style: normal;
+  font-weight: normal;
+}
+#content .heavyweight {
+  font-family: AmplitudeWide;
+  font-style: normal;
+  font-weight: bold;
 }
 #content .entry-content img,
 #content .comment-content img,
@@ -1287,6 +1299,7 @@ and more scalable.
 .page-title {
   font-size: 1.5em;
   margin-top: 1em;
+  margin-bottom: 0;
 }
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
@@ -1323,6 +1336,7 @@ and more scalable.
 }
 /* entry content */
 .entry-content {
+  margin-top: 1em;
   /*
 			image alignment on a screen this size may be
 			a bit difficult. It's set to start aligning
@@ -1330,6 +1344,9 @@ and more scalable.
 			but it's up to you. Feel free to change it up.
 			*/
 
+}
+.entry-content p {
+  margin-top: 0;
 }
 .entry-content ul {
   list-style: disc outside none;

@@ -487,6 +487,18 @@ and more scalable.
 	/* Add highlight */
 	.highlight {background-color: @highlight;}
 
+	/* Font Weights */
+	.lightweight {
+		font-family: "Amplitude Light";
+		font-style: normal;
+		font-weight: normal;
+	}
+	.heavyweight {
+		font-family: AmplitudeWide;
+		font-style: normal;
+		font-weight: bold;
+	}
+
 	/* Responsive images */
 	.entry-content img,
 	.comment-content img,
@@ -565,6 +577,7 @@ and more scalable.
 		.page-title {
 			font-size: 1.5em;
 			margin-top: 1em;
+			margin-bottom: 0;
 		}
 
 		.archive-title {}
@@ -608,7 +621,9 @@ and more scalable.
 		/* entry content */
 		.entry-content {
 
-			p {}
+			margin-top: 1em;
+
+			p {margin-top: 0;}
 
 
 			ul, ol, table, dl {}
