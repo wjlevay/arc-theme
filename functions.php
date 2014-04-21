@@ -156,12 +156,12 @@ function bones_register_sidebars() {
 		'after_title' => '</h4>',
 	));
 	register_sidebar(array(
-		'id' => 'catalog',
-		'name' => __( 'Catalog Sidebar', 'bonestheme' ),
-		'description' => __( 'The right sidebar on the Catalog page.', 'bonestheme' ),
+		'id' => 'catalogs',
+		'name' => __( 'Catalogs Sidebar', 'bonestheme' ),
+		'description' => __( 'The right sidebar on the Catalogs page.', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle catalog">',
+		'before_title' => '<h4 class="widgettitle catalogs">',
 		'after_title' => '</h4>',
 	));
 	register_sidebar(array(
