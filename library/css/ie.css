@@ -108,6 +108,14 @@ TYPOGRAPHY
   font-style: normal;
   font-weight: bold;
 }
+/* Link styles */
+.no-underline {
+  text-decoration: none;
+}
+.no-underline:hover,
+.no-underline:focus {
+  text-decoration: underline;
+}
 /* 
 use the best ampersand 
 http://simplebits.com/notebook/2008/08/14/ampersands-2/
@@ -366,6 +374,7 @@ POSTS & CONTENT STYLES
 }
 #crumbs a {
   color: #6d6e70;
+  text-decoration: none;
 }
 #crumbs a:hover,
 #crumbs a:focus {

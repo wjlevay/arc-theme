@@ -114,11 +114,10 @@ textarea {
 
 a, a:visited {
 	color: @link-color;
-	text-decoration: none;
+	text-decoration: underline;
 
 	/* on hover */
 	&:hover, &:focus {
-		text-decoration: underline;
 
 		.wp-caption, .thumbnail-caption {
 			text-decoration: underline;
@@ -137,7 +136,7 @@ a, a:visited {
 		so it basically works like the :hover selector
 		for mobile devices.
 		*/
-		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+		-webkit-tap-highlight-color : @highlight;
 	}
 }
 
@@ -454,11 +453,9 @@ and more scalable.
 			margin-right: 1em;
 		}
 		.author-name {
-			color: @gray;
 			font-size: 110%;
 		}
 		.author-info {
-			color: @black;
 		}
 	}
 }
@@ -563,7 +560,7 @@ and more scalable.
 		.single-title,
 		.page-title {
 			a {
-				color: @gray;
+				color: @black;
 				&:hover, &:focus {text-decoration: underline;}
 			}
 		}
@@ -601,6 +598,7 @@ and more scalable.
 			.category, .category a {
 				.amplitudemedium;
 				color: @news;
+				.no-underline;
 			}
 
 			time {color: @black;}
@@ -613,7 +611,7 @@ and more scalable.
 
 			a {
 				color: @gray;
-				&:hover, &:focus {}
+				.no-underline;
 			}
 		}
 
@@ -871,11 +869,7 @@ and more scalable.
 			a {
 				display: block;
 				position: relative;
-
-				&:hover,
-				&:focus {
-
-				}
+				.no-underline;
 			}
 
 		}
@@ -1095,7 +1089,9 @@ and more scalable.
 			font-weight: 700;
 			font-style: normal;
 
-			a.url {}
+			a.url {
+				.no-underline;
+			}
 
 		}
 
@@ -1103,9 +1099,7 @@ and more scalable.
 
 			a {
 				color: @gray;
-
-				&:hover {}
-
+				.no-underline;
 			}
 
 		}
@@ -1150,10 +1144,7 @@ and more scalable.
 	.comment-reply-link {
 		color: @gray;
 		margin-left: 80px;
-
-		&:hover,
-		&:focus {
-		}
+		.no-underline;
 
 	} /* end .commentlist .comment-reply-link */
 
@@ -1326,6 +1317,13 @@ and more scalable.
 	.widget-text {
 		.amplitudelight;
 		ul {padding: 0 0 .5em .5em;}
+		a {
+			color: @white;
+			background-color: @support;
+			padding: 0 16px 2px 16px;
+			margin-left: -16px;
+			.no-underline;
+		}
 	}
 }
 
@@ -1348,9 +1346,9 @@ and more scalable.
 					font-size: 110%;
 				}
 				.title a {
-					color: @gray;
+					color: @black;
 					font-size: 130%;
-					&:hover, &:focus {}
+					.no-underline;
 				}
 				.author {
 					color: @black;
@@ -1394,10 +1392,10 @@ and more scalable.
 				}
 
 				.title a {
-					color: @gray;
+					color: @black;
 					font-size: 130%;
 					font-weight: 400;
-					&:hover, &:focus {}
+					.no-underline;
 				}
 
 				.author, .post-date {
@@ -1427,6 +1425,7 @@ and more scalable.
 				background-color: @catalogs-dark;
 				padding: 0 1em 2px 1em;
 				margin-left: -1em;
+				.no-underline;
 			}
 		}
 		.widgettitle {
@@ -1451,6 +1450,7 @@ and more scalable.
 			background-color: @support-dark;
 			padding: 0 16px 2px 16px;
 			margin-left: -16px;
+			.no-underline;
 		}
 	}
 	.widgettitle {
@@ -1460,6 +1460,9 @@ and more scalable.
 }
 
 .sidebar .news-block {
+
+	max-width: 220px;
+
 	.widgettitle, .widget-text {
 		color: @white;
 		background-color: @services;
@@ -1469,11 +1472,16 @@ and more scalable.
 			background-color: @services-dark;
 			padding: 0 1em 2px 1em;
 			margin-left: -17px;
+			.no-underline;
 		}
 	}
 	.widgettitle {
 		.amplitudemedium;
 		padding-top: .5em;
+	}
+	.sale-date {
+		font-size: 4em;
+		line-height: 1;
 	}
 }
 
@@ -1504,6 +1512,10 @@ and more scalable.
 		li {
 			padding-left: .5em;
 			text-indent: -.5em;
+
+			a {
+				.no-underline;
+			}
 		}
 	}
 }
@@ -1531,7 +1543,7 @@ and more scalable.
 	}
 }
 
-#resources .widget {
+#services .widget {
 	.widgettitle {
 		.amplitudemedium;
 		color: @services;
@@ -1572,8 +1584,7 @@ and more scalable.
 
 			a {
 				color: @gray;
-				&:hover,
-				&:focus {}
+				.no-underline;
 			}
 
 			.widget {

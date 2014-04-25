@@ -165,21 +165,21 @@ function bones_register_sidebars() {
 		'after_title' => '</h4>',
 	));
 	register_sidebar(array(
+		'id' => 'services',
+		'name' => __( 'Services Sidebar', 'bonestheme' ),
+		'description' => __( 'The right sidebar on the Services page.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle services">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
 		'id' => 'support',
 		'name' => __( 'Support Sidebar', 'bonestheme' ),
 		'description' => __( 'The right sidebar on the Support page.', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle support">',
-		'after_title' => '</h4>',
-	));
-	register_sidebar(array(
-		'id' => 'resources',
-		'name' => __( 'Resources Sidebar', 'bonestheme' ),
-		'description' => __( 'The right sidebar on the Resources page.', 'bonestheme' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle resources">',
 		'after_title' => '</h4>',
 	));
 	register_sidebar(array(
