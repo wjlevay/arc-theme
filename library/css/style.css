@@ -823,6 +823,12 @@ select,
 textarea {
   font-family: 'Amplitude Light', sans-serif;
 }
+b,
+strong {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
+}
 /********************
 02. WORDPRESS BODY CLASSES
     style a page via class
@@ -1199,11 +1205,22 @@ and more scalable.
   height: 800px;
   border: 0;
 }
+.page-catalogs .special-collection {
+  clear: both;
+  margin-bottom: 2em;
+}
 .page-services .linklist .linkgroup {
   border-top: 1px dotted black;
 }
 .page-services .linklist .h3 {
   margin-top: 1em;
+}
+.page-services .linklist .h3 .linklistcatnamedesc {
+  font-family: "Amplitude Light";
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+  margin-left: 1em;
 }
 #content {
   margin-top: 0;
@@ -1970,7 +1987,6 @@ and more scalable.
 #homeright .widget_custom_recent_entries ul li .title a {
   color: #000000;
   font-size: 130%;
-  font-weight: 400;
   text-decoration: none;
 }
 #homeright .widget_custom_recent_entries ul li .title a:hover,
@@ -2050,7 +2066,7 @@ and more scalable.
 }
 .sidebar .news-block .widgettitle,
 .sidebar .news-block .widget-text {
-  color: #ffffff;
+  color: #ffffff !important;
   background-color: #008bca;
   padding: 0 1em;
 }

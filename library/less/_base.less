@@ -54,6 +54,11 @@ textarea {
     font-family: 'Amplitude Light', sans-serif;
 }
 
+b,
+strong {
+    .amplitudemedium;
+}
+
 /********************
 02. WORDPRESS BODY CLASSES
     style a page via class
@@ -466,6 +471,11 @@ and more scalable.
 		height: 800px;
 		border: 0;
 	}
+
+	.special-collection {
+		clear: both;
+		margin-bottom: 2em;
+	}
 }
 
 .page-services {
@@ -473,6 +483,12 @@ and more scalable.
 		.linkgroup {border-top: 1px dotted black;}
 		.h3 {
 			margin-top: 1em;
+
+			.linklistcatnamedesc {
+				.amplitudelight;
+				color: @black;
+				margin-left: 1em;
+			}
 		}
 	}
 }
@@ -1404,7 +1420,6 @@ and more scalable.
 				.title a {
 					color: @black;
 					font-size: 130%;
-					font-weight: 400;
 					.no-underline;
 				}
 
@@ -1474,7 +1489,7 @@ and more scalable.
 	max-width: 220px;
 
 	.widgettitle, .widget-text {
-		color: @white;
+		color: @white !important;
 		background-color: @services;
 		padding: 0 1em;
 		a {
