@@ -1224,6 +1224,11 @@ and more scalable.
   font-style: normal;
   font-weight: normal;
 }
+#content .mediumweight {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
+}
 #content .heavyweight {
   font-family: AmplitudeWide;
   font-style: normal;
@@ -1394,6 +1399,7 @@ and more scalable.
 /* end .entry-content */
 .wp-caption {
   max-width: 100%;
+  margin-bottom: 1em;
   /* images inside wp-caption */
 
 }
@@ -1834,6 +1840,16 @@ and more scalable.
 #about .widget .widget-text ul,
 .sidebar .about .widget-text ul {
   padding: 0 0 .5em .5em;
+}
+#about .widget .widget-text ul li a,
+.sidebar .about .widget-text ul li a {
+  text-decoration: none;
+}
+#about .widget .widget-text ul li a:hover,
+.sidebar .about .widget-text ul li a:hover,
+#about .widget .widget-text ul li a:focus,
+.sidebar .about .widget-text ul li a:focus {
+  text-decoration: underline;
 }
 #about .widget .widgettitle,
 .sidebar .about .widgettitle {

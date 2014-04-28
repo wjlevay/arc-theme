@@ -490,6 +490,11 @@ and more scalable.
 		font-style: normal;
 		font-weight: normal;
 	}
+	.mediumweight {
+		font-family: "Amplitude Medium";
+		font-style: normal;
+		font-weight: bold;
+	}
 	.heavyweight {
 		font-family: AmplitudeWide;
 		font-style: normal;
@@ -699,6 +704,7 @@ and more scalable.
 
 		.wp-caption {
 			max-width: 100%;
+			margin-bottom: 1em;
 
 			/* images inside wp-caption */
 			img {
@@ -1288,7 +1294,11 @@ and more scalable.
 	.widget-text {
 		ul {
 			padding: 0 0 .5em .5em;
-			li {}
+			li {
+				a {
+					.no-underline;
+				}
+			}
 		}
 	}
 
