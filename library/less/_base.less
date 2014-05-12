@@ -456,6 +456,7 @@ and more scalable.
 		.avatar {
 			float: left;
 			margin-right: 1em;
+			margin-bottom: 1em;
 		}
 		.author-name {
 			font-size: 110%;
@@ -731,9 +732,13 @@ and more scalable.
 
 			p.wp-caption-text {
 				font-size: 1em;
-				margin: 0;
+				margin: -.4em 0 0 0;
 				padding: 0 1em;
 				color: @white;
+			}
+			p.wp-caption-text a {
+				color: @white;
+				.no-underline;
 			}
 
 		} /* end .wp-caption */
@@ -849,6 +854,7 @@ and more scalable.
 			.tags-title {color: @black;}
 
 			a {
+				text-decoration: none;
 				&:hover, &:focus {
 					text-decoration: none;
 					background-color: @highlight;
@@ -1011,8 +1017,9 @@ and more scalable.
 #comment-wrap {
 	.button {
 		font-size: 16px;
+		.amplitudemedium;
 		margin-bottom: 0;
-		text-shadow: 0;
+		text-shadow: none;
 	}
 }
 
@@ -1108,8 +1115,7 @@ and more scalable.
 		margin-left: 80px;
 
 		cite.fn {
-			font-weight: 700;
-			font-style: normal;
+			.amplitudemedium;
 
 			a.url {
 				.no-underline;
@@ -1170,6 +1176,19 @@ and more scalable.
 
 	} /* end .commentlist .comment-reply-link */
 
+	/* comment awaiting moderation alert */
+	.alert.alert-info {
+		border: 0;
+		background: #fff;
+		padding: 0;
+		margin: 10px 10px 10px 80px;
+
+		p {
+			background-color: @highlight;
+			padding: 0 1em;
+		}
+	}
+
 } /* end .commentlist */
 
 /******************************************************************
@@ -1199,7 +1218,7 @@ and more scalable.
 		input[type=url],
 		textarea {
 			padding: 3px 6px;
-			background: #efefef;
+			background: #fff;
 			border: 2px solid #cecece;
 			line-height: 1.5em;
 
@@ -1306,13 +1325,38 @@ and more scalable.
 
 /* Sectional widget styles & section widgets on the homepage */
 
-#about .widget, .sidebar .about {
+#about .widget {
 	.widget-text {
 		ul {
 			padding: 0 0 .5em .5em;
 			li {
 				a {
 					.no-underline;
+				}
+			}
+		}
+	}
+
+	.widgettitle {
+		.amplitudemedium;
+		color: @about;
+	}
+
+	.post-thumbnail {
+		margin-top: 1.5em;
+
+		.thumbnail-caption {
+			background-color: @about;
+		}
+	}
+}
+
+.sidebar .about {
+	.widget-text {
+		ul {
+			padding: 0 0 .5em .5em;
+			li {
+				a {
 				}
 			}
 		}
@@ -1598,8 +1642,9 @@ and more scalable.
 
 			.contact .widgettitle {
 				font-size: 100%;
-				color: @black;
-				.amplitudewidebold;
+				.amplitudemedium;
+
+				a {color: @black;}
 			}
 
 			address {
@@ -1616,7 +1661,6 @@ and more scalable.
 
 				li {
 					margin-top: 1em;
-					font-weight: bold;
 
 					a {color: @black;}
 
@@ -1634,9 +1678,9 @@ and more scalable.
 				}
 
 				li.about,
-				li.catalogs, {.amplitudelight;}
+				li.catalogs,
 				li.news,
-				li.services {.amplitudewidebold;}
+				li.services,
 				li.galleries,
 				li.support {.amplitudemedium;}
 			}
@@ -1671,6 +1715,10 @@ and more scalable.
 	.copyright {
 		padding-top: 1em;
 		clear: both;
+
+		a {
+			.no-underline;
+		}
 	}
 
 /*********************

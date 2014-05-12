@@ -1196,6 +1196,7 @@ and more scalable.
 .archive.author .author-meta .avatar {
   float: left;
   margin-right: 1em;
+  margin-bottom: 1em;
 }
 .archive.author .author-meta .author-name {
   font-size: 110%;
@@ -1427,9 +1428,17 @@ and more scalable.
 }
 .wp-caption p.wp-caption-text {
   font-size: 1em;
-  margin: 0;
+  margin: -0.4em 0 0 0;
   padding: 0 1em;
   color: #ffffff;
+}
+.wp-caption p.wp-caption-text a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.wp-caption p.wp-caption-text a:hover,
+.wp-caption p.wp-caption-text a:focus {
+  text-decoration: underline;
 }
 /* end .wp-caption */
 .thumbnail-caption {
@@ -1515,6 +1524,9 @@ and more scalable.
 }
 .article-footer .tags .tags-title {
   color: #000000;
+}
+.article-footer .tags a {
+  text-decoration: none;
 }
 .article-footer .tags a:hover,
 .article-footer .tags a:focus {
@@ -1635,8 +1647,11 @@ and more scalable.
 }
 #comment-wrap .button {
   font-size: 16px;
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
   margin-bottom: 0;
-  text-shadow: 0;
+  text-shadow: none;
 }
 .commentlist {
   /* general comment classes */
@@ -1654,6 +1669,8 @@ and more scalable.
   /* comment reply link */
 
   /* end .commentlist .comment-reply-link */
+
+  /* comment awaiting moderation alert */
 
 }
 .commentlist li {
@@ -1706,8 +1723,9 @@ and more scalable.
   margin-left: 80px;
 }
 .commentlist .vcard cite.fn {
-  font-weight: 700;
+  font-family: "Amplitude Medium";
   font-style: normal;
+  font-weight: bold;
 }
 .commentlist .vcard cite.fn a.url {
   text-decoration: none;
@@ -1746,6 +1764,16 @@ and more scalable.
 .commentlist .comment-reply-link:focus {
   text-decoration: underline;
 }
+.commentlist .alert.alert-info {
+  border: 0;
+  background: #fff;
+  padding: 0;
+  margin: 10px 10px 10px 80px;
+}
+.commentlist .alert.alert-info p {
+  background-color: #f0ffa0;
+  padding: 0 1em;
+}
 /* end .commentlist */
 /******************************************************************
 11. COMMENT FORM STYLES
@@ -1771,7 +1799,7 @@ and more scalable.
 .respond-form form input[type=url],
 .respond-form form textarea {
   padding: 3px 6px;
-  background: #efefef;
+  background: #fff;
   border: 2px solid #cecece;
   line-height: 1.5em;
   /* form validation */
@@ -1854,32 +1882,40 @@ and more scalable.
 
 }
 /* Sectional widget styles & section widgets on the homepage */
-#about .widget .widget-text ul,
-.sidebar .about .widget-text ul {
+#about .widget .widget-text ul {
   padding: 0 0 .5em .5em;
 }
-#about .widget .widget-text ul li a,
-.sidebar .about .widget-text ul li a {
+#about .widget .widget-text ul li a {
   text-decoration: none;
 }
 #about .widget .widget-text ul li a:hover,
-.sidebar .about .widget-text ul li a:hover,
-#about .widget .widget-text ul li a:focus,
-.sidebar .about .widget-text ul li a:focus {
+#about .widget .widget-text ul li a:focus {
   text-decoration: underline;
 }
-#about .widget .widgettitle,
+#about .widget .widgettitle {
+  font-family: "Amplitude Medium";
+  font-style: normal;
+  font-weight: bold;
+  color: #f81a33;
+}
+#about .widget .post-thumbnail {
+  margin-top: 1.5em;
+}
+#about .widget .post-thumbnail .thumbnail-caption {
+  background-color: #f81a33;
+}
+.sidebar .about .widget-text ul {
+  padding: 0 0 .5em .5em;
+}
 .sidebar .about .widgettitle {
   font-family: "Amplitude Medium";
   font-style: normal;
   font-weight: bold;
   color: #f81a33;
 }
-#about .widget .post-thumbnail,
 .sidebar .about .post-thumbnail {
   margin-top: 1.5em;
 }
-#about .widget .post-thumbnail .thumbnail-caption,
 .sidebar .about .post-thumbnail .thumbnail-caption {
   background-color: #f81a33;
 }
@@ -2182,10 +2218,12 @@ and more scalable.
 }
 .footer #inner-footer #footer-widgets .contact .widgettitle {
   font-size: 100%;
-  color: #000000;
-  font-family: AmplitudeWide;
+  font-family: "Amplitude Medium";
   font-style: normal;
   font-weight: bold;
+}
+.footer #inner-footer #footer-widgets .contact .widgettitle a {
+  color: #000000;
 }
 .footer #inner-footer #footer-widgets address {
   font-style: normal;
@@ -2201,7 +2239,6 @@ and more scalable.
 }
 .footer #inner-footer #footer-widgets .widget li {
   margin-top: 1em;
-  font-weight: bold;
 }
 .footer #inner-footer #footer-widgets .widget li a {
   color: #000000;
@@ -2220,17 +2257,9 @@ and more scalable.
   color: #6d6e70;
 }
 .footer #inner-footer #footer-widgets .widget li.about,
-.footer #inner-footer #footer-widgets .widget li.catalogs {
-  font-family: "Amplitude Light";
-  font-style: normal;
-  font-weight: normal;
-}
+.footer #inner-footer #footer-widgets .widget li.catalogs,
 .footer #inner-footer #footer-widgets .widget li.news,
-.footer #inner-footer #footer-widgets .widget li.services {
-  font-family: AmplitudeWide;
-  font-style: normal;
-  font-weight: bold;
-}
+.footer #inner-footer #footer-widgets .widget li.services,
 .footer #inner-footer #footer-widgets .widget li.galleries,
 .footer #inner-footer #footer-widgets .widget li.support {
   font-family: "Amplitude Medium";
@@ -2253,6 +2282,13 @@ and more scalable.
 .copyright {
   padding-top: 1em;
   clear: both;
+}
+.copyright a {
+  text-decoration: none;
+}
+.copyright a:hover,
+.copyright a:focus {
+  text-decoration: underline;
 }
 /*********************
 14. SEARCH BAR STYLES

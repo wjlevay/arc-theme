@@ -104,10 +104,12 @@ The comments page for Bones
 				<small><?php _e("(will not be published)", 'bonestheme' ); ?></small>
 			</li>
 
+			<?php /* Uncomment for Commenter URL in form
 			<li>
 				<label for="url"><?php _e( 'Website', 'bonestheme' ); ?></label>
 				<input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e( 'have a website?', 'bonestheme' ); ?>" tabindex="3" />
 			</li>
+			*/ ?>
 
 		</ul>
 
