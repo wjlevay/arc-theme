@@ -10,8 +10,8 @@
 							get_sidebar( 'footer' );
 					?>
 
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?> | 
-					designed by <a href="http://notclosed.com/" title="Open">Open</a> | 
+					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?> &nbsp;|&nbsp; 
+					designed by <a href="http://notclosed.com/" title="Open">Open</a> &nbsp;|&nbsp; 
 					built by <a href="http://wjlevay.net" title="W.J. Levay">W.J. Levay</a> + B. George
 					</p>
 
