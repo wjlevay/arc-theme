@@ -48,13 +48,13 @@
 				<div id="inner-header" class="wrap clearfix">
 
 					<?php // uncomment code below to display random factoid about the ARChive from the Quotes custom post type
-					/* $factoid = new WP_Query(array ('post_type' => 'quote', 'posts_per_page' => 1, 'orderby' => 'rand') );
+					$factoid = new WP_Query(array ('post_type' => 'quote', 'posts_per_page' => 1, 'orderby' => 'rand') );
 					while ($factoid->have_posts()) : $factoid->the_post(); ?>
 
 					<div id="factoid"><?php the_content(); ?></div>
 
 					<?php endwhile;
-					wp_reset_postdata(); */
+					wp_reset_postdata();
 					?>
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>

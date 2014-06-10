@@ -316,6 +316,13 @@ function bones_wpsearch($form) {
 
 /************* CUSTOM FUNCTIONS *****************/
 
+// Change the excerpt length from default of 55 to x
+
+function custom_excerpt_length( $length ) {
+	return 42;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
 // Set page slug as a body class (via http://timneill.net/2013/05/wordpress-add-page-slug-to-body-class-including-parents/)
 
 function add_body_class($classes) {
@@ -425,7 +432,6 @@ function auto_featured_image() {
 
 // Use it temporarily to generate all featured images
 // add_action('the_post', 'auto_featured_image');
-
 
 
 ?>

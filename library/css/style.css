@@ -1397,7 +1397,6 @@ and more scalable.
   float: left;
   width: 75%;
   margin: 0;
-  color: #787878;
 }
 .entry-content img {
   margin: 0 0 1.5em 0;
@@ -1418,6 +1417,7 @@ and more scalable.
 .wp-caption {
   max-width: 100%;
   margin-bottom: 1em;
+  position: relative;
   /* images inside wp-caption */
 
 }
@@ -1427,9 +1427,12 @@ and more scalable.
   width: 100%;
 }
 .wp-caption p.wp-caption-text {
+  position: absolute;
+  left: 0;
+  bottom: 7px;
   font-size: 1em;
   margin: -0.4em 0 0 0;
-  padding: 0 1em;
+  padding: 0 .33em 0 1em;
   color: #ffffff;
 }
 .wp-caption p.wp-caption-text a {
@@ -1445,29 +1448,29 @@ and more scalable.
   font-size: 1em;
 }
 /* set background colors for captions */
-.page-about .wp-caption,
+.page-about .wp-caption-text,
 .page-about .thumbnail-caption {
   background-color: #f81a33;
 }
-.blog .wp-caption,
-.single .wp-caption,
+.blog .wp-caption-text,
+.single .wp-caption-text,
 .category-features .thumbnail-caption,
 .category-blog .thumbnail-caption {
   background-color: #21d1e7;
 }
-.page-galleries .wp-caption,
+.page-galleries .wp-caption-text,
 .page-galleries .thumbnail-caption {
   background-color: #64e92b;
 }
-.page-catalogs .wp-caption,
+.page-catalogs .wp-caption-text,
 .page-catalogs .thumbnail-caption {
   background-color: #93bf36;
 }
-.page-support .wp-caption,
+.page-support .wp-caption-text,
 .page-support .thumbnail-caption {
   background-color: #9f111e;
 }
-.page-services .wp-caption,
+.page-services .wp-caption-text,
 .page-services .thumbnail-caption {
   background-color: #008bca;
 }
@@ -1500,7 +1503,7 @@ and more scalable.
   position: absolute;
   left: 0;
   bottom: 7px;
-  padding: 0 1em;
+  padding: 0 0.33em 0 1em;
   color: #ffffff;
 }
 .category-features .thumbnail-caption,
@@ -1883,7 +1886,7 @@ and more scalable.
 }
 /* Sectional widget styles & section widgets on the homepage */
 #about .widget .widget-text ul {
-  padding: 0 0 .5em .5em;
+  padding: 0 0 .5em 0;
 }
 #about .widget .widget-text ul li a {
   text-decoration: none;
@@ -1905,7 +1908,7 @@ and more scalable.
   background-color: #f81a33;
 }
 .sidebar .about .widget-text ul {
-  padding: 0 0 .5em .5em;
+  padding: 0 0 .5em 0;
 }
 .sidebar .about .widgettitle {
   font-family: "Amplitude Medium";
@@ -1942,7 +1945,7 @@ and more scalable.
 }
 #about .widget.about-block .widget-text ul,
 .sidebar .about-block .widget-text ul {
-  padding: 0 0 .5em .5em;
+  padding: 0 0 .5em 0;
 }
 #about .widget.about-block .widget-text a,
 .sidebar .about-block .widget-text a {
@@ -2045,7 +2048,7 @@ and more scalable.
 #homecatalog .widget .widget-text ul {
   margin: 0;
   border-top: 1px dotted white;
-  padding: 0.5em 0 1em 0.5em;
+  padding: 0.5em 0 1em 0;
 }
 #homecatalog .widget .widgettitle ul li a,
 #homecatalog .widget .widget-text ul li a {
@@ -2053,10 +2056,11 @@ and more scalable.
 }
 #homecatalog .widget .widgettitle a,
 #homecatalog .widget .widget-text a {
+  display: block;
   color: #ffffff;
   background-color: #59921b;
-  padding: 0 1em 2px 1em;
-  margin-left: -1em;
+  padding: 0 6px 0 16px;
+  margin-left: -18px;
   text-decoration: none;
 }
 #homecatalog .widget .widgettitle a:hover,
@@ -2081,8 +2085,8 @@ and more scalable.
 .sidebar .support .widget-text a {
   color: #ffffff;
   background-color: #700106;
-  padding: 0 16px 2px 16px;
-  margin-left: -16px;
+  padding: 0 6px 0 16px;
+  margin-left: -17px;
   text-decoration: none;
 }
 .sidebar .support .widgettitle a:hover,
@@ -2110,7 +2114,7 @@ and more scalable.
 .sidebar .news-block .widget-text a {
   color: #ffffff;
   background-color: #20469e;
-  padding: 0 1em 2px 1em;
+  padding: 2px 6px 2px 16px;
   margin-left: -17px;
   text-decoration: none;
 }
