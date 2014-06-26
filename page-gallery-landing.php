@@ -52,6 +52,8 @@ Template Name: Gallery Landing Page
 
 							<?php wp_reset_postdata(); ?>
 
+							<h1 class="page-title">featured</h1>
+
 							<?php // Now get thumbnails and excerpts from the featured gallery pages ?>
 
 							<?php $galleries = new WP_Query( array('showposts' => 3, 'child_of' => 20, 'post_type' => 'page', 'orderby' => 'menu_order title', 'order' => 'DESC', 'meta_key' => 'featured_gallery', 'meta_value' => 'yes') );
