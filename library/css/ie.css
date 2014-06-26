@@ -66,6 +66,7 @@ COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
+/*@highlight:			#f0ffa0;*/
 /*
 Here's a great tutorial on how to
 use color variables properly:
@@ -456,7 +457,7 @@ EXPANDING SEARCH BAR STYLES
 /* import grid */
 /******************************************************************
 Site Name: ARChive of Contemporary Music
-Author: W.J. Levay
+Author: W.J. Levay based on design by Open
 
 Stylesheet: Grid Stylesheet
 
@@ -815,7 +816,10 @@ SIDEBARS & ASIDES
   margin-top: 0.75em;
   padding-left: 1em;
 }
-#galleries .widget ul {
+#galleries .widget ul,
+#about .widget.about ul {
+  margin-top: 1em;
+  padding-top: 1em;
   border-top: 1px black dotted;
 }
 /* links widget */
@@ -876,7 +880,7 @@ HEADER STYLES
   margin: 0.5em 0;
 }
 .header #factoid .highlight {
-  background-color: #f0ffa0;
+  background-color: #f9df72;
 }
 /*********************
 NAVIGATION STYLES

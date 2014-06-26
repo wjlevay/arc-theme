@@ -547,6 +547,7 @@ COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
+/*@highlight:			#f0ffa0;*/
 /*
 Here's a great tutorial on how to
 use color variables properly:
@@ -816,6 +817,8 @@ body {
   font-size: 110%;
   line-height: 1.5;
   color: #000000;
+  letter-spacing: 0.01em;
+  word-spacing: -0.015em;
 }
 button,
 input,
@@ -911,7 +914,7 @@ a:visited:link {
 		for mobile devices.
 		*/
 
-  -webkit-tap-highlight-color: #f0ffa0;
+  -webkit-tap-highlight-color: #f9df72;
 }
 /******************************************************************
 05. H1, H2, H3, H4, H5 STYLES
@@ -1064,9 +1067,19 @@ h5,
 /*********************
 06. HEADER STYLES
 *********************/
+.header #logo {
+  display: block;
+  max-height: 65px;
+  margin: .5em 0;
+  background: url(/wp-content/themes/bones/library/images/arc-logo-static.png) no-repeat left;
+  background-size: contain;
+}
+.header #logo:hover {
+  background: url(/wp-content/themes/bones/library/images/arc-logo-animate.gif) no-repeat left;
+  background-size: contain;
+}
 .header #logo img {
   max-width: 100%;
-  margin: .5em 0;
 }
 .header #factoid {
   display: none;
@@ -1235,7 +1248,7 @@ and more scalable.
 
 }
 #content .highlight {
-  background-color: #f0ffa0;
+  background-color: #f9df72;
 }
 #content .lightweight {
   font-family: "Amplitude Light";
@@ -1534,7 +1547,7 @@ and more scalable.
 .article-footer .tags a:hover,
 .article-footer .tags a:focus {
   text-decoration: none;
-  background-color: #f0ffa0;
+  background-color: #f9df72;
 }
 /* Sharedaddy sharing tool via JetPack plugin*/
 #main .sharedaddy .sd-block,
@@ -1774,7 +1787,7 @@ and more scalable.
   margin: 10px 10px 10px 80px;
 }
 .commentlist .alert.alert-info p {
-  background-color: #f0ffa0;
+  background-color: #f9df72;
   padding: 0 1em;
 }
 /* end .commentlist */
@@ -2052,21 +2065,34 @@ and more scalable.
 }
 #homecatalog .widget .widgettitle ul li a,
 #homecatalog .widget .widget-text ul li a {
+  color: #ffffff;
   background-color: #93bf36;
+  text-decoration: none;
+  padding: 0;
 }
-#homecatalog .widget .widgettitle a,
-#homecatalog .widget .widget-text a {
-  display: block;
+#homecatalog .widget .widgettitle ul li a:hover,
+#homecatalog .widget .widget-text ul li a:hover,
+#homecatalog .widget .widgettitle ul li a:focus,
+#homecatalog .widget .widget-text ul li a:focus {
+  text-decoration: underline;
+}
+#homecatalog .widget .widgettitle p,
+#homecatalog .widget .widget-text p {
+  margin: 0;
+}
+#homecatalog .widget .widgettitle p a,
+#homecatalog .widget .widget-text p a {
+  display: inline-block;
   color: #ffffff;
   background-color: #59921b;
-  padding: 0 6px 0 16px;
-  margin-left: -18px;
+  padding: 0 .375em 0 1em;
+  margin-left: -1em;
   text-decoration: none;
 }
-#homecatalog .widget .widgettitle a:hover,
-#homecatalog .widget .widget-text a:hover,
-#homecatalog .widget .widgettitle a:focus,
-#homecatalog .widget .widget-text a:focus {
+#homecatalog .widget .widgettitle p a:hover,
+#homecatalog .widget .widget-text p a:hover,
+#homecatalog .widget .widgettitle p a:focus,
+#homecatalog .widget .widget-text p a:focus {
   text-decoration: underline;
 }
 #homecatalog .widget .widgettitle {
@@ -2085,7 +2111,7 @@ and more scalable.
 .sidebar .support .widget-text a {
   color: #ffffff;
   background-color: #700106;
-  padding: 0 6px 0 16px;
+  padding: .125em .375em .125em 1em;
   margin-left: -17px;
   text-decoration: none;
 }
@@ -2114,7 +2140,7 @@ and more scalable.
 .sidebar .news-block .widget-text a {
   color: #ffffff;
   background-color: #20469e;
-  padding: 2px 6px 2px 16px;
+  padding: .125em .375em .125em 1em;
   margin-left: -17px;
   text-decoration: none;
 }
@@ -2152,11 +2178,6 @@ and more scalable.
   font-style: normal;
   font-weight: bold;
   color: #64e92b;
-}
-#galleries .widget ul,
-.sidebar .galleries ul {
-  margin-top: 1em;
-  padding-top: 1em;
 }
 #galleries .widget ul li,
 .sidebar .galleries ul li {
@@ -2314,7 +2335,7 @@ and more scalable.
   right: 0;
   border: none;
   outline: none;
-  background: #f0ffa0;
+  background: #f9df72;
   width: 80%;
   height: 30px;
   margin: 0;
@@ -2587,7 +2608,7 @@ you can add resource intensive styles.
 @media only screen and (min-width: 768px) {
   /******************************************************************
   Site Name: ARChive of Contemporary Music
-  Author: W.J. Levay
+  Author: W.J. Levay based on design by Open
   
   Stylesheet: Grid Stylesheet
   
@@ -2946,7 +2967,10 @@ you can add resource intensive styles.
     margin-top: 0.75em;
     padding-left: 1em;
   }
-  #galleries .widget ul {
+  #galleries .widget ul,
+  #about .widget.about ul {
+    margin-top: 1em;
+    padding-top: 1em;
     border-top: 1px black dotted;
   }
   /* links widget */
@@ -3015,7 +3039,7 @@ you can add resource intensive styles.
     margin: 0.5em 0;
   }
   .header #factoid .highlight {
-    background-color: #f0ffa0;
+    background-color: #f9df72;
   }
   /*********************
   NAVIGATION STYLES

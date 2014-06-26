@@ -47,7 +47,7 @@
 
 				<div id="inner-header" class="wrap clearfix">
 
-					<?php // uncomment code below to display random factoid about the ARChive from the Quotes custom post type
+					<?php // display random factoid about the ARChive from the Quotes custom post type
 					$factoid = new WP_Query(array ('post_type' => 'quote', 'posts_per_page' => 1, 'orderby' => 'rand') );
 					while ($factoid->have_posts()) : $factoid->the_post(); ?>
 
@@ -58,7 +58,7 @@
 					?>
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<a id="logo" href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/library/images/arc-logo.jpg"></a>
+					<a id="logo" href="<?php echo home_url(); ?>" rel="nofollow" title="The ARChive of Contemporary Music"><img src="<?php echo get_template_directory_uri(); ?>/library/images/arc-logo.png"></a>
 
 					<?php // if you'd like to use the site description you can un-comment it below ?>
 					<?php // bloginfo('description'); ?>
