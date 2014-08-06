@@ -2102,13 +2102,17 @@ and more scalable.
   padding-bottom: .5em;
 }
 .sidebar .support .widgettitle,
-.sidebar .support .widget-text {
-  color: #ffffff;
+#support .sidebar .support .widgettitle,
+.sidebar .support .widget-text,
+#support .sidebar .support .widget-text {
+  color: #ffffff !important;
   background-color: #9f111e;
   padding: 0 1em;
 }
 .sidebar .support .widgettitle a,
-.sidebar .support .widget-text a {
+#support .sidebar .support .widgettitle a,
+.sidebar .support .widget-text a,
+#support .sidebar .support .widget-text a {
   color: #ffffff;
   background-color: #700106;
   padding: .125em .375em .125em 1em;
@@ -2116,12 +2120,17 @@ and more scalable.
   text-decoration: none;
 }
 .sidebar .support .widgettitle a:hover,
+#support .sidebar .support .widgettitle a:hover,
 .sidebar .support .widget-text a:hover,
+#support .sidebar .support .widget-text a:hover,
 .sidebar .support .widgettitle a:focus,
-.sidebar .support .widget-text a:focus {
+#support .sidebar .support .widgettitle a:focus,
+.sidebar .support .widget-text a:focus,
+#support .sidebar .support .widget-text a:focus {
   text-decoration: underline;
 }
-.sidebar .support .widgettitle {
+.sidebar .support .widgettitle,
+#support .sidebar .support .widgettitle {
   font-family: "Amplitude Medium";
   font-style: normal;
   font-weight: bold;
