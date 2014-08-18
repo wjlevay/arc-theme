@@ -884,15 +884,21 @@ and more scalable.
 
 		.sd-block {
 			border-top: 0;
-			padding-top: 2em;
+			padding-top: 1em;
 		}
 
 		h3.sd-title {
 			font-size: 15px;
 			.amplitudelight;
+
+			&:before {
+				border-top: none;
+				margin-bottom: 0;
+			}
 		}
 	}
 }
+
 
 /******************************************************************
 09. PAGE NAVI STYLES
@@ -1003,14 +1009,16 @@ and more scalable.
 /* h3 comment title */
 #comments, #nocomments, #comment-form-title {
 	.amplitudewidebold;
-	display: inline-block;
+	display: block;
 
 	/* number of comments span */
-	span {}
+	span {
+		display: inline;
+	}
+
+	.h3 {margin-bottom: 0;}
 
 }
-
-#comments.h3 {margin-bottom: 0;}
 
 #nocomments {}
 
