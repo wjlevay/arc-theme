@@ -95,17 +95,17 @@ TYPOGRAPHY
 */
 /* Webtype font styles */
 .amplitudelight {
-  font-family: "Amplitude Light";
+  font-family: "Amplitude Light", Sans-Serif;
   font-style: normal;
   font-weight: normal;
 }
 .amplitudemedium {
-  font-family: "Amplitude Medium";
+  font-family: "Amplitude Medium", Sans-Serif;
   font-style: normal;
   font-weight: bold;
 }
 .amplitudewidebold {
-  font-family: AmplitudeWide;
+  font-family: AmplitudeWide, Sans-Serif;
   font-style: normal;
   font-weight: bold;
 }
@@ -692,7 +692,7 @@ NAVIGATION STYLES
   color: #f81a33;
 }
 .top-nav li.news a {
-  font-family: AmplitudeWide;
+  font-family: AmplitudeWide, Sans-Serif;
   font-style: normal;
   font-weight: bold;
   padding-left: 1.7em;
@@ -706,7 +706,7 @@ NAVIGATION STYLES
   color: #21d1e7;
 }
 .top-nav li.galleries a {
-  font-family: "Amplitude Medium";
+  font-family: "Amplitude Medium", Sans-Serif;
   font-style: normal;
   font-weight: bold;
   padding-left: 1.7em;
@@ -731,7 +731,7 @@ NAVIGATION STYLES
   color: #93bf36;
 }
 .top-nav li.services a {
-  font-family: AmplitudeWide;
+  font-family: AmplitudeWide, Sans-Serif;
   font-style: normal;
   font-weight: bold;
   padding-left: 1.7em;
@@ -745,7 +745,7 @@ NAVIGATION STYLES
   color: #008bca;
 }
 .top-nav li.support a {
-  font-family: "Amplitude Medium";
+  font-family: "Amplitude Medium", Sans-Serif;
   font-style: normal;
   font-weight: bold;
   padding-left: 1.7em;
@@ -874,7 +874,7 @@ HEADER STYLES
   display: block;
   width: 100%;
   color: #6d6e70;
-  font-size: 2em;
+  font-size: 1.833em;
   line-height: 1.333em;
 }
 .header #factoid p {

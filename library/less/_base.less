@@ -42,7 +42,6 @@ html, body {
 
 body {
 	.amplitudelight;
-	font-size: 110%;
 	line-height: 1.5;
 	color: @black;
 	letter-spacing: 0.01em;
@@ -632,6 +631,9 @@ and more scalable.
 			.category, .category a {
 				.amplitudemedium;
 				color: @news;
+			}
+
+			.category a {
 				.no-underline;
 			}
 
@@ -1452,7 +1454,7 @@ and more scalable.
 	}
 }
 
-#homeright {
+#homeright, #cubaright {
 	.widget_custom_recent_entries {
 		max-width: 100%;
 		h4 {
@@ -1775,7 +1777,7 @@ and more scalable.
 		outline: none;
 		background: @highlight;
 		width: 80%;
-		height: 30px;
+		height: 28px;
 		margin: 0;
 		z-index: 10;
 		font-size: 16px;
@@ -1868,5 +1870,9 @@ and more scalable.
 .page-catalogs {
 
 	.entry-content h2 {display: none;}
+
+	.wpDataTablesWrapper {
+		font-size: 70%;
+	}
 
 }

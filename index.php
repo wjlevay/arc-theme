@@ -30,7 +30,7 @@
 									printf( __( '<span class="category">%1$s</span> <time class="updated" datetime="%2$s" pubdate>%3$s</time>', 'bonestheme' ), $category, get_the_time( 'Y-m-j' ), get_the_time( get_option('date_format')) );
 								?></p>
 								<h1 class="entry-title single-title" itemprop="headline"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-								<p class="byline vcard"><span class="author"><?php echo get_the_author(); ?>, <?php the_author_meta( 'nickname' ); ?></p></span></p>
+								<p class="byline vcard"><span class="author"><?php echo get_the_author(); ?><?php author_ARCtitle(); ?></p></span></p>
 
 								</header> <?php // end article header ?>
 

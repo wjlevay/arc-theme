@@ -183,6 +183,24 @@ function bones_register_sidebars() {
 		'after_title' => '</h4>',
 	));
 	register_sidebar(array(
+		'id' => 'cubaleft',
+		'name' => __( 'Cuba Left', 'bonestheme' ),
+		'description' => __( 'The left Cuba Music Week sidebar.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'id' => 'cubaright',
+		'name' => __( 'Cuba Right', 'bonestheme' ),
+		'description' => __( 'The right Cuba Music Week sidebar.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle news">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
 		'id' => 'footer-1',
 		'name' => __( 'Footer Area 1', 'bonestheme' ),
 		'description' => __( 'The first footer area.', 'bonestheme' ),
@@ -316,6 +334,31 @@ function bones_wpsearch($form) {
 
 /************* CUSTOM FUNCTIONS *****************/
 
+// Add a job title field to user profiles
+
+function modify_contact_methods($profile_fields) {
+
+	// Add new fields
+	$profile_fields['title'] = 'ARC Title';
+
+	return $profile_fields;
+}
+add_filter('user_contactmethods', 'modify_contact_methods');
+
+// Format the author name + title for posts
+
+function author_ARCtitle() {
+
+	$title = get_the_author_meta( 'title' );
+	if ( $title != '' ) {
+		echo ', ' . $title;
+	}
+	else {
+		echo '';
+	}
+} // don't remove this bracket
+
+
 // Change the excerpt length from default of 55 to x
 
 function custom_excerpt_length( $length ) {
@@ -383,35 +426,35 @@ add_action('template_redirect', 'switch_page_template');
 
 // Show Captions on Thumbnail Images (via http://wordpress.org/support/topic/display-caption-with-the_post_thumbnail)
 
-function the_post_thumbnail_caption() {
-  global $post;
+// function the_post_thumbnail_caption() {
+//   global $post;
 
-  $thumb_id = get_post_thumbnail_id($post->id);
+//   $thumb_id = get_post_thumbnail_id($post->id);
 
-  $args = array(
-	'post_type' => 'attachment',
-	'post_status' => null,
-	'post_parent' => $post->ID,
-	'include'  => $thumb_id
-	); 
+//   $args = array(
+// 	'post_type' => 'attachment',
+// 	'post_status' => null,
+// 	'post_parent' => $post->ID,
+// 	'include'  => $thumb_id
+// 	); 
 
-   $thumbnail_image = get_posts($args);
+//    $thumbnail_image = get_posts($args);
 
-   if ($thumbnail_image && isset($thumbnail_image[0])) {
-     //show thumbnail title
-     //echo $thumbnail_image[0]->post_title; 
+//    if ($thumbnail_image && isset($thumbnail_image[0])) {
+//      //show thumbnail title
+//      //echo $thumbnail_image[0]->post_title; 
 
-     //Uncomment to show the thumbnail caption
-     echo $thumbnail_image[0]->post_excerpt; 
+//      //Uncomment to show the thumbnail caption
+//      echo $thumbnail_image[0]->post_excerpt; 
 
-     //Uncomment to show the thumbnail description
-     //echo $thumbnail_image[0]->post_content; 
+//      //Uncomment to show the thumbnail description
+//      //echo $thumbnail_image[0]->post_content; 
 
-     //Uncomment to show the thumbnail alt field
-     //$alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-     //if(count($alt)) echo $alt;
-  }
-}
+//      //Uncomment to show the thumbnail alt field
+//      //$alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+//      //if(count($alt)) echo $alt;
+//   }
+// }
 
 // Set Featured Images for migrated blog posts
 // http://www.gavick.com/magazine/wordpress-quick-tip-4-automatically-set-the-first-post-image-as-a-featured-image.html
